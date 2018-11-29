@@ -25,6 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         saisie = this.findViewById(R.id.SaisiPseudo);
         pseudo = saisie.getText().toString();
 
-
+//
     }
 }
