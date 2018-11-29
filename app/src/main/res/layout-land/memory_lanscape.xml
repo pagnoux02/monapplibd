@@ -79,8 +79,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image1_2"
@@ -90,8 +89,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/image1_1"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image1_3"
@@ -101,8 +99,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/image1_2"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image1_4"
@@ -114,8 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image1_3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image2_1"
@@ -125,8 +121,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image1_1"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image2_2"
@@ -136,8 +131,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/image2_1"
         app:layout_constraintTop_toBottomOf="@+id/image1_2"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image2_3"
@@ -147,8 +141,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/image2_2"
         app:layout_constraintTop_toBottomOf="@+id/image1_3"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image2_4"
@@ -161,8 +154,7 @@
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toEndOf="@+id/image2_3"
         app:layout_constraintTop_toBottomOf="@+id/image1_4"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image3_1"
@@ -172,8 +164,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image2_1"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image3_2"
@@ -183,8 +174,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/image3_1"
         app:layout_constraintTop_toBottomOf="@+id/image2_2"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image3_3"
@@ -194,8 +184,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/image3_2"
         app:layout_constraintTop_toBottomOf="@+id/image2_3"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image3_4"
@@ -208,8 +197,7 @@
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toEndOf="@+id/image3_3"
         app:layout_constraintTop_toBottomOf="@+id/image2_4"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image4_1"
@@ -221,8 +209,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image3_1"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image4_2"
@@ -234,8 +221,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image4_1"
         app:layout_constraintTop_toBottomOf="@+id/image3_2"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image4_3"
@@ -247,8 +233,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image4_2"
         app:layout_constraintTop_toBottomOf="@+id/image3_3"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <ImageView
         android:id="@+id/image4_4"
@@ -263,8 +248,7 @@
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toEndOf="@+id/image4_3"
         app:layout_constraintTop_toBottomOf="@+id/image3_4"
-        app:srcCompat="@drawable/tintin"
-        tools:srcCompat="@drawable/tintin_et_milou" />
+        tools:srcCompat="@drawable/point_interrogation" />
 
     <Button
         android:id="@+id/reinitialiser"
