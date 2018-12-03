@@ -1,6 +1,18 @@
 package com.example.fpagnoux.monapplibd;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class Memory {
+import java.util.Random;
+
+
+
+public class Memory extends AppCompatActivity {
+    //on assigne le layout memory_lanscape à l'activité
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.memory_lanscape);
+    }
 
     //déclare des listes et instancie les images des themes dans les listes
     //BD
@@ -29,5 +41,7 @@ public class Memory {
     String theme;
     String nomJoueur;
     int nbCoups;
-
+    //génération d'un chiffre aléatoire
+    Random rand = new Random();
+    int unNbRandom = rand.nextInt(8);
 }
