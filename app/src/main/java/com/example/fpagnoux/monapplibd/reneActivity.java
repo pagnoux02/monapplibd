@@ -72,7 +72,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
                 text.setText(String.valueOf(score));
                 break;
             case R.id.imgjeu2:
-                score=score+15;//
+                score=score+15;
                 text.setText(String.valueOf(score));
                 break;
             case R.id.imgjeu3 :
