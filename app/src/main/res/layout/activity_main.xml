@@ -47,7 +47,6 @@
         android:layout_marginStart="110dp"
         android:layout_marginBottom="553dp"
         android:background="@drawable/avengers"
-        android:backgroundTint="@drawable/border"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -170,11 +169,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <linearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
-    </linearLayout>
 
 </android.support.constraint.ConstraintLayout>
