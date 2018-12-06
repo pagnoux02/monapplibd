@@ -16,13 +16,13 @@ public class Memory extends AppCompatActivity {
 
 
     //Propriétés
-    String theme = "tintin";
+    String theme = "titeuf";
     String nomJoueur;
     int nbCoups;
     //génération d'un chiffre aléatoire
     Random rand = new Random();
     int unNbRandom = rand.nextInt(8);
-    private int[] imgTheme;
+    int[] imgTheme;
 
     //Méthode
 
@@ -35,11 +35,12 @@ public class Memory extends AppCompatActivity {
         if (theme == "tintin")
         {
             imgTheme = new int[] {R.drawable.t1_1, R.drawable.t1_2, R.drawable.t1_3, R.drawable.t1_4, R.drawable.t1_5, R.drawable.t1_6, R.drawable.t1_7, R.drawable.t1_8};
+
         }
         //Titeuf
         else if (theme == "titeuf")
         {
-            //imgTheme = new int[] {R.drawable.t2_1, R.drawable.t2_2, R.drawable.t2_3, R.drawable.t2_4, R.drawable.t2_5, R.drawable.t2_6, R.drawable.t2_7, R.drawable.t2_8};
+            imgTheme = new int[] {R.drawable.t2_1, R.drawable.t2_2, R.drawable.t2_3, R.drawable.t2_4, R.drawable.t2_5, R.drawable.t2_6, R.drawable.t2_7, R.drawable.t2_8};
         }
         //Simson
         else if (theme == "simson")
