@@ -3,6 +3,7 @@ package com.example.fpagnoux.monapplibd;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,10 +15,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9;
     private String theme;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Button buttClass = this.findViewById(R.id.buttClass);
         buttClass.setOnClickListener(this);
@@ -99,3 +103,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 }
+
+
+
