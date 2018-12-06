@@ -35,6 +35,11 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private Button start;
     private Boolean jeu = false;
 
+private int boucle= 0;
+
+    private TextView Timer;
+    private int letempstotal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,8 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         text = (TextView) findViewById(R.id.txtscore);
         start = (Button) findViewById(R.id.btnstart);
 
+
+        Timer = (TextView) findViewById(R.id.txttimer);
         // text.setText(String.valueOf( listimgaview[1]));
         start.setOnClickListener(this);
 
@@ -79,9 +86,9 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
         switch (v.getId()) {
             case R.id.btnstart:
-
+                letimer();
                 jouer(1);
-
+                boucle = 0;
                 break;
         }
 
@@ -127,71 +134,114 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
                     score = score + 105;
                     text.setText(String.valueOf(score));
                     break;
+
             }
         }
 
     }
 
     // Jouer peromet de generé 2 nbr aléatoir pour le choix de l'image et de la case de reception
-    private void jouer(int theme) {
-   
+    private void jouer(final int theme) {
+
+
+
+
         jeu = true;
+
         int n = rand.nextInt(3);
         int imgjeuplace = rand.nextInt(9);
 
+        text.setText(String.valueOf(n));
 
         switch (imgjeuplace) {
 
             case 0:
+             //   img1.setImageResource(imgdujeu[n]);
                 personnagejouer(n, 3, 3, 3, 3, 3, 3, 3, 3);
 
                 break;
             case 1:
+               // img2.setImageResource(imgdujeu[n]);
+
                 personnagejouer(3, n, 3, 3, 3, 3, 3, 3, 3);
                 break;
             case 2:
+               // img3.setImageResource(imgdujeu[n]);
                 personnagejouer(3, 3, n, 3, 3, 3, 3, 3, 3);
                 break;
             case 3:
-                personnagejouer(3, 3, 3, n, 3, 3, 3, 3, 3);
+               // img4.setImageResource(imgdujeu[n]);
+               personnagejouer(3, 3, 3, n, 3, 3, 3, 3, 3);
                 break;
             case 4:
+              //  img5.setImageResource(imgdujeu[n]);
                 personnagejouer(3, 3, 3, 3, n, 3, 3, 3, 3);
                 break;
             case 5:
+               // img6.setImageResource(imgdujeu[n]);
                 personnagejouer(3, 3, 3, 3, 3, n, 3, 3, 3);
                 break;
             case 6:
+                //img7.setImageResource(imgdujeu[n]);
                 personnagejouer(3, 3, 3, 3, 3, 3, n, 3, 3);
                 break;
             case 7:
+              //  img8.setImageResource(imgdujeu[n]);
                 personnagejouer(3, 3, 3, 3, 3, 3, 3, n, 3);
                 break;
             case 8:
+             //   img9.setImageResource(imgdujeu[n]);
                 personnagejouer(3, 3, 3, 3, 3, 3, 3, 3, n);
                 break;
+        }
+            if (boucle < 10 ) {
+                boucle ++ ;
+                Handler unHandler = new Handler();
+                unHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        jouer(1);
+                    }
+                }, 2000);
 
+
+            }
 
         }
-    }
+
 
 
     // affectation des image au differente case
-    private void personnagejouer(int monimg1, int monimg2, int monimg3, int monimg4, int monimg5, int monimg6, int monimg7, int monimg8, int monimg9) {
+    public void personnagejouer(int monimg1, int monimg2, int monimg3, int monimg4, int monimg5, int monimg6, int monimg7, int monimg8, int monimg9) {
 
 
         img1.setImageResource(imgdujeu[monimg1]);
         img2.setImageResource(imgdujeu[monimg2]);
-        img8.setImageResource(imgdujeu[monimg3]);
+        img3.setImageResource(imgdujeu[monimg3]);
 
-        img8.setImageResource(imgdujeu[monimg4]);
-        img8.setImageResource(imgdujeu[monimg5]);
-        img8.setImageResource(imgdujeu[monimg6]);
+        img4.setImageResource(imgdujeu[monimg4]);
+        img5.setImageResource(imgdujeu[monimg5]);
+        img6.setImageResource(imgdujeu[monimg6]);
 
-        img8.setImageResource(imgdujeu[monimg7]);
+        img7.setImageResource(imgdujeu[monimg7]);
         img8.setImageResource(imgdujeu[monimg8]);
         img9.setImageResource(imgdujeu[monimg9]);
     }
+
+
+    public void letimer (){
+        letempstotal++;
+        Timer.setText(String.valueOf(letempstotal+"/ 60"));
+        if (letempstotal <=59 ){
+        Handler unHandler = new Handler();
+        unHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                letimer();
+            }
+        }, 1000);
+    }}
+
 
 }
 
