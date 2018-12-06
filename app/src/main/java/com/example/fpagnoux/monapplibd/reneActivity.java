@@ -40,7 +40,8 @@ private int boucle= 0;
     private TextView Timer;
     private int letempstotal;
 
-    private int place ;
+    private int place, imgalea ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,43 +103,54 @@ private int boucle= 0;
 
 
                 case R.id.imgjeu1:
+                    if ( place == 0){
+                    if (imgalea == 0 ){
+                        score=score -10;
+                    }
+                    if ( imgalea == 1) {
+                        score=score +5;
 
-                    score++;
-                    text.setText(String.valueOf(score));
+                    }
+                    if ( imgalea == 2) {
+                        score=score +15;
+                    }}
+
                     break;
                 case R.id.imgjeu2:
                     score = score + 15;
-                    text.setText(String.valueOf(score));
+
                     break;
                 case R.id.imgjeu3:
                     score = score + 30;
-                    text.setText(String.valueOf(score));
+
                     break;
                 case R.id.imgjeu4:
                     score = score + 30;
-                    text.setText(String.valueOf(score));
+
                     break;
                 case R.id.imgjeu5:
                     score = score + 45;
-                    text.setText(String.valueOf(score));
+
                     break;
                 case R.id.imgjeu6://
                     score = score + 60;
-                    text.setText(String.valueOf(score));
+
                     break;
 
                 case R.id.imgjeu7:
                     score = score + 75;
-                    text.setText(String.valueOf(score));
+
                     break;
                 case R.id.imgjeu8:
                     score = score + 90;
-                    text.setText(String.valueOf(score));
+
                     break;
                 case R.id.imgjeu9:
                     score = score + 105;
-                    text.setText(String.valueOf(score));
+
                     break;
+
+                        //text.setText(String.valueOf(score));
 
             }
         }
@@ -158,7 +170,7 @@ private int boucle= 0;
 
 
         place = imgjeuplace;
-
+        imgalea = n;
             text.setText(String.valueOf(n));
 
         switch (imgjeuplace) {
