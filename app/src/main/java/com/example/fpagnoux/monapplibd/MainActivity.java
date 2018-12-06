@@ -1,36 +1,26 @@
 package com.example.fpagnoux.monapplibd;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private final int code_fenetre = 20;
-    private EditText saisie;
     private String pseudo;
     private int num;
-    private Button boutonClass;
     private ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9;
     private String theme;
-    private TextView unTitre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        unTitre = this.findViewById(R.id.Titre);
-
-        boutonClass = this.findViewById(R.id.buttClass);
-        boutonClass.setOnClickListener(this);
+        Button buttClass = this.findViewById(R.id.buttClass);
+        buttClass.setOnClickListener(this);
 
         img1 = this.findViewById(R.id.avengersView);
         img1.setOnClickListener(this);
@@ -65,9 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttClass:
-                saisie = this.findViewById(R.id.SaisiPseudo);
+                EditText saisie = this.findViewById(R.id.SaisiPseudo);
                 pseudo = saisie.getText().toString();
-                classement(num);
+                rank(num);
                 break;
             case R.id.avengersView:
                 theme = "avengers";
@@ -99,11 +89,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void classement(int unNumQ){
+    private void rank(int unNumQ){
         Intent unIntent = new Intent(this, activityClassement.class);
         unIntent.putExtra("Joueur", pseudo);
         unIntent.putExtra("Numero", unNumQ);
         unIntent.putExtra("Theme", theme);
-        this.startActivityForResult(unIntent,code_fenetre);
+        int cFenetre = 20;
+        this.startActivityForResult(unIntent, cFenetre);
     }
+
 }

@@ -13,12 +13,11 @@ public class activityClassement extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classement);
-
-        String lePseudo = this.getIntent().getExtras().getString("Joueur");
+        
         String leTheme = this.getIntent().getExtras().getString("Theme");
 
         test = this.findViewById(R.id.viewPseudo);
-        test.setText(leTheme); //
+        test.setText(leTheme); 
 
 
 
