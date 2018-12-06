@@ -31,9 +31,10 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     //   private List l = new LinkedList(img1,img2,img3,img4,img5,img6,img7,img8,img9);
     private TextView text;
     private int score = 0;
-    private String theme;
     private Button start;
     private Boolean jeu = false;
+    private String leTheme;
+    private String lePseudo;
 
     //hugo
     private TextView test;
@@ -51,13 +52,8 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         start.setOnClickListener(this);
 
         //hugo
-        String leTheme = this.getIntent().getExtras().getString("Theme");
-        String lePseudo = this.getIntent().getExtras().getString("Pseudo");
-
-        test = this.findViewById(R.id.txttheme);
-        test.setText(leTheme);
-        pseudo = this.findViewById(R.id.txtpseudo);
-        pseudo.setText(lePseudo);
+        leTheme = this.getIntent().getExtras().getString("Theme");
+        lePseudo = this.getIntent().getExtras().getString("Joueur");
 
         // instancie les images
         img1 = (ImageView) findViewById(R.id.imgjeu1);
@@ -82,7 +78,10 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         img8.setOnClickListener(this);
         img9.setOnClickListener(this);
 
-
+        test = this.findViewById(R.id.txttheme);
+        test.setText(leTheme);
+        pseudo = this.findViewById(R.id.txtpseudo);
+        pseudo.setText(lePseudo);
     }
 
 
@@ -195,13 +194,13 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
         img1.setImageResource(imgdujeu[monimg1]);
         img2.setImageResource(imgdujeu[monimg2]);
-        img8.setImageResource(imgdujeu[monimg3]);
+        img3.setImageResource(imgdujeu[monimg3]);
 
-        img8.setImageResource(imgdujeu[monimg4]);
-        img8.setImageResource(imgdujeu[monimg5]);
-        img8.setImageResource(imgdujeu[monimg6]);
+        img4.setImageResource(imgdujeu[monimg4]);
+        img5.setImageResource(imgdujeu[monimg5]);
+        img6.setImageResource(imgdujeu[monimg6]);
 
-        img8.setImageResource(imgdujeu[monimg7]);
+        img7.setImageResource(imgdujeu[monimg7]);
         img8.setImageResource(imgdujeu[monimg8]);
         img9.setImageResource(imgdujeu[monimg9]);
     }
