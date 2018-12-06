@@ -23,6 +23,10 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private String theme;
     private Button start;
 
+    //hugo
+    private TextView test;
+    private TextView pseudo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,15 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         start = (Button) findViewById(R.id.btnstart);
 
         start.setOnClickListener(this);
+
+        //hugo
+        String leTheme = this.getIntent().getExtras().getString("Theme");
+        String lePseudo = this.getIntent().getExtras().getString("Pseudo");
+
+        test = this.findViewById(R.id.txttheme);
+        test.setText(leTheme);
+        pseudo = this.findViewById(R.id.txtpseudo);
+        pseudo.setText(lePseudo);
 
         // instancie les images
         img1 = (ImageView) findViewById(R.id.imgjeu1);

@@ -11,10 +11,9 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private String pseudo;
-    private int num;
     private ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9;
     private String theme;
-
+    int cFenetre = 20;
 
 
     @Override
@@ -23,8 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
+
         Button buttClass = this.findViewById(R.id.buttClass);
         buttClass.setOnClickListener(this);
+
+        Button buttValider = this.findViewById(R.id.buttValider);
+        buttValider.setOnClickListener(this);
 
         img1 = this.findViewById(R.id.avengersView);
         img1.setOnClickListener(this);
@@ -57,11 +60,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        EditText saisie = this.findViewById(R.id.SaisiPseudo);
         switch (v.getId()) {
             case R.id.buttClass:
-                EditText saisie = this.findViewById(R.id.SaisiPseudo);
                 pseudo = saisie.getText().toString();
-                rank(num);
+                rank();
+                break;
+            case R.id.buttValider:
+                pseudo = saisie.getText().toString();
+                play();
                 break;
             case R.id.avengersView:
                 theme = "avengers";
@@ -93,12 +100,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void rank(int unNumQ){
+    private void rank(){
         Intent unIntent = new Intent(this, activityClassement.class);
         unIntent.putExtra("Joueur", pseudo);
-        unIntent.putExtra("Numero", unNumQ);
         unIntent.putExtra("Theme", theme);
-        int cFenetre = 20;
+        this.startActivityForResult(unIntent, cFenetre);
+    }
+
+    private void play(){
+        Intent unIntent = new Intent(this, reneActivity.class);
+        unIntent.putExtra("Joueur", pseudo);
+        unIntent.putExtra("Theme", theme);
         this.startActivityForResult(unIntent, cFenetre);
     }
 
