@@ -40,6 +40,8 @@ private int boucle= 0;
     private TextView Timer;
     private int letempstotal;
 
+    private int place ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,6 +87,7 @@ private int boucle= 0;
     public void onClick(View v) {
 
         switch (v.getId()) {
+            // verification du clique sur le bouton start
             case R.id.btnstart:
                 letimer();
                 jouer(1);
@@ -97,7 +100,9 @@ private int boucle= 0;
 
             switch (v.getId()) {
 
+
                 case R.id.imgjeu1:
+
                     score++;
                     text.setText(String.valueOf(score));
                     break;
@@ -151,7 +156,10 @@ private int boucle= 0;
         int n = rand.nextInt(3);
         int imgjeuplace = rand.nextInt(9);
 
-        text.setText(String.valueOf(n));
+
+        place = imgjeuplace;
+
+            text.setText(String.valueOf(n));
 
         switch (imgjeuplace) {
 
@@ -194,7 +202,8 @@ private int boucle= 0;
                 personnagejouer(3, 3, 3, 3, 3, 3, 3, 3, n);
                 break;
         }
-            if (boucle < 10 ) {
+            // permet de refaire la fonction jouer tout les X temps
+            if (letempstotal < 60 ) {
                 boucle ++ ;
                 Handler unHandler = new Handler();
                 unHandler.postDelayed(new Runnable() {
@@ -205,6 +214,10 @@ private int boucle= 0;
                 }, 2000);
 
 
+            }
+            else {
+             jeu = false;
+             letempstotal = 0;
             }
 
         }
@@ -228,10 +241,10 @@ private int boucle= 0;
         img9.setImageResource(imgdujeu[monimg9]);
     }
 
-
+// affichage du temps
     public void letimer (){
         letempstotal++;
-        Timer.setText(String.valueOf(letempstotal+"/ 60"));
+        Timer.setText(String.valueOf(letempstotal+" / 60"));
         if (letempstotal <=59 ){
         Handler unHandler = new Handler();
         unHandler.postDelayed(new Runnable() {
