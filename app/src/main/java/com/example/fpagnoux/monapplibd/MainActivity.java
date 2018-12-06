@@ -101,14 +101,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void rank(){
-        Intent unIntent = new Intent(this, activityClassement.class);
+        Intent unIntent = new Intent(MainActivity.this, activityClassement.class);
         unIntent.putExtra("Joueur", pseudo);
         unIntent.putExtra("Theme", theme);
         this.startActivityForResult(unIntent, cFenetre);
     }
 
     private void play(){
-        Intent unIntent = new Intent(this, reneActivity.class);
+        Intent unIntent = new Intent(MainActivity.this, reneActivity.class);
         unIntent.putExtra("Joueur", pseudo);
         unIntent.putExtra("Theme", theme);
         this.startActivityForResult(unIntent, cFenetre);

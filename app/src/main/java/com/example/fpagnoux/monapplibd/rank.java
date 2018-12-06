@@ -1,21 +1,15 @@
 package com.example.fpagnoux.monapplibd;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.widget.EditText;
-
-import java.util.ArrayList;
 
 public class rank {
     private int id;
     private String pseudo;
     private int score;
 
-
     public rank(){
 
     }
+
 
     public rank(int unId, String unPseudo, int unScore){
         id = unId;
@@ -43,5 +37,6 @@ public class rank {
     public int getScore(){
         return score;
     }
+
 
 }

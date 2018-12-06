@@ -29,11 +29,11 @@ public class Rank_SQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String KEY_NAME = "pseudo";
     private static final String KEY_SCORE = "Score";
 
-    public static final int score = 0;
+
 
     //Création de la table
     public static final String reqCreationTable ="CREATE TABLE "+ TABLE_CLASSEMENT + " (" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            KEY_NAME + " TEXT" + score + "INTEGER);";
+            KEY_NAME + " TEXT" + KEY_SCORE + "INTEGER);";
 
     //Constructeur
     public Rank_SQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -82,10 +82,16 @@ public class Rank_SQLiteOpenHelper extends SQLiteOpenHelper {
         return insertion;
     }
 
+    public void ajoutInsertScore(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("INSERT INTO Classement VALUES (15,'Quel est l''essai de question','essai 1','essai 2','essai 3','essai 4','essai 1');");
 
 
-    public List<rank> getAllRank() {
-        List<rank> rankList = new ArrayList<rank>();
+    }
+
+    public ArrayList<rank> getAllRank() {
+        ArrayList<rank> rankList = new ArrayList<rank>();
         // Select All Query
         String selectQuery = "SELECT  * FROM " + TABLE_CLASSEMENT;
 
@@ -107,7 +113,4 @@ public class Rank_SQLiteOpenHelper extends SQLiteOpenHelper {
         // return contact list
         return rankList;
     }
-
-
-
 }
