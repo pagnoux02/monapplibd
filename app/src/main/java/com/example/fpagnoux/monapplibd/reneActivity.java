@@ -25,7 +25,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
-    private ImageView imgpnt1,imgpnt2,imgptn3;
+    private ImageView imgpnt1,imgpnt2,imgpnt3;
 
     // private ImageView listimgaview[] = img1 ,img2 ,img3,img4,img5,img6,img7,img8,img9;
 
@@ -35,7 +35,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private String theme;
     private Button start;
     private Boolean jeu = false;
-
+    private boolean eststart =true ;
     private int i ;
 
 
@@ -58,8 +58,10 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         // text.setText(String.valueOf( listimgaview[1]));
         start.setOnClickListener(this);
 
-
-
+        // imageview qui contient les images afin dans la zone de score
+        imgpnt1 =  (ImageView) findViewById(R.id.imgpts1);
+        imgpnt2 =  (ImageView) findViewById(R.id.imgpts2);
+        imgpnt3 =  (ImageView) findViewById(R.id.imgpts3);
 
         // instancie les images ou l'utilisateur devra cliquer
         img1 = (ImageView) findViewById(R.id.imgjeu1);
@@ -110,9 +112,12 @@ public void pointparimg(int i){
         switch (v.getId()) {
             // verification du clique sur le bouton start
             case R.id.btnstart:
-                letimer();
-                jouer(1);
+                if (eststart == true ) {
+                    letimer();
+                    jouer(1);
+                    eststart = false;
 
+                }
                 break;
         }
 
@@ -238,9 +243,16 @@ public void pointparimg(int i){
 
 
             }
+            // remet au valeur par defaut
             else {
+
              jeu = false;
              letempstotal = 60;
+             personnagejouer(3, 3, 3, 3, 3, 3, 3, 3, 3);
+             score = 0;
+             text.setText(score);
+             eststart = true;
+
 
             }
 
