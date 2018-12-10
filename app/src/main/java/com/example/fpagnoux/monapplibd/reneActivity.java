@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import java.util.List;
 import java.util.Random;
 import java.util.Timer;
 
@@ -24,7 +25,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
-
+    private ImageView imgpnt1,imgpnt2,imgptn3;
 
     // private ImageView listimgaview[] = img1 ,img2 ,img3,img4,img5,img6,img7,img8,img9;
 
@@ -35,10 +36,11 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private Button start;
     private Boolean jeu = false;
 
-private int boucle= 0;
+    private int i ;
+
 
     private TextView Timer;
-    private int letempstotal;
+    private int letempstotal = 60;
 
     private int place, imgalea ;
 
@@ -56,7 +58,10 @@ private int boucle= 0;
         // text.setText(String.valueOf( listimgaview[1]));
         start.setOnClickListener(this);
 
-        // instancie les images
+
+
+
+        // instancie les images ou l'utilisateur devra cliquer
         img1 = (ImageView) findViewById(R.id.imgjeu1);
         img2 = (ImageView) findViewById(R.id.imgjeu2);
         img3 = (ImageView) findViewById(R.id.imgjeu3);
@@ -81,7 +86,22 @@ private int boucle= 0;
 
 
     }
+    //attribution des points par images
+public void pointparimg(int i){
+    String ok = "img"+i;
+  ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
 
+    if ((int) imgdelacase[i].getTag() == android.R.drawable.sym_def_app_icon) {
+        score = score + -5;
+    }
+    if ((int) imgdelacase[i].getTag() == android.R.drawable.star_big_off) {
+        score = score + 5;
+    }
+    if ((int) imgdelacase[i].getTag() == android.R.drawable.star_big_on) {
+        score = score + 15;
+    }
+    text.setText(String.valueOf(score));
+}
 
     //fonction qui s'active quand il y a un click
     @Override
@@ -92,7 +112,7 @@ private int boucle= 0;
             case R.id.btnstart:
                 letimer();
                 jouer(1);
-                boucle = 0;
+
                 break;
         }
 
@@ -100,57 +120,47 @@ private int boucle= 0;
 
 
             switch (v.getId()) {
-
+                    // atribution du score en fonction de l'image et de la place
 
                 case R.id.imgjeu1:
-                    if ( place == 0){
-                    if (imgalea == 0 ){
-                        score=score -10;
-                    }
-                    if ( imgalea == 1) {
-                        score=score +5;
-
-                    }
-                    if ( imgalea == 2) {
-                        score=score +15;
-                    }}
-
+                    pointparimg(0);
+                    jeu = false;
                     break;
                 case R.id.imgjeu2:
-                    score = score + 15;
-
+                    pointparimg(1);
+                    jeu = false;
                     break;
                 case R.id.imgjeu3:
-                    score = score + 30;
-
+                    pointparimg(2);
+                    jeu = false;
                     break;
                 case R.id.imgjeu4:
-                    score = score + 30;
-
+                    pointparimg(3);
+                    jeu = false;
                     break;
                 case R.id.imgjeu5:
-                    score = score + 45;
-
+                    pointparimg(4);
+                    jeu = false;
                     break;
                 case R.id.imgjeu6://
-                    score = score + 60;
-
+                    pointparimg(5);
+                    jeu = false;
                     break;
-
                 case R.id.imgjeu7:
-                    score = score + 75;
-
+                    pointparimg(6);
+                    jeu = false;
                     break;
                 case R.id.imgjeu8:
-                    score = score + 90;
-
+                    pointparimg(7);
+                    jeu = false;
                     break;
                 case R.id.imgjeu9:
-                    score = score + 105;
-
+                    pointparimg(8);
+                    jeu = false;
                     break;
 
-                        //text.setText(String.valueOf(score));
+
+
 
             }
         }
@@ -171,7 +181,7 @@ private int boucle= 0;
 
         place = imgjeuplace;
         imgalea = n;
-            text.setText(String.valueOf(n));
+        //text.setText(String.valueOf(n));
 
         switch (imgjeuplace) {
 
@@ -215,21 +225,23 @@ private int boucle= 0;
                 break;
         }
             // permet de refaire la fonction jouer tout les X temps
-            if (letempstotal < 60 ) {
-                boucle ++ ;
+            if (letempstotal > 0 ) {
+
                 Handler unHandler = new Handler();
                 unHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         jouer(1);
+
                     }
-                }, 2000);
+                }, 4000);
 
 
             }
             else {
              jeu = false;
-             letempstotal = 0;
+             letempstotal = 60;
+
             }
 
         }
@@ -241,28 +253,37 @@ private int boucle= 0;
 
 
         img1.setImageResource(imgdujeu[monimg1]);
+        //affectation d'un tag pui permet de faire une comparaison par la suite
+        img1.setTag(imgdujeu[monimg1]);
         img2.setImageResource(imgdujeu[monimg2]);
+        img2.setTag(imgdujeu[monimg2]);
         img3.setImageResource(imgdujeu[monimg3]);
-
+        img3.setTag(imgdujeu[monimg3]);
         img4.setImageResource(imgdujeu[monimg4]);
+        img4.setTag(imgdujeu[monimg4]);
         img5.setImageResource(imgdujeu[monimg5]);
+        img5.setTag(imgdujeu[monimg5]);
         img6.setImageResource(imgdujeu[monimg6]);
-
+        img6.setTag(imgdujeu[monimg6]);
         img7.setImageResource(imgdujeu[monimg7]);
+        img7.setTag(imgdujeu[monimg7]);
         img8.setImageResource(imgdujeu[monimg8]);
+        img8.setTag(imgdujeu[monimg8]);
         img9.setImageResource(imgdujeu[monimg9]);
+        img9.setTag(imgdujeu[monimg9]);
     }
 
-// affichage du temps
+// affichage du temps sur 60s
     public void letimer (){
-        letempstotal++;
+        letempstotal--;
         Timer.setText(String.valueOf(letempstotal+" / 60"));
-        if (letempstotal <=59 ){
+        if (letempstotal >00 ){
         Handler unHandler = new Handler();
         unHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 letimer();
+
             }
         }, 1000);
     }}
