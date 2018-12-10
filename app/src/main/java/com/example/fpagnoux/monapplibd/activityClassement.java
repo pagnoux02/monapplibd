@@ -9,7 +9,6 @@ import org.w3c.dom.Text;
 public class activityClassement extends AppCompatActivity {
     private TextView test;
     private TextView afficher;
-    private collectionScores bdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +19,9 @@ public class activityClassement extends AppCompatActivity {
 
         test = this.findViewById(R.id.viewPseudo);
         test.setText(leTheme);
-
+/*
         afficher = this.findViewById(R.id.affiche);
-        afficher.setText(bdd.nb_elements());
+        afficher.setText(bdd.nb_elements());*/
 
 
 
