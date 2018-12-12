@@ -12,14 +12,6 @@ import java.util.List;
 
 
 public class Memory extends AppCompatActivity {
-    //on assigne le layout memory_lanscape à l'activité
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.memory_lanscape);
-    }
-
-
     //Propriétés
     String theme = "titeuf";
     String nomJoueur;
@@ -29,18 +21,33 @@ public class Memory extends AppCompatActivity {
     int unNbRandom = rand.nextInt(8);
     int[] imgTheme;
     TextView txtViewTheme = (TextView) findViewById(R.id.theme);
-    private ImageView img1, img2, img3, img4, img5, img6, img7, img8;
+    private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
+
+    //on assigne le layout memory_lanscape à l'activité
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.memory_lanscape);
+
+        // instancie les images
+        img1 = (ImageView) findViewById(R.id.image1_1);
+        img2 = (ImageView) findViewById(R.id.image1_2);
+        img3 = (ImageView) findViewById(R.id.image1_3);
+        img4 = (ImageView) findViewById(R.id.image1_4);
+        img5 = (ImageView) findViewById(R.id.image2_1);
+        img6 = (ImageView) findViewById(R.id.image2_2);
+        img7 = (ImageView) findViewById(R.id.image2_3);
+        img8 = (ImageView) findViewById(R.id.image2_4);
+        img9 = (ImageView) findViewById(R.id.image3_1);
+        img10 = (ImageView) findViewById(R.id.image3_2);
+        img11 = (ImageView) findViewById(R.id.image3_3);
+        img12 = (ImageView) findViewById(R.id.image3_4);
+
+    }
+
     //Méthode
     //instanciation image
-    // instancie les images
-    //img1 = (ImageView) findViewById(R.id.image1_1);
-    //img2 = (ImageView) findViewById(R.id.image1_2);
-    //img3 = (ImageView) findViewById(R.id.image1_3);
-    //img4 = (ImageView) findViewById(R.id.image1_4);
-    //img5 = (ImageView) findViewById(R.id.image2_1);
-    //img6 = (ImageView) findViewById(R.id.image2_2);
-    //img7 = (ImageView) findViewById(R.id.image2_3);
-    //img8 = (ImageView) findViewById(R.id.image2_4);
+
 
     //définition des themes
 
