@@ -2,6 +2,7 @@ package com.example.fpagnoux.monapplibd;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -30,6 +31,7 @@ public class Memory extends AppCompatActivity {
     TextView txtViewTheme = (TextView) findViewById(R.id.theme);
 
     //Méthode
+    private ImageView img1, img2, img3, img4, img5, img6, img7, img8;
 
     //définition des themes
 
