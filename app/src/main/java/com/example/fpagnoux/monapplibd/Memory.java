@@ -9,6 +9,8 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.floor;
+import static java.lang.Math.random;
 
 
 public class Memory extends AppCompatActivity {
@@ -22,14 +24,15 @@ public class Memory extends AppCompatActivity {
     int[] imgTheme;
     TextView txtViewTheme = (TextView) findViewById(R.id.theme);
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,img13, img14, img15, img16;
+    int[] assignImg;
 
-    //on assigne le layout memory_lanscape à l'activité
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.memory_lanscape);
+        setContentView(R.layout.memory_lanscape); //on assigne le layout memory_lanscape à l'activité
 
-        // instanciation des images
+        // instanciation des imagesView
         img1 = (ImageView) findViewById(R.id.image1_1);
         img2 = (ImageView) findViewById(R.id.image1_2);
         img3 = (ImageView) findViewById(R.id.image1_3);
@@ -45,15 +48,14 @@ public class Memory extends AppCompatActivity {
         img13 = (ImageView) findViewById(R.id.image4_1);
         img14 = (ImageView) findViewById(R.id.image4_2);
         img15 = (ImageView) findViewById(R.id.image4_3);
-        img16 = (ImageView) findViewById(R.id.image3_4);
-
+        img16 = (ImageView) findViewById(R.id.image4_4);
     }
 
     //Méthode
 
     //définition des themes
 
-    private void definitionThemme()
+    private void definitionTheme()
     {
         //BD
         //Tintin
@@ -63,6 +65,7 @@ public class Memory extends AppCompatActivity {
             imgTheme = new int[] {R.drawable.t1_1, R.drawable.t1_2, R.drawable.t1_3, R.drawable.t1_4, R.drawable.t1_5, R.drawable.t1_6, R.drawable.t1_7, R.drawable.t1_8};
             //On affiche le thème sélectionné
             txtViewTheme.setText("Thème: Tintin");
+            int imgAlea = imgTheme[(int)(Math.random()*imgTheme.length)];
         }
         //Titeuf
         else if (theme == "titeuf")
@@ -131,4 +134,5 @@ public class Memory extends AppCompatActivity {
             txtViewTheme.setText("Thème: Avenger");
         }
     }
+
 }
