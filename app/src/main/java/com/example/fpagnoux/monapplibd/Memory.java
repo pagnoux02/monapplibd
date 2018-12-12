@@ -29,9 +29,18 @@ public class Memory extends AppCompatActivity {
     int unNbRandom = rand.nextInt(8);
     int[] imgTheme;
     TextView txtViewTheme = (TextView) findViewById(R.id.theme);
-
-    //Méthode
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8;
+    //Méthode
+    //instanciation image
+    // instancie les images
+    //img1 = (ImageView) findViewById(R.id.image1_1);
+    //img2 = (ImageView) findViewById(R.id.image1_2);
+    //img3 = (ImageView) findViewById(R.id.image1_3);
+    //img4 = (ImageView) findViewById(R.id.image1_4);
+    //img5 = (ImageView) findViewById(R.id.image2_1);
+    //img6 = (ImageView) findViewById(R.id.image2_2);
+    //img7 = (ImageView) findViewById(R.id.image2_3);
+    //img8 = (ImageView) findViewById(R.id.image2_4);
 
     //définition des themes
 
