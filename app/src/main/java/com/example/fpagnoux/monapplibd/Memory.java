@@ -21,7 +21,7 @@ public class Memory extends AppCompatActivity {
     int unNbRandom = rand.nextInt(8);
     int[] imgTheme;
     TextView txtViewTheme = (TextView) findViewById(R.id.theme);
-    private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
+    private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,img13, img14, img15, img16;
 
     //on assigne le layout memory_lanscape à l'activité
     @Override
@@ -29,7 +29,7 @@ public class Memory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memory_lanscape);
 
-        // instancie les images
+        // instanciation des images
         img1 = (ImageView) findViewById(R.id.image1_1);
         img2 = (ImageView) findViewById(R.id.image1_2);
         img3 = (ImageView) findViewById(R.id.image1_3);
@@ -42,12 +42,14 @@ public class Memory extends AppCompatActivity {
         img10 = (ImageView) findViewById(R.id.image3_2);
         img11 = (ImageView) findViewById(R.id.image3_3);
         img12 = (ImageView) findViewById(R.id.image3_4);
+        img13 = (ImageView) findViewById(R.id.image4_1);
+        img14 = (ImageView) findViewById(R.id.image4_2);
+        img15 = (ImageView) findViewById(R.id.image4_3);
+        img16 = (ImageView) findViewById(R.id.image3_4);
 
     }
 
     //Méthode
-    //instanciation image
-
 
     //définition des themes
 
@@ -66,7 +68,7 @@ public class Memory extends AppCompatActivity {
         else if (theme == "titeuf")
         {
             //instancie les images dans un tableau
-            //imgTheme = new int[] {R.drawable.t2_1, R.drawable.t2_2, R.drawable.t2_3, R.drawable.t2_4, R.drawable.t2_5, R.drawable.t2_6, R.drawable.t2_7, R.drawable.t2_8};
+            imgTheme = new int[] {R.drawable.t2_1, R.drawable.t2_2, R.drawable.t2_3, R.drawable.t2_4, R.drawable.t2_5, R.drawable.t2_6, R.drawable.t2_7, R.drawable.t2_8};
             //On affiche le thème sélectionné
             txtViewTheme.setText("Thème: Titeuf");
         }
