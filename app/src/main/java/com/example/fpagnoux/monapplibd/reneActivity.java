@@ -1,5 +1,7 @@
 package com.example.fpagnoux.monapplibd;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -18,7 +20,7 @@ import java.util.Timer;
 public class reneActivity  extends AppCompatActivity implements View.OnClickListener {
     // creation d'un nombre aleatoir
     Random rand = new Random();
-    int n = rand.nextInt(3);
+    int n = rand.nextInt( 3);
 
     //liste avec les 3 image ( pour l'aleatoir ) + 1 image de base
     private int[] imgdujeu = new int[]{android.R.drawable.sym_def_app_icon, android.R.drawable.star_big_off, android.R.drawable.star_big_on, android.R.drawable.checkbox_off_background};
@@ -27,9 +29,9 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
     private ImageView imgpnt1,imgpnt2,imgpnt3;
 
-    // private ImageView listimgaview[] = img1 ,img2 ,img3,img4,img5,img6,img7,img8,img9;
 
-    //   private List l = new LinkedList(img1,img2,img3,img4,img5,img6,img7,img8,img9);
+
+
     private TextView text;
     private int score = 0;
     private String theme;
@@ -44,6 +46,11 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
     private int place, imgalea ;
 
+
+    // TEST
+    long animationDuration = 1000;
+
+    //TEST
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +69,10 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         imgpnt1 =  (ImageView) findViewById(R.id.imgpts1);
         imgpnt2 =  (ImageView) findViewById(R.id.imgpts2);
         imgpnt3 =  (ImageView) findViewById(R.id.imgpts3);
+
+        imgpnt1.setImageResource(imgdujeu[0]);
+        imgpnt2.setImageResource(imgdujeu[1]);
+        imgpnt3.setImageResource(imgdujeu[2]);
 
         // instancie les images ou l'utilisateur devra cliquer
         img1 = (ImageView) findViewById(R.id.imgjeu1);
@@ -87,22 +98,28 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         img9.setOnClickListener(this);
 
 
+
     }
+
     //attribution des points par images
 public void pointparimg(int i){
-    String ok = "img"+i;
+
   ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
 
     if ((int) imgdelacase[i].getTag() == android.R.drawable.sym_def_app_icon) {
         score = score + -5;
+        jeu = false;
     }
     if ((int) imgdelacase[i].getTag() == android.R.drawable.star_big_off) {
         score = score + 5;
+        jeu = false;
     }
     if ((int) imgdelacase[i].getTag() == android.R.drawable.star_big_on) {
         score = score + 15;
+        jeu = false;
     }
     text.setText(String.valueOf(score));
+
 }
 
     //fonction qui s'active quand il y a un click
@@ -112,11 +129,15 @@ public void pointparimg(int i){
         switch (v.getId()) {
             // verification du clique sur le bouton start
             case R.id.btnstart:
-                if (eststart == true ) {
+
+                // verification si le jeu est deja en fonctionnement
+                    score = 0;
+                    if (eststart == true ) {
+                    text.setText(String.valueOf(score));
                     letimer();
                     jouer(1);
                     eststart = false;
-
+                    handleAnimation(imgpnt1);
                 }
                 break;
         }
@@ -129,39 +150,39 @@ public void pointparimg(int i){
 
                 case R.id.imgjeu1:
                     pointparimg(0);
-                    jeu = false;
+
                     break;
                 case R.id.imgjeu2:
                     pointparimg(1);
-                    jeu = false;
+
                     break;
                 case R.id.imgjeu3:
                     pointparimg(2);
-                    jeu = false;
+
                     break;
                 case R.id.imgjeu4:
                     pointparimg(3);
-                    jeu = false;
+
                     break;
                 case R.id.imgjeu5:
                     pointparimg(4);
-                    jeu = false;
+
                     break;
                 case R.id.imgjeu6://
                     pointparimg(5);
-                    jeu = false;
+
                     break;
                 case R.id.imgjeu7:
                     pointparimg(6);
-                    jeu = false;
+
                     break;
                 case R.id.imgjeu8:
                     pointparimg(7);
-                    jeu = false;
+
                     break;
                 case R.id.imgjeu9:
                     pointparimg(8);
-                    jeu = false;
+
                     break;
 
 
@@ -230,6 +251,8 @@ public void pointparimg(int i){
                 break;
         }
             // permet de refaire la fonction jouer tout les X temps
+           int  alea = (rand.nextInt((5 - 2) + 1) + 2);
+            alea = alea * 1000;
             if (letempstotal > 0 ) {
 
                 Handler unHandler = new Handler();
@@ -238,8 +261,9 @@ public void pointparimg(int i){
                     public void run() {
                         jouer(1);
 
+
                     }
-                }, 4000);
+                },  alea);
 
 
             }
@@ -249,8 +273,7 @@ public void pointparimg(int i){
              jeu = false;
              letempstotal = 60;
              personnagejouer(3, 3, 3, 3, 3, 3, 3, 3, 3);
-             score = 0;
-             text.setText(score);
+
              eststart = true;
 
 
@@ -265,7 +288,7 @@ public void pointparimg(int i){
 
 
         img1.setImageResource(imgdujeu[monimg1]);
-        //affectation d'un tag pui permet de faire une comparaison par la suite
+        //affectation d'un tag qui permet de faire une comparaison par la suite
         img1.setTag(imgdujeu[monimg1]);
         img2.setImageResource(imgdujeu[monimg2]);
         img2.setTag(imgdujeu[monimg2]);
@@ -300,8 +323,32 @@ public void pointparimg(int i){
         }, 1000);
     }}
 
+    public void handleAnimation(View view){
+        ObjectAnimator animatorX = ObjectAnimator.ofFloat(imgpnt1,"X",400f);
 
-}
+        animatorX.setDuration(animationDuration);
+       AnimatorSet animatorSet = new AnimatorSet();
+       animatorSet.playTogether(animatorX);
+       animatorSet.start();
+
+
+        Handler unHandler = new Handler();
+        unHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(imgpnt1,"X",200f);
+                animatorX2.setDuration(animationDuration);
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                animatorSet2.playTogether(animatorX2);
+                animatorSet2.start();
+
+            }
+        }, 1000);
+    }}
+
+
+
+
 
 
 
