@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,7 +26,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     //liste avec les 3 image ( pour l'aleatoir ) + 1 image de base
     private int[] imgdujeu = new int[]{android.R.drawable.sym_def_app_icon, android.R.drawable.star_big_off, android.R.drawable.star_big_on, android.R.drawable.checkbox_off_background};
 
-
+  //  android.R.drawable.checkbox_off_background
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
     private ImageView imgpnt1,imgpnt2,imgpnt3;
 
@@ -46,10 +47,13 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
     private int place, imgalea ;
 
+        // contien tout les imageview de jeu
 
     // TEST
     long animationDuration = 1000;
-
+    private int nbdelacase;
+    private float trans;
+    private TextView test;
     //TEST
 
     @Override
@@ -86,6 +90,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         img9 = (ImageView) findViewById(R.id.imgjeu9);
 
 
+
         //ajoute un evenement qui verifie le click sur les img
         img1.setOnClickListener(this);
         img2.setOnClickListener(this);
@@ -98,25 +103,31 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         img9.setOnClickListener(this);
 
 
+        test =  (TextView) findViewById(R.id.txtpseudo);
+
 
     }
 
     //attribution des points par images
+
 public void pointparimg(int i){
 
-  ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
-
+    ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
     if ((int) imgdelacase[i].getTag() == android.R.drawable.sym_def_app_icon) {
         score = score + -5;
         jeu = false;
+        animation(i);
+
     }
     if ((int) imgdelacase[i].getTag() == android.R.drawable.star_big_off) {
         score = score + 5;
         jeu = false;
+        animation(i);
     }
     if ((int) imgdelacase[i].getTag() == android.R.drawable.star_big_on) {
         score = score + 15;
         jeu = false;
+        animation(i);
     }
     text.setText(String.valueOf(score));
 
@@ -137,7 +148,7 @@ public void pointparimg(int i){
                     letimer();
                     jouer(1);
                     eststart = false;
-                    handleAnimation(imgpnt1);
+                 //   handleAnimation(imgpnt1);
                 }
                 break;
         }
@@ -150,6 +161,7 @@ public void pointparimg(int i){
 
                 case R.id.imgjeu1:
                     pointparimg(0);
+               //     animation(1);
 
                     break;
                 case R.id.imgjeu2:
@@ -195,7 +207,6 @@ public void pointparimg(int i){
 
     // Jouer peromet de generé 2 nbr aléatoir pour le choix de l'image et de la case de reception
     private void jouer(final int theme) {
-
 
 
 
@@ -260,7 +271,21 @@ public void pointparimg(int i){
                     @Override
                     public void run() {
                         jouer(1);
+                        ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
+                       if (nbdelacase <=2 ){
+                            imgdelacase[nbdelacase].setY(846);
+                        }
+                        if (nbdelacase >2 && nbdelacase <=5 ){
+                            imgdelacase[nbdelacase].setY(1272);
+                        }
+                        if (nbdelacase >5 && nbdelacase <=8 ){
+                            imgdelacase[nbdelacase].setY(1714);
+                        }
+                        // rRemove the view from the parent layout
+                        //  ((ViewManager)img1.getParent()).removeView(img1);
 
+
+                        imgdelacase[nbdelacase].animate().alpha(1);
 
                     }
                 },  alea);
@@ -290,22 +315,31 @@ public void pointparimg(int i){
         img1.setImageResource(imgdujeu[monimg1]);
         //affectation d'un tag qui permet de faire une comparaison par la suite
         img1.setTag(imgdujeu[monimg1]);
+
         img2.setImageResource(imgdujeu[monimg2]);
         img2.setTag(imgdujeu[monimg2]);
+
         img3.setImageResource(imgdujeu[monimg3]);
         img3.setTag(imgdujeu[monimg3]);
+     ;
         img4.setImageResource(imgdujeu[monimg4]);
         img4.setTag(imgdujeu[monimg4]);
+
         img5.setImageResource(imgdujeu[monimg5]);
         img5.setTag(imgdujeu[monimg5]);
+
         img6.setImageResource(imgdujeu[monimg6]);
         img6.setTag(imgdujeu[monimg6]);
+
         img7.setImageResource(imgdujeu[monimg7]);
         img7.setTag(imgdujeu[monimg7]);
+
         img8.setImageResource(imgdujeu[monimg8]);
         img8.setTag(imgdujeu[monimg8]);
+
         img9.setImageResource(imgdujeu[monimg9]);
         img9.setTag(imgdujeu[monimg9]);
+
     }
 
 // affichage du temps sur 60s
@@ -322,7 +356,7 @@ public void pointparimg(int i){
             }
         }, 1000);
     }}
-
+/*
     public void handleAnimation(View view){
         ObjectAnimator animatorX = ObjectAnimator.ofFloat(imgpnt1,"X",400f);
 
@@ -344,7 +378,44 @@ public void pointparimg(int i){
 
             }
         }, 1000);
-    }}
+    }*/
+
+
+public void animation (int i){
+
+    ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
+    //uneImage3.animate().translationX(400);
+    trans = imgdelacase[i].getY();
+    test.setText(String.valueOf(trans));
+    imgdelacase[i].animate().translationY(500).setDuration(1000);
+
+ //StartAction
+    nbdelacase = i ;
+
+    imgdelacase[i].animate().translationY(300).withStartAction(new Runnable(){
+        public void run(){
+
+          //  text.setText(String.valueOf( imgdelacase[nbdelacase].getHeight()));
+            // do something
+        }
+    });
+// EndAction
+    imgdelacase[i].animate().alpha(0).withEndAction(new Runnable(){
+        public void run(){
+
+
+        }
+    });
+   }}
+
+
+
+
+
+
+
+
+
 
 
 

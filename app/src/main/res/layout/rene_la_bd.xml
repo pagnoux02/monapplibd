@@ -197,6 +197,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/checkbox_off_background" />
 
+
     <ImageView
         android:id="@+id/imgjeu2"
         android:layout_width="185dp"
