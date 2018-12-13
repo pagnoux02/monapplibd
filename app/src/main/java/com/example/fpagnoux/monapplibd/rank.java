@@ -12,6 +12,7 @@ public class rank {
 
 
     public rank(int unId, String unPseudo, int unScore){
+        super();
         id = unId;
         pseudo = unPseudo;
         score = unScore;
