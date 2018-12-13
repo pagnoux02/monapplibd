@@ -187,7 +187,6 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         }
     }
 
-
     // affectation des image au differente case
     private void personnagejouer(int monimg1, int monimg2, int monimg3, int monimg4, int monimg5, int monimg6, int monimg7, int monimg8, int monimg9) {
 

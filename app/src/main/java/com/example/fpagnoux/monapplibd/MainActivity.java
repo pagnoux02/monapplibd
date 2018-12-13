@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9;
     private String theme;
     int cFenetre = 20;
-    private MySQLiteOpenHelper ouvrir;
     private collectionScore unecollection = new collectionScore();
 
     @Override

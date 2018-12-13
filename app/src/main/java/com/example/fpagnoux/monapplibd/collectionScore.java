@@ -21,17 +21,22 @@ public class collectionScore {
     public void insertion_questions(Context un_context){
         base_score = new MySQLiteOpenHelper(un_context);
 
-        ensScore = base_score.getLesQuestions();
+        ensScore = base_score.getLesScores();
 
         if(ensScore.isEmpty()){
-            base_score.ajoutScoreDep(new rank(1,"hugo", 1000));
-            base_score.ajoutScoreDep(new rank(2,"francois", 990));
+            base_score.ajoutScoreDep(new rank(1,"Hugo", 100));
+            base_score.ajoutScoreDep(new rank(2,"Francois", 90));
+            base_score.ajoutScoreDep(new rank(3,"Mael", 80));
+            base_score.ajoutScoreDep(new rank(4,"Julian", 70));
+            base_score.ajoutScoreDep(new rank(5,"Dylan", 60));
+            base_score.ajoutScoreDep(new rank(6,"Steeven", 50));
+            base_score.ajoutScoreDep(new rank(7,"Thomas", 40));
+            base_score.ajoutScoreDep(new rank(8,"Anthony", 30));
+            base_score.ajoutScoreDep(new rank(9,"Loïc", 20));
+            base_score.ajoutScoreDep(new rank(10,"Benjamin", 10));
+            base_score.ajoutScoreDep(new rank(11,"Valentin", 0));
 
-            base_score.ajoutInsertScore();
-
-            ensScore = base_score.getLesQuestions();
-
+            ensScore = base_score.getLesScores();
         }
     }
-
 }
