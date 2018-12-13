@@ -105,13 +105,13 @@ public class Memory extends AppCompatActivity {
         //Tintin
         if (theme == "tintin")
         {
-
             //instancie les images dans un tableau
             imgTheme = new int[] {R.drawable.t1_1, R.drawable.t1_2, R.drawable.t1_3, R.drawable.t1_4, R.drawable.t1_5, R.drawable.t1_6, R.drawable.t1_7, R.drawable.t1_8};
             ImageView[] imgAlea = new ImageView[(int)((Math.random()*imgTheme.length)*2)];
             //mélange les images de manière aléatoire
             Collections.shuffle(Arrays.asList(imgAlea));
 
+            //Assigne les images de manière aléatoire
             img1 = imgAlea[1];
             img2 = imgAlea[2];
             img3 = imgAlea[3];
@@ -128,7 +128,6 @@ public class Memory extends AppCompatActivity {
             img14 = imgAlea[14];
             img15 = imgAlea[15];
             img16 = imgAlea[16];
-
         }
         //Titeuf
         else if (theme == "titeuf")
