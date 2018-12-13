@@ -272,15 +272,18 @@ public void pointparimg(int i){
                     public void run() {
                         jouer(1);
                         ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
-                       if (nbdelacase <=2 ){
-                            imgdelacase[nbdelacase].setY(846);
-                        }
-                        if (nbdelacase >2 && nbdelacase <=5 ){
-                            imgdelacase[nbdelacase].setY(1272);
-                        }
-                        if (nbdelacase >5 && nbdelacase <=8 ){
-                            imgdelacase[nbdelacase].setY(1714);
-                        }
+
+                          /*  imgdelacase[0].setY(846);
+                            imgdelacase[1].setY(846);
+                            imgdelacase[2].setY(846);
+                            imgdelacase[3].setY(1272);
+                            imgdelacase[4].setY(1272);
+                            imgdelacase[5].setY(1272);
+                            imgdelacase[6].setY(1714);
+                            imgdelacase[7].setY(1714);
+                            imgdelacase[8].setY(1714);
+*/
+                          imgdelacase[nbdelacase].setY(trans);
                         // rRemove the view from the parent layout
                         //  ((ViewManager)img1.getParent()).removeView(img1);
 
@@ -387,7 +390,7 @@ public void animation (int i){
     //uneImage3.animate().translationX(400);
     trans = imgdelacase[i].getY();
     test.setText(String.valueOf(trans));
-    imgdelacase[i].animate().translationY(500).setDuration(1000);
+    imgdelacase[i].animate().translationY(500).setDuration(300);
 
  //StartAction
     nbdelacase = i ;
