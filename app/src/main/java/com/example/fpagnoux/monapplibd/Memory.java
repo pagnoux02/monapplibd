@@ -112,7 +112,7 @@ public class Memory extends AppCompatActivity {
             Collections.shuffle(Arrays.asList(imgAlea));
 
             //Assigne les images de manière aléatoire
-            //setImageResource(imgdujeu[monimg1]
+            //setImageResource([])
             img1 = imgAlea[1];
             img2 = imgAlea[2];
             img3 = imgAlea[3];
