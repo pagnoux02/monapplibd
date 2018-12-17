@@ -74,7 +74,15 @@ public class Memory extends AppCompatActivity {
             txtViewTheme.setText("Thème : Avengers");
         }
 
+        //définition du thème des cartes
+        definitionTheme();
+        //chargement des images des cartes
+        resCartes();
+    }
 
+    private void resCartes()
+
+    {
         // instanciation des imagesView
         img1 = (ImageView) findViewById(R.id.image1_1);
         img2 = (ImageView) findViewById(R.id.image1_2);
@@ -94,13 +102,14 @@ public class Memory extends AppCompatActivity {
         img16 = (ImageView) findViewById(R.id.image4_4);
     }
 
+
     //Méthode
 
     //définition des themes
 
     private void definitionTheme()
     {
-        int unNbRandom = rand.nextInt(8);
+        /*int unNbRandom = rand.nextInt(8);
         //BD
         //Tintin
         if (theme == "tintin")
@@ -179,7 +188,7 @@ public class Memory extends AppCompatActivity {
         {
             //instancie les images dans un tableau
             //imgTheme = new int[] {R.drawable.a9_1, R.drawable.a9_2, R.drawable.a9_3, R.drawable.a9_4, R.drawable.a9_5, R.drawable.a9_6, R.drawable.a9_7, R.drawable.a9_8};
-        }
+        }*/
     }
 
 }
