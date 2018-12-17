@@ -26,7 +26,7 @@ public class Memory extends AppCompatActivity {
     int unNbRandom = rand.nextInt(8);
     private int[] imgTheme;
     private TextView txtViewTheme;
-    private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,img13, img14, img15, img16;
+    private ImageView imgV1, imgV2, imgV3, imgV4, imgV5, imgV6, imgV7, imgV8, imgV9, imgV10, imgV11, imgV12,imgV13, imgV14, imgV15, imgV16;
     private int[] assignImg;
 
 
@@ -76,31 +76,34 @@ public class Memory extends AppCompatActivity {
 
         //définition du thème des cartes
         definitionTheme();
-        //chargement des images des cartes
-        resCartes();
+        //instanciation des imagesView
+        imgView();
     }
 
-    private void resCartes()
+    //https://www.youtube.com/watch?v=94CWNE9ruMA tuto inspi
+
+    private void imgView()
 
     {
         // instanciation des imagesView
-        img1 = (ImageView) findViewById(R.id.image1_1);
-        img2 = (ImageView) findViewById(R.id.image1_2);
-        img3 = (ImageView) findViewById(R.id.image1_3);
-        img4 = (ImageView) findViewById(R.id.image1_4);
-        img5 = (ImageView) findViewById(R.id.image2_1);
-        img6 = (ImageView) findViewById(R.id.image2_2);
-        img7 = (ImageView) findViewById(R.id.image2_3);
-        img8 = (ImageView) findViewById(R.id.image2_4);
-        img9 = (ImageView) findViewById(R.id.image3_1);
-        img10 = (ImageView) findViewById(R.id.image3_2);
-        img11 = (ImageView) findViewById(R.id.image3_3);
-        img12 = (ImageView) findViewById(R.id.image3_4);
-        img13 = (ImageView) findViewById(R.id.image4_1);
-        img14 = (ImageView) findViewById(R.id.image4_2);
-        img15 = (ImageView) findViewById(R.id.image4_3);
-        img16 = (ImageView) findViewById(R.id.image4_4);
+        imgV1 = (ImageView) findViewById(R.id.image1_1);
+        imgV2 = (ImageView) findViewById(R.id.image1_2);
+        imgV3 = (ImageView) findViewById(R.id.image1_3);
+        imgV4 = (ImageView) findViewById(R.id.image1_4);
+        imgV5 = (ImageView) findViewById(R.id.image2_1);
+        imgV6 = (ImageView) findViewById(R.id.image2_2);
+        imgV7 = (ImageView) findViewById(R.id.image2_3);
+        imgV8 = (ImageView) findViewById(R.id.image2_4);
+        imgV9 = (ImageView) findViewById(R.id.image3_1);
+        imgV10 = (ImageView) findViewById(R.id.image3_2);
+        imgV11 = (ImageView) findViewById(R.id.image3_3);
+        imgV12 = (ImageView) findViewById(R.id.image3_4);
+        imgV13 = (ImageView) findViewById(R.id.image4_1);
+        imgV14 = (ImageView) findViewById(R.id.image4_2);
+        imgV15 = (ImageView) findViewById(R.id.image4_3);
+        imgV16 = (ImageView) findViewById(R.id.image4_4);
     }
+
 
 
     //Méthode
