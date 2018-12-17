@@ -221,13 +221,14 @@
     <ProgressBar
         android:id="@+id/progresstimer"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="641dp"
+        android:layout_width="632dp"
         android:layout_height="37dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="368dp"
         android:layout_marginEnd="5dp"
+        android:max="60"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -242,6 +243,45 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnFacile"
+        android:layout_width="633dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="30dp"
+        android:text="Facile"
+        app:layout_constraintBottom_toTopOf="@+id/btnMoyen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnMoyen"
+        android:layout_width="631dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="30dp"
+        android:text="Moyen"
+        app:layout_constraintBottom_toTopOf="@+id/btnDifficile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDifficile"
+        android:layout_width="631dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="96dp"
+        android:text="DIFFICILE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

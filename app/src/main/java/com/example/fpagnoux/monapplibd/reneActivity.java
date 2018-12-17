@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
@@ -43,7 +44,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
     private TextView Timer;
-    private int letempstotal = 60;
+    private int letempstotal = 60, tempsapparition;
 
     private int place, imgalea ;
 
@@ -56,6 +57,11 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private TextView test;
     //TEST
 
+    private ProgressBar timerbar;
+    //bouton choix du mode
+    private Button facile , moyen,difficile ;
+    private int modedejeu = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +70,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         text = (TextView) findViewById(R.id.txtscore);
         start = (Button) findViewById(R.id.btnstart);
 
+        timerbar = (ProgressBar)findViewById(R.id.progresstimer) ;
 
         Timer = (TextView) findViewById(R.id.txttimer);
         // text.setText(String.valueOf( listimgaview[1]));
@@ -103,8 +110,12 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         img9.setOnClickListener(this);
 
 
-        test =  (TextView) findViewById(R.id.txtpseudo);
-
+        facile = (Button)findViewById(R.id.btnFacile);
+        moyen = (Button)findViewById(R.id.btnMoyen);
+        difficile= (Button)findViewById(R.id.btnDifficile);
+        facile.setOnClickListener(this);
+        moyen.setOnClickListener(this);
+        difficile.setOnClickListener(this);
 
     }
 
@@ -138,18 +149,35 @@ public void pointparimg(int i){
     public void onClick(View v) {
 
         switch (v.getId()) {
+
+            case R.id.btnFacile:
+                modedejeu =1;
+                break;
+            case R.id.btnMoyen:
+                modedejeu =2;
+                break;
+            case R.id.btnDifficile:
+                modedejeu =3;
+                break;
+
             // verification du clique sur le bouton start
             case R.id.btnstart:
 
+                if (modedejeu != 0  ){
                 // verification si le jeu est deja en fonctionnement
-                    score = 0;
+
                     if (eststart == true ) {
+                        score = 0;
                     text.setText(String.valueOf(score));
                     letimer();
-                    jouer(1);
+
+                    jouer(1,modedejeu);
                     eststart = false;
                  //   handleAnimation(imgpnt1);
-                }
+                        facile.setVisibility(View.INVISIBLE);
+                        moyen.setVisibility(View.INVISIBLE);
+                        difficile.setVisibility(View.INVISIBLE);
+                }}
                 break;
         }
 
@@ -206,12 +234,23 @@ public void pointparimg(int i){
     }
 
     // Jouer peromet de generé 2 nbr aléatoir pour le choix de l'image et de la case de reception
-    private void jouer(final int theme) {
+    private void jouer(final int theme, final int unmodedejeu) {
+        switch (modedejeu){
+            case 1:
+                tempsapparition = 3000;
+                break;
+            case 2:
+                tempsapparition = 1500;
+                break;
+            case 3:
+                tempsapparition = 900;
+                break;
 
-
+        }
 
         jeu = true;
 
+        //generation aleatoire pour l'image et la case ou elle va se trouver
         int n = rand.nextInt(3);
         int imgjeuplace = rand.nextInt(9);
 
@@ -270,7 +309,7 @@ public void pointparimg(int i){
                 unHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        jouer(1);
+                        jouer(1,modedejeu);
                         ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
 
 
@@ -278,7 +317,7 @@ public void pointparimg(int i){
                       imgdelacase[nbdelacase].animate().alpha(1);
 
                     }
-                },  3000);
+                },  tempsapparition);
 
 
             }
@@ -288,9 +327,12 @@ public void pointparimg(int i){
              jeu = false;
              letempstotal = 60;
              personnagejouer(3, 3, 3, 3, 3, 3, 3, 3, 3);
-
+             modedejeu = 1;
              eststart = true;
 
+                facile.setVisibility(View.VISIBLE);
+                moyen.setVisibility(View.VISIBLE);
+                difficile.setVisibility(View.VISIBLE);
 
             }
 
@@ -345,6 +387,7 @@ public void pointparimg(int i){
 
             }
         }, 1000);
+        timerbar.setProgress(letempstotal);
     }}
 /*
     public void handleAnimation(View view){
@@ -381,7 +424,7 @@ public void animation (int i){
 
     nbdelacase = i ;
 
-    imgdelacase[i].animate().translationY(100).withStartAction(new Runnable(){
+    imgdelacase[i].animate().translationY(300).withStartAction(new Runnable(){
         public void run(){
             ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
 
