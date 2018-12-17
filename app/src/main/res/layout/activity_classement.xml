@@ -6,33 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".activityClassement">
 
-    <TextView
-        android:id="@+id/viewPseudo"
-        android:layout_width="271dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
-        android:text="Classement"
-        android:textColor="@android:color/black"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ListView
         android:id="@+id/lv"
-        android:layout_width="657dp"
-        android:layout_height="722dp"
+        android:layout_width="757dp"
+        android:layout_height="830dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"></ListView>
+
+    <TextView
+        android:id="@+id/txtView"
+        android:layout_width="455dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/classement"
+        android:gravity="center"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/lv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.708"></ListView>
+        app:layout_constraintVertical_bias="0.051" />
 
 </android.support.constraint.ConstraintLayout>
