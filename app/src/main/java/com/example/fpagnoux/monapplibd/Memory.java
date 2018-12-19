@@ -2,6 +2,7 @@ package com.example.fpagnoux.monapplibd;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,6 +28,9 @@ public class Memory extends AppCompatActivity {
     private int[] imgTheme;
     private TextView txtViewTheme;
     private ImageView imgV1, imgV2, imgV3, imgV4, imgV5, imgV6, imgV7, imgV8, imgV9, imgV10, imgV11, imgV12,imgV13, imgV14, imgV15, imgV16;
+    private int img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,img13, img14, img15, img16;
+    //liste pour les images
+    private int[] tabCarte = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13, 14, 15, 16};
     private int[] assignImg;
 
 
@@ -34,6 +38,44 @@ public class Memory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memory_lanscape); //on assigne le layout memory_lanscape à l'activité
+
+
+        // instanciation des imagesView
+        imgV1 = (ImageView) findViewById(R.id.image1_1);
+        imgV2 = (ImageView) findViewById(R.id.image1_2);
+        imgV3 = (ImageView) findViewById(R.id.image1_3);
+        imgV4 = (ImageView) findViewById(R.id.image1_4);
+        imgV5 = (ImageView) findViewById(R.id.image2_1);
+        imgV6 = (ImageView) findViewById(R.id.image2_2);
+        imgV7 = (ImageView) findViewById(R.id.image2_3);
+        imgV8 = (ImageView) findViewById(R.id.image2_4);
+        imgV9 = (ImageView) findViewById(R.id.image3_1);
+        imgV10 = (ImageView) findViewById(R.id.image3_2);
+        imgV11 = (ImageView) findViewById(R.id.image3_3);
+        imgV12 = (ImageView) findViewById(R.id.image3_4);
+        imgV13 = (ImageView) findViewById(R.id.image4_1);
+        imgV14 = (ImageView) findViewById(R.id.image4_2);
+        imgV15 = (ImageView) findViewById(R.id.image4_3);
+        imgV16 = (ImageView) findViewById(R.id.image4_4);
+
+        //tag
+        imgV1.setTag("0");
+        imgV2.setTag("1");
+        imgV3.setTag("2");
+        imgV4.setTag("3");
+        imgV5.setTag("4");
+        imgV6.setTag("5");
+        imgV7.setTag("6");
+        imgV8.setTag("7");
+        imgV9.setTag("8");
+        imgV10.setTag("9");
+        imgV11.setTag("10");
+        imgV12.setTag("11");
+        imgV13.setTag("12");
+        imgV14.setTag("13");
+        imgV15.setTag("14");
+        imgV16.setTag("15");
+
 
         //On affiche le theme choisi dans le textView theme
         txtViewTheme = findViewById(R.id.theme);
@@ -74,39 +116,157 @@ public class Memory extends AppCompatActivity {
             txtViewTheme.setText("Thème : Avengers");
         }
 
-        //définition du thème des cartes
-        definitionTheme();
-        //instanciation des imagesView
-        imgView();
+
+        //charge les images
+        imgrsc();
+
+        //melange de la liste
+        Collections.shuffle(Arrays.asList(tabCarte));
+
+
+
+
+        imgV1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //int laCarte = String.parseInt((String) view.getTag());
+                //doStuff(imgV1, laCarte);
+            }
+        });
+
+        imgV2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        imgV16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+
     }
 
     //https://www.youtube.com/watch?v=94CWNE9ruMA tuto inspi
+    //Méthode
 
-    private void imgView()
 
+    private void imgrsc()
     {
-        // instanciation des imagesView
-        imgV1 = (ImageView) findViewById(R.id.image1_1);
-        imgV2 = (ImageView) findViewById(R.id.image1_2);
-        imgV3 = (ImageView) findViewById(R.id.image1_3);
-        imgV4 = (ImageView) findViewById(R.id.image1_4);
-        imgV5 = (ImageView) findViewById(R.id.image2_1);
-        imgV6 = (ImageView) findViewById(R.id.image2_2);
-        imgV7 = (ImageView) findViewById(R.id.image2_3);
-        imgV8 = (ImageView) findViewById(R.id.image2_4);
-        imgV9 = (ImageView) findViewById(R.id.image3_1);
-        imgV10 = (ImageView) findViewById(R.id.image3_2);
-        imgV11 = (ImageView) findViewById(R.id.image3_3);
-        imgV12 = (ImageView) findViewById(R.id.image3_4);
-        imgV13 = (ImageView) findViewById(R.id.image4_1);
-        imgV14 = (ImageView) findViewById(R.id.image4_2);
-        imgV15 = (ImageView) findViewById(R.id.image4_3);
-        imgV16 = (ImageView) findViewById(R.id.image4_4);
+        img1 = R.drawable.t1_1;
+        img2 = R.drawable.t1_2;
+        img3 = R.drawable.t1_3;
+        img4 = R.drawable.t1_4;
+        img5 = R.drawable.t1_5;
+        img6 = R.drawable.t1_6;
+        img7 = R.drawable.t1_7;
+        img8 = R.drawable.t1_8;
+        img9 = R.drawable.t1_1_2;
+        img10 = R.drawable.t1_2_2;
+        img11 = R.drawable.t1_3_2;
+        img12 = R.drawable.t1_4_2;
+        img13 = R.drawable.t1_5_2;
+        img14 = R.drawable.t1_6_2;
+        img15 = R.drawable.t1_7_2;
+        img16 = R.drawable.t1_8_2;
     }
 
-
-
-    //Méthode
 
     //définition des themes
 
@@ -120,27 +280,6 @@ public class Memory extends AppCompatActivity {
             //instancie les images dans un tableau
             imgTheme = new int[] {R.drawable.t1_1, R.drawable.t1_2, R.drawable.t1_3, R.drawable.t1_4, R.drawable.t1_5, R.drawable.t1_6, R.drawable.t1_7, R.drawable.t1_8};
             ImageView[] imgAlea = new ImageView[(int)((Math.random()*imgTheme.length)*2)];
-            //mélange les images de manière aléatoire
-            Collections.shuffle(Arrays.asList(imgAlea));
-
-            //Assigne les images de manière aléatoire
-            //setImageResource([])
-            img1 = imgAlea[1];
-            img2 = imgAlea[2];
-            img3 = imgAlea[3];
-            img4 = imgAlea[4];
-            img5 = imgAlea[5];
-            img6 = imgAlea[6];
-            img7 = imgAlea[7];
-            img8 = imgAlea[8];
-            img9 = imgAlea[9];
-            img10 = imgAlea[10];
-            img11 = imgAlea[11];
-            img12 = imgAlea[12];
-            img13 = imgAlea[13];
-            img14 = imgAlea[14];
-            img15 = imgAlea[15];
-            img16 = imgAlea[16];
         }
         //Titeuf
         else if (theme == "titeuf")
