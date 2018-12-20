@@ -25,7 +25,11 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     int n = rand.nextInt( 3);
 
     //liste avec les 3 image ( pour l'aleatoir ) + 1 image de base
-    private int[] imgdujeu = new int[]{android.R.drawable.sym_def_app_icon, android.R.drawable.star_big_off, android.R.drawable.star_big_on, android.R.drawable.checkbox_off_background};
+    //private int[] imgdujeu = new int[]{android.R.drawable.sym_def_app_icon, android.R.drawable.star_big_off, android.R.drawable.star_big_on, android.R.drawable.checkbox_off_background};
+
+   // private int[] imgdujeu = new int[]{R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr, android.R.drawable.checkbox_off_background};
+     // private int[] imgdujeu = new int[]{R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr, android.R.drawable.checkbox_off_background};
+      private int[] imgdujeu = new int[]{R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr, android.R.drawable.checkbox_off_background};
 
   //  android.R.drawable.checkbox_off_background
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
@@ -85,6 +89,8 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         imgpnt2.setImageResource(imgdujeu[1]);
         imgpnt3.setImageResource(imgdujeu[2]);
 
+
+
         // instancie les images ou l'utilisateur devra cliquer
         img1 = (ImageView) findViewById(R.id.imgjeu1);
         img2 = (ImageView) findViewById(R.id.imgjeu2);
@@ -124,18 +130,18 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 public void pointparimg(int i){
 
     ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
-    if ((int) imgdelacase[i].getTag() == android.R.drawable.sym_def_app_icon) {
+    if ((int) imgdelacase[i].getTag() ==imgdujeu[0]) {
         score = score + -5;
         jeu = false;
         animation(i);
 
     }
-    if ((int) imgdelacase[i].getTag() == android.R.drawable.star_big_off) {
+    if ((int) imgdelacase[i].getTag() == imgdujeu[1] ){
         score = score + 5;
         jeu = false;
         animation(i);
     }
-    if ((int) imgdelacase[i].getTag() == android.R.drawable.star_big_on) {
+    if ((int) imgdelacase[i].getTag() == imgdujeu[2]) {
         score = score + 15;
         jeu = false;
         animation(i);
@@ -353,7 +359,7 @@ public void pointparimg(int i){
 
         img3.setImageResource(imgdujeu[monimg3]);
         img3.setTag(imgdujeu[monimg3]);
-     ;
+
         img4.setImageResource(imgdujeu[monimg4]);
         img4.setTag(imgdujeu[monimg4]);
 
@@ -380,13 +386,13 @@ public void pointparimg(int i){
         Timer.setText(String.valueOf(letempstotal+" / 60"));
         if (letempstotal >00 ){
         Handler unHandler = new Handler();
-        unHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                letimer();
+            unHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    letimer();
 
-            }
-        }, 1000);
+                }
+            }, 1000);
         timerbar.setProgress(letempstotal);
     }}
 /*
@@ -415,6 +421,8 @@ public void pointparimg(int i){
 
 
 public void animation (int i){
+
+
 
 
     ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
