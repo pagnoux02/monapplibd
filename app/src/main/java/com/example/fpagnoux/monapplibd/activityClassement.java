@@ -22,7 +22,7 @@ public class activityClassement extends AppCompatActivity {
 
        /* GridView gridView = (GridView)findViewById(R.id.grid_view);
         rankAdapter RankAdapter = new rankAdapter(this, convert(cmd.getLesScores()));
-        gridView.setAdapter(RankAdapter);*/
+        gridView.setAdapter(RankAdapter);*///
     }
     public rank[] convert(ArrayList<rank> uneListe) {
         int i = 0;
