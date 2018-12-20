@@ -1,6 +1,10 @@
 package com.example.fpagnoux.monapplibd;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,7 +21,8 @@ import static java.lang.Math.floor;
 import static java.lang.Math.random;
 
 
-//https://www.youtube.com/watch?v=94CWNE9ruMA tuto inspi
+//tuto inspiration
+//https://www.youtube.com/watch?v=94CWNE9ruMA
 
 
 public class Memory extends AppCompatActivity {
@@ -307,6 +312,7 @@ public class Memory extends AppCompatActivity {
             imgView.setImageResource(img16);
         }
 
+        //regarde quelle image et sélectionnée et la sauvegarde temporairement
         if(nbCarte == 1)
         {
             carte1 = tabCarte[carte];
@@ -324,7 +330,32 @@ public class Memory extends AppCompatActivity {
             }
             nbCarte = 2;
             clic2 = carte;
-            imgView.setEnabled(false);
+            imgV1.setEnabled(false);
+            imgV2.setEnabled(false);
+            imgV3.setEnabled(false);
+            imgV4.setEnabled(false);
+            imgV5.setEnabled(false);
+            imgV6.setEnabled(false);
+            imgV7.setEnabled(false);
+            imgV8.setEnabled(false);
+            imgV9.setEnabled(false);
+            imgV10.setEnabled(false);
+            imgV11.setEnabled(false);
+            imgV12.setEnabled(false);
+            imgV13.setEnabled(false);
+            imgV14.setEnabled(false);
+            imgV15.setEnabled(false);
+            imgV16.setEnabled(false);
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable()
+            {
+                @Override
+                public void run() {
+                    //regarde si les deux image sélectionnéessont égales
+                    calculate();
+                }
+            }, 1000 /*delais en millisecondes*/);
         }
 
     }
@@ -333,182 +364,184 @@ public class Memory extends AppCompatActivity {
     //Méthode
 
 
+
+
+
     private void imgrsc()
     {
+        switch(theme) {
+            case "tintin":
+                img1 = R.drawable.t1_1;
+                img2 = R.drawable.t1_2;
+                img3 = R.drawable.t1_3;
+                img4 = R.drawable.t1_4;
+                img5 = R.drawable.t1_5;
+                img6 = R.drawable.t1_6;
+                img7 = R.drawable.t1_7;
+                img8 = R.drawable.t1_8;
+                img9 = R.drawable.t1_1_2;
+                img10 = R.drawable.t1_2_2;
+                img11 = R.drawable.t1_3_2;
+                img12 = R.drawable.t1_4_2;
+                img13 = R.drawable.t1_5_2;
+                img14 = R.drawable.t1_6_2;
+                img15 = R.drawable.t1_7_2;
+                img16 = R.drawable.t1_8_2;
+                break;
 
-        if(theme == "tintin")
-        {
-            img1 = R.drawable.t1_1;
-            img2 = R.drawable.t1_2;
-            img3 = R.drawable.t1_3;
-            img4 = R.drawable.t1_4;
-            img5 = R.drawable.t1_5;
-            img6 = R.drawable.t1_6;
-            img7 = R.drawable.t1_7;
-            img8 = R.drawable.t1_8;
-            img9 = R.drawable.t1_1_2;
-            img10 = R.drawable.t1_2_2;
-            img11 = R.drawable.t1_3_2;
-            img12 = R.drawable.t1_4_2;
-            img13 = R.drawable.t1_5_2;
-            img14 = R.drawable.t1_6_2;
-            img15 = R.drawable.t1_7_2;
-            img16 = R.drawable.t1_8_2;
-        }
-        else if (theme == "titeuf")
-        {
-            img1 = R.drawable.t2_1;
-            img2 = R.drawable.t2_2;
-            img3 = R.drawable.t2_3;
-            img4 = R.drawable.t2_4;
-            img5 = R.drawable.t2_5;
-            img6 = R.drawable.t2_6;
-            img7 = R.drawable.t2_7;
-            img8 = R.drawable.t2_8;
-            img9 = R.drawable.t2_1_2;
-            img10 = R.drawable.t2_2_2;
-            img11 = R.drawable.t2_3_2;
-            img12 = R.drawable.t2_4_2;
-            img13 = R.drawable.t2_5_2;
-            img14 = R.drawable.t2_6_2;
-            img15 = R.drawable.t2_7_2;
-            img16 = R.drawable.t2_8_2;
-        }
-        else if (theme == "simpson")
-        {
-            /*img1 = R.drawable.t3_1;
-            img2 = R.drawable.t3_2;
-            img3 = R.drawable.t3_3;
-            img4 = R.drawable.t3_4;
-            img5 = R.drawable.t3_5;
-            img6 = R.drawable.t3_6;
-            img7 = R.drawable.t3_7;
-            img8 = R.drawable.t3_8;
-            img9 = R.drawable.t3_1_2;
-            img10 = R.drawable.t3_2_2;
-            img11 = R.drawable.t3_3_2;
-            img12 = R.drawable.t3_4_2;
-            img13 = R.drawable.t3_5_2;
-            img14 = R.drawable.t3_6_2;
-            img15 = R.drawable.t3_7_2;
-            img16 = R.drawable.t3_8_2;*/
-        }
-        else if (theme == "naruto")
-        {
-            /*img1 = R.drawable.t4_1;
-            img2 = R.drawable.t4_2;
-            img3 = R.drawable.t4_3;
-            img4 = R.drawable.t4_4;
-            img5 = R.drawable.t4_5;
-            img6 = R.drawable.t4_6;
-            img7 = R.drawable.t4_7;
-            img8 = R.drawable.t4_8;
-            img9 = R.drawable.t4_1_2;
-            img10 = R.drawable.t4_2_2;
-            img11 = R.drawable.t4_3_2;
-            img12 = R.drawable.t4_4_2;
-            img13 = R.drawable.t4_5_2;
-            img14 = R.drawable.t4_6_2;
-            img15 = R.drawable.t4_7_2;
-            img16 = R.drawable.t4_8_2;*/
-        }
-        else if (theme == "fairytail")
-        {
-            /*img1 = R.drawable.t5_1;
-            img2 = R.drawable.t5_2;
-            img3 = R.drawable.t5_3;
-            img4 = R.drawable.t5_4;
-            img5 = R.drawable.t5_5;
-            img6 = R.drawable.t5_6;
-            img7 = R.drawable.t5_7;
-            img8 = R.drawable.t5_8;
-            img9 = R.drawable.t5_1_2;
-            img10 = R.drawable.t5_2_2;
-            img11 = R.drawable.t5_3_2;
-            img12 = R.drawable.t5_4_2;
-            img13 = R.drawable.t5_5_2;
-            img14 = R.drawable.t5_6_2;
-            img15 = R.drawable.t5_7_2;
-            img16 = R.drawable.t5_8_2;*/
-        }
-        else if (theme == "onepiece")
-        {
-            /*img1 = R.drawable.t6_1;
-            img2 = R.drawable.t6_2;
-            img3 = R.drawable.t6_3;
-            img4 = R.drawable.t6_4;
-            img5 = R.drawable.t6_5;
-            img6 = R.drawable.t6_6;
-            img7 = R.drawable.t6_7;
-            img8 = R.drawable.t6_8;
-            img9 = R.drawable.t6_1_2;
-            img10 = R.drawable.t6_2_2;
-            img11 = R.drawable.t6_3_2;
-            img12 = R.drawable.t6_4_2;
-            img13 = R.drawable.t6_5_2;
-            img14 = R.drawable.t6_6_2;
-            img15 = R.drawable.t6_7_2;
-            img16 = R.drawable.t6_8_2;*/
-        }
-        else if (theme == "superman")
-        {
-            /*img1 = R.drawable.t7_1;
-            img2 = R.drawable.t7_2;
-            img3 = R.drawable.t7_3;
-            img4 = R.drawable.t7_4;
-            img5 = R.drawable.t7_5;
-            img6 = R.drawable.t7_6;
-            img7 = R.drawable.t7_7;
-            img8 = R.drawable.t7_8;
-            img9 = R.drawable.t7_1_2;
-            img10 = R.drawable.t7_2_2;
-            img11 = R.drawable.t7_3_2;
-            img12 = R.drawable.t7_4_2;
-            img13 = R.drawable.t7_5_2;
-            img14 = R.drawable.t7_6_2;
-            img15 = R.drawable.t7_7_2;
-            img16 = R.drawable.t7_8_2;*/
-        }
-        else if (theme == "spiderman")
-        {
-            /*img1 = R.drawable.t8_1;
-            img2 = R.drawable.t8_2;
-            img3 = R.drawable.t8_3;
-            img4 = R.drawable.t8_4;
-            img5 = R.drawable.t8_5;
-            img6 = R.drawable.t8_6;
-            img7 = R.drawable.t8_7;
-            img8 = R.drawable.t8_8;
-            img9 = R.drawable.t8_1_2;
-            img10 = R.drawable.t8_2_2;
-            img11 = R.drawable.t8_3_2;
-            img12 = R.drawable.t8_4_2;
-            img13 = R.drawable.t8_5_2;
-            img14 = R.drawable.t8_6_2;
-            img15 = R.drawable.t8_7_2;
-            img16 = R.drawable.t8_8_2;*/
-        }
-        else if (theme == "avengers")
-        {
-            /*img1 = R.drawable.t9_1;
-            img2 = R.drawable.t9_2;
-            img3 = R.drawable.t9_3;
-            img4 = R.drawable.t9_4;
-            img5 = R.drawable.t9_5;
-            img6 = R.drawable.t9_6;
-            img7 = R.drawable.t9_7;
-            img8 = R.drawable.t9_8;
-            img9 = R.drawable.t9_1_2;
-            img10 = R.drawable.t9_2_2;
-            img11 = R.drawable.t9_3_2;
-            img12 = R.drawable.t9_4_2;
-            img13 = R.drawable.t9_5_2;
-            img14 = R.drawable.t9_6_2;
-            img15 = R.drawable.t9_7_2;
-            img16 = R.drawable.t9_8_2;*/
+            case "titeuf":
+                img1 = R.drawable.t2_1;
+                img2 = R.drawable.t2_2;
+                img3 = R.drawable.t2_3;
+                img4 = R.drawable.t2_4;
+                img5 = R.drawable.t2_5;
+                img6 = R.drawable.t2_6;
+                img7 = R.drawable.t2_7;
+                img8 = R.drawable.t2_8;
+                img9 = R.drawable.t2_1_2;
+                img10 = R.drawable.t2_2_2;
+                img11 = R.drawable.t2_3_2;
+                img12 = R.drawable.t2_4_2;
+                img13 = R.drawable.t2_5_2;
+                img14 = R.drawable.t2_6_2;
+                img15 = R.drawable.t2_7_2;
+                img16 = R.drawable.t2_8_2;
+                break;
+
+            case "simpson":
+                img1 = R.drawable.t3_1;
+                img2 = R.drawable.t3_2;
+                img3 = R.drawable.t3_3;
+                img4 = R.drawable.t3_4;
+                img5 = R.drawable.t3_5;
+                img6 = R.drawable.t3_6;
+                img7 = R.drawable.t3_7;
+                img8 = R.drawable.t3_8;
+                img9 = R.drawable.t3_1_2;
+                img10 = R.drawable.t3_2_2;
+                img11 = R.drawable.t3_3_2;
+                img12 = R.drawable.t3_4_2;
+                img13 = R.drawable.t3_5_2;
+                img14 = R.drawable.t3_6_2;
+                img15 = R.drawable.t3_7_2;
+                img16 = R.drawable.t3_8_2;
+                break;
+
+            case "naruto":
+                /*img1 = R.drawable.t4_1;
+                img2 = R.drawable.t4_2;
+                img3 = R.drawable.t4_3;
+                img4 = R.drawable.t4_4;
+                img5 = R.drawable.t4_5;
+                img6 = R.drawable.t4_6;
+                img7 = R.drawable.t4_7;
+                img8 = R.drawable.t4_8;
+                img9 = R.drawable.t4_1_2;
+                img10 = R.drawable.t4_2_2;
+                img11 = R.drawable.t4_3_2;
+                img12 = R.drawable.t4_4_2;
+                img13 = R.drawable.t4_5_2;
+                img14 = R.drawable.t4_6_2;
+                img15 = R.drawable.t4_7_2;
+                img16 = R.drawable.t4_8_2;*/
+                break;
+
+            case "fairytail":
+                /*img1 = R.drawable.t5_1;
+                img2 = R.drawable.t5_2;
+                img3 = R.drawable.t5_3;
+                img4 = R.drawable.t5_4;
+                img5 = R.drawable.t5_5;
+                img6 = R.drawable.t5_6;
+                img7 = R.drawable.t5_7;
+                img8 = R.drawable.t5_8;
+                img9 = R.drawable.t5_1_2;
+                img10 = R.drawable.t5_2_2;
+                img11 = R.drawable.t5_3_2;
+                img12 = R.drawable.t5_4_2;
+                img13 = R.drawable.t5_5_2;
+                img14 = R.drawable.t5_6_2;
+                img15 = R.drawable.t5_7_2;
+                img16 = R.drawable.t5_8_2;*/
+                break;
+
+            case "onepiece":
+                /*img1 = R.drawable.t6_1;
+                img2 = R.drawable.t6_2;
+                img3 = R.drawable.t6_3;
+                img4 = R.drawable.t6_4;
+                img5 = R.drawable.t6_5;
+                img6 = R.drawable.t6_6;
+                img7 = R.drawable.t6_7;
+                img8 = R.drawable.t6_8;
+                img9 = R.drawable.t6_1_2;
+                img10 = R.drawable.t6_2_2;
+                img11 = R.drawable.t6_3_2;
+                img12 = R.drawable.t6_4_2;
+                img13 = R.drawable.t6_5_2;
+                img14 = R.drawable.t6_6_2;
+                img15 = R.drawable.t6_7_2;
+                img16 = R.drawable.t6_8_2;*/
+                break;
+
+            case "superman":
+                /*img1 = R.drawable.t7_1;
+                img2 = R.drawable.t7_2;
+                img3 = R.drawable.t7_3;
+                img4 = R.drawable.t7_4;
+                img5 = R.drawable.t7_5;
+                img6 = R.drawable.t7_6;
+                img7 = R.drawable.t7_7;
+                img8 = R.drawable.t7_8;
+                img9 = R.drawable.t7_1_2;
+                img10 = R.drawable.t7_2_2;
+                img11 = R.drawable.t7_3_2;
+                img12 = R.drawable.t7_4_2;
+                img13 = R.drawable.t7_5_2;
+                img14 = R.drawable.t7_6_2;
+                img15 = R.drawable.t7_7_2;
+                img16 = R.drawable.t7_8_2;*/
+                break;
+
+            case "spiderman":
+                /*img1 = R.drawable.t8_1;
+                img2 = R.drawable.t8_2;
+                img3 = R.drawable.t8_3;
+                img4 = R.drawable.t8_4;
+                img5 = R.drawable.t8_5;
+                img6 = R.drawable.t8_6;
+                img7 = R.drawable.t8_7;
+                img8 = R.drawable.t8_8;
+                img9 = R.drawable.t8_1_2;
+                img10 = R.drawable.t8_2_2;
+                img11 = R.drawable.t8_3_2;
+                img12 = R.drawable.t8_4_2;
+                img13 = R.drawable.t8_5_2;
+                img14 = R.drawable.t8_6_2;
+                img15 = R.drawable.t8_7_2;
+                img16 = R.drawable.t8_8_2;*/
+                break;
+
+            case "avengers":
+                /*img1 = R.drawable.t9_1;
+                img2 = R.drawable.t9_2;
+                img3 = R.drawable.t9_3;
+                img4 = R.drawable.t9_4;
+                img5 = R.drawable.t9_5;
+                img6 = R.drawable.t9_6;
+                img7 = R.drawable.t9_7;
+                img8 = R.drawable.t9_8;
+                img9 = R.drawable.t9_1_2;
+                img10 = R.drawable.t9_2_2;
+                img11 = R.drawable.t9_3_2;
+                img12 = R.drawable.t9_4_2;
+                img13 = R.drawable.t9_5_2;
+                img14 = R.drawable.t9_6_2;
+                img15 = R.drawable.t9_7_2;
+                img16 = R.drawable.t9_8_2;*/
+                break;
         }
     }
-
 
     //définition des themes
 
@@ -532,46 +565,224 @@ public class Memory extends AppCompatActivity {
         else if (theme == "simpson")
         {
             //instancie les images dans un tableau
-            //imgtheme = new int[] {R.drawable.s3_1, R.drawable.s3_2, R.drawable.s3_3, R.drawable.s3_4, R.drawable.s3_5, R.drawable.s3_6, R.drawable.s3_7, R.drawable.s3_8, R.drawable.t3_1_2, R.drawable.t3_2_2, R.drawable.t3_3_2, R.drawable.t3_4_2, R.drawable.t3_5_2, R.drawable.t3_6_2, R.drawable.t3_7_2, R.drawable.t3_8_2};
+            imgTheme = new int[] {R.drawable.t3_1, R.drawable.t3_2, R.drawable.t3_3, R.drawable.t3_4, R.drawable.t3_5, R.drawable.t3_6, R.drawable.t3_7, R.drawable.t3_8, R.drawable.t3_1_2, R.drawable.t3_2_2, R.drawable.t3_3_2, R.drawable.t3_4_2, R.drawable.t3_5_2, R.drawable.t3_6_2, R.drawable.t3_7_2, R.drawable.t3_8_2};
         }
         //Manga
         //Naruto
         else if (theme == "naruto")
         {
             //instancie les images dans un tableau
-            //imgTheme = new int[] {R.drawable.n4_1, R.drawable.n4_2, R.drawable.n4_3, R.drawable.n4_4, R.drawable.n4_5, R.drawable.n4_6, R.drawable.n4_7, R.drawable.n4_8, R.drawable.t4_1_2, R.drawable.t4_2_2, R.drawable.t4_3_2, R.drawable.t4_4_2, R.drawable.t4_5_2, R.drawable.t4_6_2, R.drawable.t4_7_2, R.drawable.t4_8_2};
+            //imgTheme = new int[] {R.drawable.t4_1, R.drawable.t4_2, R.drawable.t4_3, R.drawable.t4_4, R.drawable.t4_5, R.drawable.t4_6, R.drawable.t4_7, R.drawable.t4_8, R.drawable.t4_1_2, R.drawable.t4_2_2, R.drawable.t4_3_2, R.drawable.t4_4_2, R.drawable.t4_5_2, R.drawable.t4_6_2, R.drawable.t4_7_2, R.drawable.t4_8_2};
         }
         //Fairy Tail
         else if (theme == "fairytail")
         {
             //instancie les images dans un tableau
-            //imgTheme = new int[] {R.drawable.f5_1, R.drawable.f5_2, R.drawable.f5_3, R.drawable.f5_4, R.drawable.f5_5, R.drawable.f5_6, R.drawable.f5_7, R.drawable.f5_8, R.drawable.t5_1_2, R.drawable.t5_2_2, R.drawable.t5_3_2, R.drawable.t5_4_2, R.drawable.t5_5_2, R.drawable.t5_6_2, R.drawable.t5_7_2, R.drawable.t5_8_2};
+            //imgTheme = new int[] {R.drawable.t5_1, R.drawable.t5_2, R.drawable.t5_3, R.drawable.t5_4, R.drawable.t5_5, R.drawable.t5_6, R.drawable.t5_7, R.drawable.t5_8, R.drawable.t5_1_2, R.drawable.t5_2_2, R.drawable.t5_3_2, R.drawable.t5_4_2, R.drawable.t5_5_2, R.drawable.t5_6_2, R.drawable.t5_7_2, R.drawable.t5_8_2};
         }
         //One Piece
         else if (theme == "onepiece")
         {
             //instancie les images dans un tableau
-            //imgTheme = new int[] {R.drawable.o6_1, R.drawable.o6_2, R.drawable.o6_3, R.drawable.o6_4, R.drawable.o6_5, R.drawable.o6_6, R.drawable.o6_7, R.drawable.o6_8, R.drawable.t6_1_2, R.drawable.t6_2_2, R.drawable.t6_3_2, R.drawable.t6_4_2, R.drawable.t6_5_2, R.drawable.t6_6_2, R.drawable.6_7_2, R.drawable.t6_8_2};
+            //imgTheme = new int[] {R.drawable.t6_1, R.drawable.t6_2, R.drawable.t6_3, R.drawable.t6_4, R.drawable.t6_5, R.drawable.t6_6, R.drawable.t6_7, R.drawable.t6_8, R.drawable.t6_1_2, R.drawable.t6_2_2, R.drawable.t6_3_2, R.drawable.t6_4_2, R.drawable.t6_5_2, R.drawable.t6_6_2, R.drawable.6_7_2, R.drawable.t6_8_2};
         }
         //Comics
         //Super Man
         else if (theme == "superman")
         {
             //instancie les images dans un tableau
-            //imgTheme = new int[] {R.drawable.s7_1, R.drawable.s7_2, R.drawable.s7_3, R.drawable.s7_4, R.drawable.s7_5, R.drawable.s7_6, R.drawable.s7_7, R.drawable.s7_8, R.drawable.t7_1_2, R.drawable.t7_2_2, R.drawable.t7_3_2, R.drawable.t7_4_2, R.drawable.t7_5_2, R.drawable.t7_6_2, R.drawable.t7_7_2, R.drawable.t7_8_2};
+            //imgTheme = new int[] {R.drawable.t7_1, R.drawable.t7_2, R.drawable.t7_3, R.drawable.t7_4, R.drawable.t7_5, R.drawable.t7_6, R.drawable.t7_7, R.drawable.t7_8, R.drawable.t7_1_2, R.drawable.t7_2_2, R.drawable.t7_3_2, R.drawable.t7_4_2, R.drawable.t7_5_2, R.drawable.t7_6_2, R.drawable.t7_7_2, R.drawable.t7_8_2};
         }
         //Spider Man
         else if (theme == "spiderman")
         {
             //instancie les images dans un tableau
-            //imgTheme = new int[] {R.drawable.s8_1, R.drawable.s8_2, R.drawable.s8_3, R.drawable.s8_4, R.drawable.s8_5, R.drawable.s8_6, R.drawable.s8_7, R.drawable.s8_8, R.drawable.t8_1_2, R.drawable.t8_2_2, R.drawable.t8_3_2, R.drawable.t8_4_2, R.drawable.t8_5_2, R.drawable.t8_6_2, R.drawable.t8_7_2, R.drawable.t8_8_2};
+            //imgTheme = new int[] {R.drawable.t8_1, R.drawable.t8_2, R.drawable.t8_3, R.drawable.t8_4, R.drawable.t8_5, R.drawable.t8_6, R.drawable.t8_7, R.drawable.t8_8, R.drawable.t8_1_2, R.drawable.t8_2_2, R.drawable.t8_3_2, R.drawable.t8_4_2, R.drawable.t8_5_2, R.drawable.t8_6_2, R.drawable.t8_7_2, R.drawable.t8_8_2};
         }
         //Avenger
         else if (theme == "avengers")
         {
             //instancie les images dans un tableau
-            //imgTheme = new int[] {R.drawable.a9_1, R.drawable.a9_2, R.drawable.a9_3, R.drawable.a9_4, R.drawable.a9_5, R.drawable.a9_6, R.drawable.a9_7, R.drawable.a9_8, R.drawable.t9_1_2, R.drawable.t9_2_2, R.drawable.t9_3_2, R.drawable.t9_4_2, R.drawable.t9_5_2, R.drawable.t9_6_2, R.drawable.t9_7_2, R.drawable.t9_8_2};
+            //imgTheme = new int[] {R.drawable.t9_1, R.drawable.t9_2, R.drawable.t9_3, R.drawable.t9_4, R.drawable.t9_5, R.drawable.t9_6, R.drawable.t9_7, R.drawable.t9_8, R.drawable.t9_1_2, R.drawable.t9_2_2, R.drawable.t9_3_2, R.drawable.t9_4_2, R.drawable.t9_5_2, R.drawable.t9_6_2, R.drawable.t9_7_2, R.drawable.t9_8_2};
         }
     }
+
+
+
+    private void calculate(){
+        if(carte1 == carte2){
+            switch (clic1) {
+                case 0:
+                    imgV1.setVisibility(View.INVISIBLE);
+                    break;
+                case 1:
+                    imgV2.setVisibility(View.INVISIBLE);
+                    break;
+                case 2:
+                    imgV3.setVisibility(View.INVISIBLE);
+                    break;
+                case 3:
+                    imgV4.setVisibility(View.INVISIBLE);
+                    break;
+                case 4:
+                    imgV5.setVisibility(View.INVISIBLE);
+                    break;
+                case 5:
+                    imgV6.setVisibility(View.INVISIBLE);
+                    break;
+                case 6:
+                    imgV7.setVisibility(View.INVISIBLE);
+                    break;
+                case 7:
+                    imgV8.setVisibility(View.INVISIBLE);
+                    break;
+                case 8:
+                    imgV9.setVisibility(View.INVISIBLE);
+                    break;
+                case 9:
+                    imgV10.setVisibility(View.INVISIBLE);
+                    break;
+                case 10:
+                    imgV11.setVisibility(View.INVISIBLE);
+                    break;
+                case 11:
+                    imgV12.setVisibility(View.INVISIBLE);
+                    break;
+                case 12:
+                    imgV13.setVisibility(View.INVISIBLE);
+                    break;
+                case 13:
+                    imgV14.setVisibility(View.INVISIBLE);
+                    break;
+                case 14:
+                    imgV15.setVisibility(View.INVISIBLE);
+                    break;
+                case 15:
+                    imgV16.setVisibility(View.INVISIBLE);
+                    break;
+            }
+
+            switch (clic2) {
+                case 0:
+                    imgV1.setVisibility(View.INVISIBLE);
+                    break;
+                case 1:
+                    imgV2.setVisibility(View.INVISIBLE);
+                    break;
+                case 2:
+                    imgV3.setVisibility(View.INVISIBLE);
+                    break;
+                case 3:
+                    imgV4.setVisibility(View.INVISIBLE);
+                    break;
+                case 4:
+                    imgV5.setVisibility(View.INVISIBLE);
+                    break;
+                case 5:
+                    imgV6.setVisibility(View.INVISIBLE);
+                    break;
+                case 6:
+                    imgV7.setVisibility(View.INVISIBLE);
+                    break;
+                case 7:
+                    imgV8.setVisibility(View.INVISIBLE);
+                    break;
+                case 8:
+                    imgV9.setVisibility(View.INVISIBLE);
+                    break;
+                case 9:
+                    imgV10.setVisibility(View.INVISIBLE);
+                    break;
+                case 10:
+                    imgV11.setVisibility(View.INVISIBLE);
+                    break;
+                case 11:
+                    imgV12.setVisibility(View.INVISIBLE);
+                    break;
+                case 12:
+                    imgV13.setVisibility(View.INVISIBLE);
+                    break;
+                case 13:
+                    imgV14.setVisibility(View.INVISIBLE);
+                    break;
+                case 14:
+                    imgV15.setVisibility(View.INVISIBLE);
+                    break;
+                case 15:
+                    imgV16.setVisibility(View.INVISIBLE);
+                    break;
+            }
+        }
+
+        nbCoups = nbCoups++;
+
+        imgV1.setEnabled(true);
+        imgV2.setEnabled(true);
+        imgV3.setEnabled(true);
+        imgV4.setEnabled(true);
+        imgV5.setEnabled(true);
+        imgV6.setEnabled(true);
+        imgV7.setEnabled(true);
+        imgV8.setEnabled(true);
+        imgV9.setEnabled(true);
+        imgV10.setEnabled(true);
+        imgV11.setEnabled(true);
+        imgV12.setEnabled(true);
+        imgV13.setEnabled(true);
+        imgV14.setEnabled(true);
+        imgV15.setEnabled(true);
+        imgV16.setEnabled(true);
+
+        //on vérifie que la partie est fini
+        finPartie();
+    }
+
+    private void finPartie()
+    {
+        //Si toute les images sont invisibles
+        if (imgV1.getVisibility() == View.INVISIBLE &&
+                imgV2.getVisibility() == View.INVISIBLE &&
+                imgV3.getVisibility() == View.INVISIBLE &&
+                imgV4.getVisibility() == View.INVISIBLE &&
+                imgV5.getVisibility() == View.INVISIBLE &&
+                imgV6.getVisibility() == View.INVISIBLE &&
+                imgV7.getVisibility() == View.INVISIBLE &&
+                imgV8.getVisibility() == View.INVISIBLE &&
+                imgV9.getVisibility() == View.INVISIBLE &&
+                imgV10.getVisibility() == View.INVISIBLE &&
+                imgV11.getVisibility() == View.INVISIBLE &&
+                imgV12.getVisibility() == View.INVISIBLE &&
+                imgV13.getVisibility() == View.INVISIBLE &&
+                imgV14.getVisibility() == View.INVISIBLE &&
+                imgV15.getVisibility() == View.INVISIBLE &&
+                imgV16.getVisibility() == View.INVISIBLE)
+        {
+            //On affiche une boite de dialogue annonçant le nombre de coups fait et ptoposant de recommencer ou quitter
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
+            alertDialogBuilder
+                    .setMessage("Fin de la partie ! \n Tu as fini en : " + nbCoups + " coups !")
+                    //empêche l'annulation
+                    .setCancelable(false)
+                    //on recommence une partie
+                    .setPositiveButton("Nouvelle partie", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            Intent intent = new Intent(getApplicationContext(), Memory.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    })
+                    //renvois au Main activity
+                    .setNegativeButton("Quitter", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+        }
+    }
+
 
 }
