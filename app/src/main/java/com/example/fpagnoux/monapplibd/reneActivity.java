@@ -22,14 +22,14 @@ import java.util.Timer;
 public class reneActivity  extends AppCompatActivity implements View.OnClickListener {
     // creation d'un nombre aleatoir
     Random rand = new Random();
-    int n = rand.nextInt( 3);
+    int n = rand.nextInt( 3)+1;
 
     //liste avec les 3 image ( pour l'aleatoir ) + 1 image de base
     //private int[] imgdujeu = new int[]{android.R.drawable.sym_def_app_icon, android.R.drawable.star_big_off, android.R.drawable.star_big_on, android.R.drawable.checkbox_off_background};
 
    // private int[] imgdujeu = new int[]{R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr, android.R.drawable.checkbox_off_background};
      // private int[] imgdujeu = new int[]{R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr, android.R.drawable.checkbox_off_background};
-      private int[] imgdujeu = new int[]{R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr, android.R.drawable.checkbox_off_background};
+      private int[] imgdujeu = new int[]{android.R.drawable.checkbox_off_background ,R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr ,R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr,R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr};
 
   //  android.R.drawable.checkbox_off_background
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
@@ -74,11 +74,16 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private Button facile , moyen,difficile ;
     private int modedejeu = 0;
 
+    private int montheme;
 
+
+    private int nbrindeximg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rene_la_bd);
+
+
 
         text = (TextView) findViewById(R.id.txtscore);
         start = (Button) findViewById(R.id.btnstart);
@@ -101,9 +106,45 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         imgpnt2 =  (ImageView) findViewById(R.id.imgpts2);
         imgpnt3 =  (ImageView) findViewById(R.id.imgpts3);
 
-        imgpnt1.setImageResource(imgdujeu[0]);
-        imgpnt2.setImageResource(imgdujeu[1]);
-        imgpnt3.setImageResource(imgdujeu[2]);
+
+        // ajout d'un nombre à n afin de modifier la recherche  dans la list d'image en fonction des themes
+
+
+        switch (leTheme){
+            case "simpson":
+                nbrindeximg=1;
+                break;
+            case "titeuf":
+                nbrindeximg=4;
+                break;
+            case "tintin":
+                nbrindeximg=7;
+                break;
+            case "avengers":
+                nbrindeximg=10;
+
+                break;
+            case  "spiderman":
+                nbrindeximg=13;
+                break;
+            case  "superman":
+                nbrindeximg=16;
+                break;
+
+            case  "fairytail":
+                nbrindeximg=19;
+                break;
+            case "naruto":
+                nbrindeximg=22;
+                break;
+            case"onepiece":
+                nbrindeximg=25;
+                break;
+        }
+
+        imgpnt1.setImageResource(imgdujeu[nbrindeximg]);
+        imgpnt2.setImageResource(imgdujeu[nbrindeximg+1]);
+        imgpnt3.setImageResource(imgdujeu[nbrindeximg+2]);
 
 
 
@@ -157,18 +198,18 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 public void pointparimg(int i){
 
     ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
-    if ((int) imgdelacase[i].getTag() ==imgdujeu[0]) {
+    if ((int) imgdelacase[i].getTag() ==imgdujeu[nbrindeximg]) {
         score = score + -5;
         jeu = false;
         animation(i);
 
     }
-    if ((int) imgdelacase[i].getTag() == imgdujeu[1] ){
+    if ((int) imgdelacase[i].getTag() == imgdujeu[nbrindeximg+1] ){
         score = score + 5;
         jeu = false;
         animation(i);
     }
-    if ((int) imgdelacase[i].getTag() == imgdujeu[2]) {
+    if ((int) imgdelacase[i].getTag() == imgdujeu[nbrindeximg+2]) {
         score = score + 15;
         jeu = false;
         animation(i);
@@ -204,7 +245,7 @@ public void pointparimg(int i){
                     text.setText(String.valueOf(score));
                     letimer();
 
-                    jouer(1,modedejeu);
+                    jouer(leTheme,modedejeu);
                     eststart = false;
                  //   handleAnimation(imgpnt1);
                         facile.setVisibility(View.INVISIBLE);
@@ -267,7 +308,13 @@ public void pointparimg(int i){
     }
 
     // Jouer peromet de generé 2 nbr aléatoir pour le choix de l'image et de la case de reception
-    private void jouer(final int theme, final int unmodedejeu) {
+    private void jouer( String theme, int unmodedejeu) {
+
+        //generation aleatoire pour l'image et la case ou elle va se trouver
+        int n = rand.nextInt(3)+1;
+        int imgjeuplace = rand.nextInt(9);
+
+
         switch (modedejeu){
             case 1:
                 tempsapparition = 3000;
@@ -281,11 +328,43 @@ public void pointparimg(int i){
 
         }
 
+        // ajout d'un nombre à n afin de modifier la recherche  dans la list d'image en fonction des themes
+        switch (theme){
+            case "simpson":
+
+                break;
+            case "titeuf":
+                    n = n+3;
+                break;
+            case "tintin":
+                    n = n+6;
+                break;
+            case "avengers":
+
+
+                break;
+            case  "spiderman":
+
+                break;
+            case  "superman":
+
+                break;
+
+            case  "fairytail":
+
+                break;
+            case "naruto":
+
+                break;
+            case"onepiece":
+
+                break;
+        }
+
+
         jeu = true;
 
-        //generation aleatoire pour l'image et la case ou elle va se trouver
-        int n = rand.nextInt(3);
-        int imgjeuplace = rand.nextInt(9);
+
 
 
         place = imgjeuplace;
@@ -296,41 +375,41 @@ public void pointparimg(int i){
 
             case 0:
              //   img1.setImageResource(imgdujeu[n]);
-                personnagejouer(n, 3, 3, 3, 3, 3, 3, 3, 3);
+                personnagejouer(n, 0, 0, 0, 0,0, 0,0, 0);
 
                 break;
             case 1:
                // img2.setImageResource(imgdujeu[n]);
 
-                personnagejouer(3, n, 3, 3, 3, 3, 3, 3, 3);
+                personnagejouer(0, n, 0, 0, 0, 0, 0, 0, 0);
                 break;
             case 2:
                // img3.setImageResource(imgdujeu[n]);
-                personnagejouer(3, 3, n, 3, 3, 3, 3, 3, 3);
+                personnagejouer(0, 0, n, 0, 0, 0, 0,0, 0);
                 break;
             case 3:
                // img4.setImageResource(imgdujeu[n]);
-               personnagejouer(3, 3, 3, n, 3, 3, 3, 3, 3);
+               personnagejouer(0, 0, 0, n, 0, 0, 0, 0, 0);
                 break;
             case 4:
               //  img5.setImageResource(imgdujeu[n]);
-                personnagejouer(3, 3, 3, 3, n, 3, 3, 3, 3);
+                personnagejouer(0, 0, 0, 0, n, 0, 0, 0, 0);
                 break;
             case 5:
                // img6.setImageResource(imgdujeu[n]);
-                personnagejouer(3, 3, 3, 3, 3, n, 3, 3, 3);
+                personnagejouer(0, 0, 0, 0, 0, n, 0, 0, 0);
                 break;
             case 6:
                 //img7.setImageResource(imgdujeu[n]);
-                personnagejouer(3, 3, 3, 3, 3, 3, n, 3, 3);
+                personnagejouer( 0, 0,0, 0,0 , 0, n, 0, 0);
                 break;
             case 7:
               //  img8.setImageResource(imgdujeu[n]);
-                personnagejouer(3, 3, 3, 3, 3, 3, 3, n, 3);
+                personnagejouer(0, 0, 0, 0, 0, 0, 0, n,0);
                 break;
             case 8:
              //   img9.setImageResource(imgdujeu[n]);
-                personnagejouer(3, 3, 3, 3, 3, 3, 3, 3, n);
+                personnagejouer(0, 0, 0, 0, 0, 0, 0, 0, n);
                 break;
         }
             // permet de refaire la fonction jouer tout les X temps
@@ -342,7 +421,7 @@ public void pointparimg(int i){
                 unHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        jouer(1,modedejeu);
+                        jouer(leTheme,modedejeu);
                         ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
 
 
@@ -412,6 +491,7 @@ public void pointparimg(int i){
         letempstotal--;
         Timer.setText(String.valueOf(letempstotal+" / 60"));
         if (letempstotal >00 ){
+
         Handler unHandler = new Handler();
             unHandler.postDelayed(new Runnable() {
                 @Override
@@ -420,6 +500,7 @@ public void pointparimg(int i){
 
                 }
             }, 1000);
+
         timerbar.setProgress(letempstotal);
     }}
 /*
