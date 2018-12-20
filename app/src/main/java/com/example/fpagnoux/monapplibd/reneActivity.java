@@ -348,6 +348,7 @@ public void pointparimg(int i){
                 break;
             case  "superman":
 
+                
                 break;
 
             case  "fairytail":
