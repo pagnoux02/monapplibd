@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@drawable/bd_fond">
+
 
 
     <TextView
@@ -13,21 +15,26 @@
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+
         android:text="Nom_Joueur"
         android:textColor="@android:color/background_dark"
+
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/theme"
+
         android:layout_width="305dp"
         android:layout_height="131dp"
+
         android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/bulle_bd_2"
+
         android:text="Thème_choisi"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
@@ -43,6 +50,7 @@
         android:id="@+id/nbCoup"
         android:layout_width="119dp"
         android:layout_height="129dp"
+
         android:layout_marginStart="8dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="8dp"
@@ -50,6 +58,7 @@
         android:text="0"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
+
         android:textSize="70sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -35,9 +35,16 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
     private TextView text;
     private int score = 0;
-    private String theme;
     private Button start;
     private Boolean jeu = false;
+
+    private String leTheme;
+    private String lePseudo;
+
+    //hugo
+    private TextView test;
+    private TextView pseudo;
+
     private boolean eststart =true ;
     private int i ;
 
@@ -53,8 +60,9 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     long animationDuration = 1000;
     private int nbdelacase;
     private float trans;
-    private TextView test;
+   
     //TEST
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +77,13 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         // text.setText(String.valueOf( listimgaview[1]));
         start.setOnClickListener(this);
 
+
+        //hugo
+        leTheme = this.getIntent().getExtras().getString("Theme");
+        lePseudo = this.getIntent().getExtras().getString("Joueur");
+
+        // instancie les images
+
         // imageview qui contient les images afin dans la zone de score
         imgpnt1 =  (ImageView) findViewById(R.id.imgpts1);
         imgpnt2 =  (ImageView) findViewById(R.id.imgpts2);
@@ -79,6 +94,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         imgpnt3.setImageResource(imgdujeu[2]);
 
         // instancie les images ou l'utilisateur devra cliquer
+
         img1 = (ImageView) findViewById(R.id.imgjeu1);
         img2 = (ImageView) findViewById(R.id.imgjeu2);
         img3 = (ImageView) findViewById(R.id.imgjeu3);
@@ -103,7 +119,13 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         img9.setOnClickListener(this);
 
 
-        test =  (TextView) findViewById(R.id.txtpseudo);
+        test = this.findViewById(R.id.txttheme);
+        test.setText(leTheme);
+        pseudo = this.findViewById(R.id.txtpseudo);
+        pseudo.setText(lePseudo);
+
+
+      
 
 
     }
@@ -297,7 +319,6 @@ public void pointparimg(int i){
         }
 
 
-
     // affectation des image au differente case
     public void personnagejouer(int monimg1, int monimg2, int monimg3, int monimg4, int monimg5, int monimg6, int monimg7, int monimg8, int monimg9) {
 
@@ -305,13 +326,13 @@ public void pointparimg(int i){
         img1.setImageResource(imgdujeu[monimg1]);
         //affectation d'un tag qui permet de faire une comparaison par la suite
         img1.setTag(imgdujeu[monimg1]);
-
+      
         img2.setImageResource(imgdujeu[monimg2]);
         img2.setTag(imgdujeu[monimg2]);
 
         img3.setImageResource(imgdujeu[monimg3]);
         img3.setTag(imgdujeu[monimg3]);
-     ;
+     
         img4.setImageResource(imgdujeu[monimg4]);
         img4.setTag(imgdujeu[monimg4]);
 
@@ -323,6 +344,7 @@ public void pointparimg(int i){
 
         img7.setImageResource(imgdujeu[monimg7]);
         img7.setTag(imgdujeu[monimg7]);
+
 
         img8.setImageResource(imgdujeu[monimg8]);
         img8.setTag(imgdujeu[monimg8]);
