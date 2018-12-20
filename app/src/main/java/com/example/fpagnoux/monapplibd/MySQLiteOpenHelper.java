@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -37,6 +38,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        db.execSQL("DROP TABLE Rank;");
+        onCreate(db);
     }
 
     public void insertScore() {
@@ -56,7 +59,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
                 unRank.setId(unCurseur.getInt(unCurseur.getColumnIndex("id")));
                 unRank.setPseudo(unCurseur.getString(unCurseur.getColumnIndex("pseudo")));
                 unRank.setScore(unCurseur.getInt(unCurseur.getColumnIndex("score")));
-
+                System.out.println(unRank.getPseudo());
                 ensScore.add(unRank);
             } while (unCurseur.moveToNext());
             Collections.shuffle(ensScore);
@@ -77,11 +80,5 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         long insertion = db.insert("Rank", null, values);
         return insertion;
-    }
-
-    public void ajoutInsertScore() {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        db.execSQL("INSERT INTO Rank VALUES (15,'',1500);");
     }
 }
