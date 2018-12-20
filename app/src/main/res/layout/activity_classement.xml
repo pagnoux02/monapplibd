@@ -25,11 +25,12 @@
         android:id="@+id/grid_view"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:columnWidth="75dp"
+        android:horizontalSpacing="2dp"
         android:numColumns="3"
         android:verticalSpacing="2dp"
-        android:horizontalSpacing="2dp"
-        android:columnWidth="75dp"
-        android:layout_margin="15dp"
-        />
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </android.support.constraint.ConstraintLayout>
