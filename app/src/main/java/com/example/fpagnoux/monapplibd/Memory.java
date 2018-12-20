@@ -30,10 +30,10 @@ public class Memory extends AppCompatActivity {
 
     private String theme = "tintin";
     private String nomJoueur;
-    private int nbCoups;
+    private int nbCoups = 0;
 
     //génération d'un chiffre aléatoire
-    Random rand = new Random();
+    //Random rand = new Random();
     //int unNbRandom = rand.nextInt(16);
 
     private int[] imgTheme;
@@ -42,7 +42,7 @@ public class Memory extends AppCompatActivity {
     private ImageView imgV1, imgV2, imgV3, imgV4, imgV5, imgV6, imgV7, imgV8, imgV9, imgV10, imgV11, imgV12,imgV13, imgV14, imgV15, imgV16;
     private int img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,img13, img14, img15, img16;
     //liste pour les images
-    private int[] tabCarte = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13, 14, 15, 16};
+    private Integer[] tabCarte = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13, 14, 15, 16};
 
     int carte1, carte2;
     int clic1, clic2;
@@ -95,46 +95,7 @@ public class Memory extends AppCompatActivity {
         //On affiche le theme choisi dans le textView theme
         txtViewTheme = findViewById(R.id.theme);
 
-        definitionTheme();
-        /*if(theme == "tintin")
-        {
-            txtViewTheme.setText("Thème : Tintin");
-            imgTheme = new int[] {R.drawable.t1_1, R.drawable.t1_2, R.drawable.t1_3, R.drawable.t1_4, R.drawable.t1_5, R.drawable.t1_6, R.drawable.t1_7, R.drawable.t1_8};
-
-        }
-        else if (theme == "titeuf")
-        {
-            txtViewTheme.setText("Thème : Titeuf");
-        }
-        else if (theme == "simpson")
-        {
-            txtViewTheme.setText("Thème : Simson");
-        }
-        else if (theme == "naruto")
-        {
-            txtViewTheme.setText("Thème : Naruto");
-        }
-        else if (theme == "fairytail")
-        {
-            txtViewTheme.setText("Thème : Fairy Tail");
-        }
-        else if (theme == "onepiece")
-        {
-            txtViewTheme.setText("Thème : One Piece");
-        }
-        else if (theme == "superman")
-        {
-            txtViewTheme.setText("Thème : Superman");
-        }
-        else if (theme == "spiderman")
-        {
-            txtViewTheme.setText("Thème : Spider-man");
-        }
-        else if (theme == "avengers")
-        {
-            txtViewTheme.setText("Thème : Avengers");
-        }*/
-
+        //definitionTheme();
 
         //charge les images
         imgrsc();
@@ -363,10 +324,6 @@ public class Memory extends AppCompatActivity {
 
     //Méthode
 
-
-
-
-
     private void imgrsc()
     {
         switch(theme) {
@@ -545,9 +502,9 @@ public class Memory extends AppCompatActivity {
 
     //définition des themes
 
+/*
     private void definitionTheme()
     {
-        int unNbRandom = rand.nextInt(16);
         //BD
         //Tintin
         if (theme == "tintin")
@@ -605,11 +562,12 @@ public class Memory extends AppCompatActivity {
             //instancie les images dans un tableau
             //imgTheme = new int[] {R.drawable.t9_1, R.drawable.t9_2, R.drawable.t9_3, R.drawable.t9_4, R.drawable.t9_5, R.drawable.t9_6, R.drawable.t9_7, R.drawable.t9_8, R.drawable.t9_1_2, R.drawable.t9_2_2, R.drawable.t9_3_2, R.drawable.t9_4_2, R.drawable.t9_5_2, R.drawable.t9_6_2, R.drawable.t9_7_2, R.drawable.t9_8_2};
         }
-    }
+    }*/
 
 
 
     private void calculate(){
+        //si les image 1 et 2 sont identique on les rend invisibles
         if(carte1 == carte2){
             switch (clic1) {
                 case 0:
@@ -713,9 +671,10 @@ public class Memory extends AppCompatActivity {
                     break;
             }
         }
-
+        //nombre de coup + 1
         nbCoups = nbCoups++;
 
+        //images déverouillées
         imgV1.setEnabled(true);
         imgV2.setEnabled(true);
         imgV3.setEnabled(true);
