@@ -9,6 +9,8 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewManager;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -20,6 +22,9 @@ import java.util.Random;
 import java.util.Timer;
 
 public class reneActivity  extends AppCompatActivity implements View.OnClickListener {
+
+
+
     // creation d'un nombre aleatoir
     Random rand = new Random();
     int n = rand.nextInt( 3)+1;
@@ -29,7 +34,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
    // private int[] imgdujeu = new int[]{R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr, android.R.drawable.checkbox_off_background};
      // private int[] imgdujeu = new int[]{R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr, android.R.drawable.checkbox_off_background};
-      private int[] imgdujeu = new int[]{android.R.drawable.checkbox_off_background ,R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr ,R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr,R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr};
+      private int[] imgdujeu = new int[]{android.R.drawable.checkbox_off_background ,R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr ,R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr,R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr,R.drawable.a_1_fr,R.drawable.a_2_fr,R.drawable.a_3_fr};
 
   //  android.R.drawable.checkbox_off_background
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
@@ -82,6 +87,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rene_la_bd);
+
 
 
 
@@ -340,29 +346,19 @@ public void pointparimg(int i){
                     n = n+6;
                 break;
             case "avengers":
-
-
+                    n = n+9;
                 break;
             case  "spiderman":
-
                 break;
             case  "superman":
-
-                
                 break;
-
             case  "fairytail":
-
                 break;
             case "naruto":
-
                 break;
             case"onepiece":
-
                 break;
         }
-
-
         jeu = true;
 
 
@@ -439,7 +435,7 @@ public void pointparimg(int i){
 
              jeu = false;
              letempstotal = 60;
-             personnagejouer(3, 3, 3, 3, 3, 3, 3, 3, 3);
+             personnagejouer(0,0, 0, 0, 0,0, 0, 0, 0);
              modedejeu = 1;
              eststart = true;
 
