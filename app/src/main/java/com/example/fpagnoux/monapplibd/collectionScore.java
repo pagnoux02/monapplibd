@@ -1,12 +1,15 @@
 package com.example.fpagnoux.monapplibd;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
 public class collectionScore {
     ArrayList<rank> ensScore= new ArrayList<>();
     MySQLiteOpenHelper base_score;
+    SQLiteDatabase db;
+
 
     public int nb_elements(){ return ensScore.size();}
 
@@ -18,7 +21,7 @@ public class collectionScore {
 
     //solution basée sur une insertion en code des questions
 
-    public void insertion_questions(Context un_context){
+    public void insertion_Score(Context un_context){
         base_score = new MySQLiteOpenHelper(un_context);
 
         ensScore = base_score.getLesScores();

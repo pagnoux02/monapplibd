@@ -39,6 +39,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     //hugo
     private TextView test;
     private TextView pseudo;
+    private rank joueur;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,6 +141,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
                     text.setText(String.valueOf(score));
                     break;
             }
+           // joueur = new rank();
         }
 
     }
