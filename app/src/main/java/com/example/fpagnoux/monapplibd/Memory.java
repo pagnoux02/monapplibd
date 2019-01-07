@@ -42,7 +42,7 @@ public class Memory extends AppCompatActivity {
     private ImageView imgV1, imgV2, imgV3, imgV4, imgV5, imgV6, imgV7, imgV8, imgV9, imgV10, imgV11, imgV12,imgV13, imgV14, imgV15, imgV16;
     private int img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,img13, img14, img15, img16;
     //liste pour les images
-    private Integer[] tabCarte = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13, 14, 15, 16};
+    private Integer[] tabCarte = {101, 102, 103, 104, 105, 106, 107, 108, 201, 202, 203, 204, 205, 206, 207, 208};
 
     int carte1, carte2;
     int clic1, clic2;
@@ -239,37 +239,37 @@ public class Memory extends AppCompatActivity {
     private void doStuff(ImageView imgView, int carte)
     {
         //met les bonnes images dans les imageviews
-        if (tabCarte[carte] == 1) {
+        if (tabCarte[carte] == 101) {
             imgView.setImageResource(img1);
-        } else if (tabCarte[carte] == 2) {
+        } else if (tabCarte[carte] == 102) {
         imgView.setImageResource(img2);
-        } else if (tabCarte[carte] == 3) {
+        } else if (tabCarte[carte] == 103) {
             imgView.setImageResource(img3);
-        } else if (tabCarte[carte] == 4) {
+        } else if (tabCarte[carte] == 104) {
             imgView.setImageResource(img4);
-        } else if (tabCarte[carte] == 5) {
+        } else if (tabCarte[carte] == 105) {
             imgView.setImageResource(img5);
-        } else if (tabCarte[carte] == 6) {
+        } else if (tabCarte[carte] == 106) {
             imgView.setImageResource(img6);
-        } else if (tabCarte[carte] == 7) {
+        } else if (tabCarte[carte] == 107) {
             imgView.setImageResource(img7);
-        } else if (tabCarte[carte] == 8) {
+        } else if (tabCarte[carte] == 108) {
             imgView.setImageResource(img8);
-        } else if (tabCarte[carte] == 9) {
+        } else if (tabCarte[carte] == 201) {
             imgView.setImageResource(img9);
-        } else if (tabCarte[carte] == 10) {
+        } else if (tabCarte[carte] == 202) {
             imgView.setImageResource(img10);
-        } else if (tabCarte[carte] == 11) {
+        } else if (tabCarte[carte] == 203) {
             imgView.setImageResource(img11);
-        } else if (tabCarte[carte] == 12) {
+        } else if (tabCarte[carte] == 204) {
             imgView.setImageResource(img12);
-        } else if (tabCarte[carte] == 13) {
+        } else if (tabCarte[carte] == 205) {
             imgView.setImageResource(img13);
-        } else if (tabCarte[carte] == 14) {
+        } else if (tabCarte[carte] == 206) {
             imgView.setImageResource(img14);
-        } else if (tabCarte[carte] == 15) {
+        } else if (tabCarte[carte] == 207) {
             imgView.setImageResource(img15);
-        } else if (tabCarte[carte] == 16) {
+        } else if (tabCarte[carte] == 208) {
             imgView.setImageResource(img16);
         }
 
@@ -313,7 +313,7 @@ public class Memory extends AppCompatActivity {
             {
                 @Override
                 public void run() {
-                    //regarde si les deux image sélectionnéessont égales
+                    //regarde si les deux image sélectionnées sont égales
                     calculate();
                 }
             }, 1000 /*delais en millisecondes*/);
