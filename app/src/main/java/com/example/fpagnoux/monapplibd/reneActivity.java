@@ -34,12 +34,11 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
    // private int[] imgdujeu = new int[]{R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr, android.R.drawable.checkbox_off_background};
      // private int[] imgdujeu = new int[]{R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr, android.R.drawable.checkbox_off_background};
-      private int[] imgdujeu = new int[]{android.R.drawable.checkbox_off_background ,R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr ,R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr,R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr,R.drawable.a_1_fr,R.drawable.a_2_fr,R.drawable.a_3_fr};
+      private int[] imgdujeu = new int[]{android.R.drawable.checkbox_off_background ,R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr ,R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr,R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr,R.drawable.a_1_fr,R.drawable.a_2_fr,R.drawable.a_3_fr,R.drawable.sp_fr,R.drawable.sp_2_frr,R.drawable.sp_3_fr,R.drawable.su_1_fr,R.drawable.su_2_frr,R.drawable.su_3_fr,R.drawable.fai_1_fr,R.drawable.fai_2_frr,R.drawable.fai_3_frr, R.drawable.na_1_fr,R.drawable.na_2_fr,R.drawable.na_3_fr, R.drawable.one_1_frr,R.drawable.one_2_fr,R.drawable.one_3_fr};
 
   //  android.R.drawable.checkbox_off_background
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
     private ImageView imgpnt1,imgpnt2,imgpnt3;
-
 
 
 
@@ -229,7 +228,7 @@ public void pointparimg(int i){
     public void onClick(View v) {
 
         switch (v.getId()) {
-
+                // determine le niveau  de difficulté
             case R.id.btnFacile:
                 modedejeu =1;
                 break;
@@ -260,12 +259,12 @@ public void pointparimg(int i){
                 }}
                 break;
         }
-
+         // Si le jeu est en cours de deroulement
         if (jeu == true) {
 
 
             switch (v.getId()) {
-                    // atribution du score en fonction de l'image et de la place
+                    // attribution du score en fonction de l'image et de la place
 
                 case R.id.imgjeu1:
                     pointparimg(0);
@@ -349,14 +348,19 @@ public void pointparimg(int i){
                     n = n+9;
                 break;
             case  "spiderman":
+                n = n+12;
                 break;
             case  "superman":
+                n = n+15;
                 break;
             case  "fairytail":
+                n = n+ 18;
                 break;
             case "naruto":
+                n= n+21;
                 break;
             case"onepiece":
+                n = n+24;
                 break;
         }
         jeu = true;
