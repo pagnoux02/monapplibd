@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
@@ -36,11 +37,11 @@ public class Memory extends AppCompatActivity {
     //Random rand = new Random();
     //int unNbRandom = rand.nextInt(16);
 
-    private int[] imgTheme;
+    //private int[] imgTheme;
     private TextView txtViewTheme;
 
     private ImageView imgV1, imgV2, imgV3, imgV4, imgV5, imgV6, imgV7, imgV8, imgV9, imgV10, imgV11, imgV12,imgV13, imgV14, imgV15, imgV16;
-    private int img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,img13, img14, img15, img16;
+    private int img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12,img13, img14, img15, img16;
     //liste pour les images
     private Integer[] tabCarte = {101, 102, 103, 104, 105, 106, 107, 108, 201, 202, 203, 204, 205, 206, 207, 208};
 
@@ -53,7 +54,6 @@ public class Memory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memory_lanscape); //on assigne le layout memory_lanscape à l'activité
-
 
         // instanciation des imagesView
         imgV1 = (ImageView) findViewById(R.id.image1_1);
@@ -91,7 +91,6 @@ public class Memory extends AppCompatActivity {
         imgV15.setTag("14");
         imgV16.setTag("15");
 
-
         //On affiche le theme choisi dans le textView theme
         txtViewTheme = findViewById(R.id.theme);
 
@@ -102,9 +101,6 @@ public class Memory extends AppCompatActivity {
 
         //melange de la liste
         Collections.shuffle(Arrays.asList(tabCarte));
-
-
-
 
         imgV1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -235,9 +231,9 @@ public class Memory extends AppCompatActivity {
         });
     }
 
-
     private void doStuff(ImageView imgView, int carte)
     {
+
         //met les bonnes images dans les imageviews
         if (tabCarte[carte] == 101) {
             imgView.setImageResource(img1);
@@ -282,15 +278,18 @@ public class Memory extends AppCompatActivity {
             }
             nbCarte = 2;
             clic1 = carte;
+
             imgView.setEnabled(false);
-        } else if (carte2 == 2)
+        } else if (nbCarte == 2)
         {
             carte2 = tabCarte[carte];
             if (carte2 > 200) {
                 carte2 = carte2 - 100;
             }
-            nbCarte = 2;
+            nbCarte = 1;
             clic2 = carte;
+
+
             imgV1.setEnabled(false);
             imgV2.setEnabled(false);
             imgV3.setEnabled(false);
@@ -308,17 +307,17 @@ public class Memory extends AppCompatActivity {
             imgV15.setEnabled(false);
             imgV16.setEnabled(false);
 
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable()
-            {
-                @Override
-                public void run() {
-                    //regarde si les deux image sélectionnées sont égales
-                    calculate();
-                }
-            }, 1000 /*delais en millisecondes*/);
         }
 
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run() {
+                //regarde si les deux image sélectionnées sont égales
+                calculate();
+            }
+        }, 1000 /*delais en millisecondes*/);
     }
 
 
@@ -326,8 +325,10 @@ public class Memory extends AppCompatActivity {
 
     private void imgrsc()
     {
+
         switch(theme) {
             case "tintin":
+                img0 = R.drawable.t1_0;
                 img1 = R.drawable.t1_1;
                 img2 = R.drawable.t1_2;
                 img3 = R.drawable.t1_3;
@@ -347,6 +348,7 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "titeuf":
+                img0 = R.drawable.t2_0;
                 img1 = R.drawable.t2_1;
                 img2 = R.drawable.t2_2;
                 img3 = R.drawable.t2_3;
@@ -366,6 +368,7 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "simpson":
+                img0 = R.drawable.t3_0;
                 img1 = R.drawable.t3_1;
                 img2 = R.drawable.t3_2;
                 img3 = R.drawable.t3_3;
@@ -385,7 +388,8 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "naruto":
-                /*img1 = R.drawable.t4_1;
+                /*img0 = R.drawable.t4_0;
+                img1 = R.drawable.t4_1;
                 img2 = R.drawable.t4_2;
                 img3 = R.drawable.t4_3;
                 img4 = R.drawable.t4_4;
@@ -404,7 +408,8 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "fairytail":
-                /*img1 = R.drawable.t5_1;
+                /*img0 = R.drawable.t5_0;
+                img1 = R.drawable.t5_1;
                 img2 = R.drawable.t5_2;
                 img3 = R.drawable.t5_3;
                 img4 = R.drawable.t5_4;
@@ -423,7 +428,8 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "onepiece":
-                /*img1 = R.drawable.t6_1;
+                /*img0 = R.drawable.t6_0;
+                img1 = R.drawable.t6_1;
                 img2 = R.drawable.t6_2;
                 img3 = R.drawable.t6_3;
                 img4 = R.drawable.t6_4;
@@ -442,7 +448,8 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "superman":
-                /*img1 = R.drawable.t7_1;
+                /*img0 = R.drawable.t7_0;
+                img1 = R.drawable.t7_1;
                 img2 = R.drawable.t7_2;
                 img3 = R.drawable.t7_3;
                 img4 = R.drawable.t7_4;
@@ -461,7 +468,8 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "spiderman":
-                /*img1 = R.drawable.t8_1;
+                /*img0 = R.drawable.t8_0;
+                img1 = R.drawable.t8_1;
                 img2 = R.drawable.t8_2;
                 img3 = R.drawable.t8_3;
                 img4 = R.drawable.t8_4;
@@ -480,7 +488,8 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "avengers":
-                /*img1 = R.drawable.t9_1;
+                /*img0 = R.drawable.t9_0;
+                img1 = R.drawable.t9_1;
                 img2 = R.drawable.t9_2;
                 img3 = R.drawable.t9_3;
                 img4 = R.drawable.t9_4;
@@ -567,6 +576,10 @@ public class Memory extends AppCompatActivity {
 
 
     private void calculate(){
+
+        //instanciation du textview du nombre de coups
+        TextView txtCoup = (TextView) findViewById(R.id.nbCoup);
+
         //si les image 1 et 2 sont identique on les rend invisibles
         if(carte1 == carte2){
             switch (clic1) {
@@ -670,9 +683,17 @@ public class Memory extends AppCompatActivity {
                     imgV16.setVisibility(View.INVISIBLE);
                     break;
             }
+
+            nbCoups++;
+            txtCoup.setText(nbCoups);
+
+
+
         }
-        //nombre de coup + 1
-        nbCoups = nbCoups++;
+        else {
+            imgV1.setImageResource(R.drawable.t1_0);
+        }
+
 
         //images déverouillées
         imgV1.setEnabled(true);
@@ -742,6 +763,4 @@ public class Memory extends AppCompatActivity {
                     });
         }
     }
-
-
 }

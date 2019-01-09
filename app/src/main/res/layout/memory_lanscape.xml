@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light">
 
     <!--nom du joueur-->
     <TextView
@@ -84,6 +85,7 @@
         android:layout_marginStart="65dp"
         android:layout_marginTop="356dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/point_interrogation" />
@@ -96,6 +98,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="356dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image1_1"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/point_interrogation" />
@@ -108,6 +111,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="356dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image1_2"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/point_interrogation" />
@@ -121,6 +125,7 @@
         android:layout_marginTop="356dp"
         android:layout_marginEnd="50dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image1_3"
@@ -135,6 +140,7 @@
         android:layout_marginStart="65dp"
         android:layout_marginTop="24dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image1_1"
         tools:src="@drawable/point_interrogation" />
@@ -147,6 +153,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image2_1"
         app:layout_constraintTop_toBottomOf="@+id/image1_2"
         tools:src="@drawable/point_interrogation" />
@@ -160,6 +167,7 @@
         android:layout_marginTop="24dp"
         android:clickable="true"
         android:contentDescription="TODO"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image2_2"
         app:layout_constraintTop_toBottomOf="@+id/image1_3"
         tools:src="@drawable/point_interrogation" />
@@ -173,6 +181,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="50dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image2_3"
@@ -187,6 +196,7 @@
         android:layout_marginStart="65dp"
         android:layout_marginTop="24dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image2_1"
         tools:src="@drawable/point_interrogation" />
@@ -199,6 +209,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image3_1"
         app:layout_constraintTop_toBottomOf="@+id/image2_2"
         tools:src="@drawable/point_interrogation" />
@@ -211,6 +222,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image3_2"
         app:layout_constraintTop_toBottomOf="@+id/image2_3"
         tools:src="@drawable/point_interrogation" />
@@ -224,6 +236,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="50dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image3_3"
@@ -239,6 +252,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image3_1"
@@ -254,6 +268,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image4_1"
         app:layout_constraintTop_toBottomOf="@+id/image3_2"
@@ -269,6 +284,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image4_2"
         app:layout_constraintTop_toBottomOf="@+id/image3_3"
@@ -285,6 +301,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="8dp"
         android:clickable="true"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
