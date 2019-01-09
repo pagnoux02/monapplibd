@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -49,11 +50,24 @@ public class Memory extends AppCompatActivity {
     int clic1, clic2;
     int nbCarte = 1;
 
+    private Button btnRetour, btnReinitialiser;
 
     @Override
+    //sauvegarde l'instance
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("monNbCoup", nbCoups);
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memory_lanscape); //on assigne le layout memory_lanscape à l'activité
+        Bundle state = getIntent().getExtras();
+        if(state != null)
+        {
+            nbCoups = savedInstanceState.getInt("monNbCoup");
+        }
 
         // instanciation des imagesView
         imgV1 = (ImageView) findViewById(R.id.image1_1);
@@ -91,10 +105,12 @@ public class Memory extends AppCompatActivity {
         imgV15.setTag("14");
         imgV16.setTag("15");
 
+        //bouttons
+        btnReinitialiser = findViewById(R.id.reinitialiser);
+        btnRetour = findViewById(R.id.retour);
+
         //On affiche le theme choisi dans le textView theme
         txtViewTheme = findViewById(R.id.theme);
-
-        //definitionTheme();
 
         //charge les images
         imgrsc();
@@ -229,6 +245,34 @@ public class Memory extends AppCompatActivity {
                 doStuff(imgV16, laCarte);
             }
         });
+
+        //boutons
+        //bouton retour qui fait revenir a la page d'acceuil
+        btnRetour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        //bouton reinitialiser qui relance la partie
+        btnReinitialiser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Memory.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+
+
+
+
+
     }
 
     private void doStuff(ImageView imgView, int carte)
@@ -289,6 +333,7 @@ public class Memory extends AppCompatActivity {
             nbCarte = 1;
             clic2 = carte;
 
+            nbCoups++;
 
             imgV1.setEnabled(false);
             imgV2.setEnabled(false);
@@ -306,7 +351,6 @@ public class Memory extends AppCompatActivity {
             imgV14.setEnabled(false);
             imgV15.setEnabled(false);
             imgV16.setEnabled(false);
-
         }
 
         Handler handler = new Handler();
@@ -314,14 +358,217 @@ public class Memory extends AppCompatActivity {
         {
             @Override
             public void run() {
+                //instanciation du textview du nombre de coups
+                TextView txtCoup = (TextView) findViewById(R.id.nbCoup);
                 //regarde si les deux image sélectionnées sont égales
                 calculate();
+                //affiche le nombre de coups
+                txtCoup.setText(String.valueOf(nbCoups));
             }
-        }, 1000 /*delais en millisecondes*/);
+        } , 1000/*delais en millisecondes*/);
     }
 
 
     //Méthode
+
+    private void calculate(){
+
+        //si les image 1 et 2 sont identique on les rend invisibles
+        if(carte1 == carte2){
+            switch (clic1) {
+                case 0:
+                    imgV1.setVisibility(View.INVISIBLE);
+                    break;
+                case 1:
+                    imgV2.setVisibility(View.INVISIBLE);
+                    break;
+                case 2:
+                    imgV3.setVisibility(View.INVISIBLE);
+                    break;
+                case 3:
+                    imgV4.setVisibility(View.INVISIBLE);
+                    break;
+                case 4:
+                    imgV5.setVisibility(View.INVISIBLE);
+                    break;
+                case 5:
+                    imgV6.setVisibility(View.INVISIBLE);
+                    break;
+                case 6:
+                    imgV7.setVisibility(View.INVISIBLE);
+                    break;
+                case 7:
+                    imgV8.setVisibility(View.INVISIBLE);
+                    break;
+                case 8:
+                    imgV9.setVisibility(View.INVISIBLE);
+                    break;
+                case 9:
+                    imgV10.setVisibility(View.INVISIBLE);
+                    break;
+                case 10:
+                    imgV11.setVisibility(View.INVISIBLE);
+                    break;
+                case 11:
+                    imgV12.setVisibility(View.INVISIBLE);
+                    break;
+                case 12:
+                    imgV13.setVisibility(View.INVISIBLE);
+                    break;
+                case 13:
+                    imgV14.setVisibility(View.INVISIBLE);
+                    break;
+                case 14:
+                    imgV15.setVisibility(View.INVISIBLE);
+                    break;
+                case 15:
+                    imgV16.setVisibility(View.INVISIBLE);
+                    break;
+            }
+
+            switch (clic2) {
+                case 0:
+                    imgV1.setVisibility(View.INVISIBLE);
+                    break;
+                case 1:
+                    imgV2.setVisibility(View.INVISIBLE);
+                    break;
+                case 2:
+                    imgV3.setVisibility(View.INVISIBLE);
+                    break;
+                case 3:
+                    imgV4.setVisibility(View.INVISIBLE);
+                    break;
+                case 4:
+                    imgV5.setVisibility(View.INVISIBLE);
+                    break;
+                case 5:
+                    imgV6.setVisibility(View.INVISIBLE);
+                    break;
+                case 6:
+                    imgV7.setVisibility(View.INVISIBLE);
+                    break;
+                case 7:
+                    imgV8.setVisibility(View.INVISIBLE);
+                    break;
+                case 8:
+                    imgV9.setVisibility(View.INVISIBLE);
+                    break;
+                case 9:
+                    imgV10.setVisibility(View.INVISIBLE);
+                    break;
+                case 10:
+                    imgV11.setVisibility(View.INVISIBLE);
+                    break;
+                case 11:
+                    imgV12.setVisibility(View.INVISIBLE);
+                    break;
+                case 12:
+                    imgV13.setVisibility(View.INVISIBLE);
+                    break;
+                case 13:
+                    imgV14.setVisibility(View.INVISIBLE);
+                    break;
+                case 14:
+                    imgV15.setVisibility(View.INVISIBLE);
+                    break;
+                case 15:
+                    imgV16.setVisibility(View.INVISIBLE);
+                    break;
+            }
+
+
+
+
+        }
+        else {
+            imgV1.setImageResource(R.drawable.point_interrogation);
+            imgV2.setImageResource(R.drawable.point_interrogation);
+            imgV3.setImageResource(R.drawable.point_interrogation);
+            imgV4.setImageResource(R.drawable.point_interrogation);
+            imgV5.setImageResource(R.drawable.point_interrogation);
+            imgV6.setImageResource(R.drawable.point_interrogation);
+            imgV7.setImageResource(R.drawable.point_interrogation);
+            imgV8.setImageResource(R.drawable.point_interrogation);
+            imgV9.setImageResource(R.drawable.point_interrogation);
+            imgV10.setImageResource(R.drawable.point_interrogation);
+            imgV11.setImageResource(R.drawable.point_interrogation);
+            imgV12.setImageResource(R.drawable.point_interrogation);
+            imgV13.setImageResource(R.drawable.point_interrogation);
+            imgV14.setImageResource(R.drawable.point_interrogation);
+            imgV15.setImageResource(R.drawable.point_interrogation);
+            imgV16.setImageResource(R.drawable.point_interrogation);
+        }
+
+
+        //images déverouillées
+        imgV1.setEnabled(true);
+        imgV2.setEnabled(true);
+        imgV3.setEnabled(true);
+        imgV4.setEnabled(true);
+        imgV5.setEnabled(true);
+        imgV6.setEnabled(true);
+        imgV7.setEnabled(true);
+        imgV8.setEnabled(true);
+        imgV9.setEnabled(true);
+        imgV10.setEnabled(true);
+        imgV11.setEnabled(true);
+        imgV12.setEnabled(true);
+        imgV13.setEnabled(true);
+        imgV14.setEnabled(true);
+        imgV15.setEnabled(true);
+        imgV16.setEnabled(true);
+
+        //on vérifie que la partie est fini
+        finPartie();
+    }
+
+    private void finPartie()
+    {
+        //Si toute les images sont invisibles
+        if (imgV1.getVisibility() == View.INVISIBLE &&
+                imgV2.getVisibility() == View.INVISIBLE &&
+                imgV3.getVisibility() == View.INVISIBLE &&
+                imgV4.getVisibility() == View.INVISIBLE &&
+                imgV5.getVisibility() == View.INVISIBLE &&
+                imgV6.getVisibility() == View.INVISIBLE &&
+                imgV7.getVisibility() == View.INVISIBLE &&
+                imgV8.getVisibility() == View.INVISIBLE &&
+                imgV9.getVisibility() == View.INVISIBLE &&
+                imgV10.getVisibility() == View.INVISIBLE &&
+                imgV11.getVisibility() == View.INVISIBLE &&
+                imgV12.getVisibility() == View.INVISIBLE &&
+                imgV13.getVisibility() == View.INVISIBLE &&
+                imgV14.getVisibility() == View.INVISIBLE &&
+                imgV15.getVisibility() == View.INVISIBLE &&
+                imgV16.getVisibility() == View.INVISIBLE)
+        {
+            //On affiche une boite de dialogue annonçant le nombre de coups fait et ptoposant de recommencer ou quitter
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
+            alertDialogBuilder
+                    .setMessage("Fin de la partie ! \n Tu as fini en : " + nbCoups + " coups !")
+                    //empêche l'annulation
+                    .setCancelable(false)
+                    //on recommence une partie
+                    .setPositiveButton("Nouvelle partie", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            Intent intent = new Intent(getApplicationContext(), Memory.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    })
+                    //renvois au Main activity
+                    .setNegativeButton("Quitter", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+        }
+    }
 
     private void imgrsc()
     {
@@ -572,195 +819,4 @@ public class Memory extends AppCompatActivity {
             //imgTheme = new int[] {R.drawable.t9_1, R.drawable.t9_2, R.drawable.t9_3, R.drawable.t9_4, R.drawable.t9_5, R.drawable.t9_6, R.drawable.t9_7, R.drawable.t9_8, R.drawable.t9_1_2, R.drawable.t9_2_2, R.drawable.t9_3_2, R.drawable.t9_4_2, R.drawable.t9_5_2, R.drawable.t9_6_2, R.drawable.t9_7_2, R.drawable.t9_8_2};
         }
     }*/
-
-
-
-    private void calculate(){
-
-        //instanciation du textview du nombre de coups
-        TextView txtCoup = (TextView) findViewById(R.id.nbCoup);
-
-        //si les image 1 et 2 sont identique on les rend invisibles
-        if(carte1 == carte2){
-            switch (clic1) {
-                case 0:
-                    imgV1.setVisibility(View.INVISIBLE);
-                    break;
-                case 1:
-                    imgV2.setVisibility(View.INVISIBLE);
-                    break;
-                case 2:
-                    imgV3.setVisibility(View.INVISIBLE);
-                    break;
-                case 3:
-                    imgV4.setVisibility(View.INVISIBLE);
-                    break;
-                case 4:
-                    imgV5.setVisibility(View.INVISIBLE);
-                    break;
-                case 5:
-                    imgV6.setVisibility(View.INVISIBLE);
-                    break;
-                case 6:
-                    imgV7.setVisibility(View.INVISIBLE);
-                    break;
-                case 7:
-                    imgV8.setVisibility(View.INVISIBLE);
-                    break;
-                case 8:
-                    imgV9.setVisibility(View.INVISIBLE);
-                    break;
-                case 9:
-                    imgV10.setVisibility(View.INVISIBLE);
-                    break;
-                case 10:
-                    imgV11.setVisibility(View.INVISIBLE);
-                    break;
-                case 11:
-                    imgV12.setVisibility(View.INVISIBLE);
-                    break;
-                case 12:
-                    imgV13.setVisibility(View.INVISIBLE);
-                    break;
-                case 13:
-                    imgV14.setVisibility(View.INVISIBLE);
-                    break;
-                case 14:
-                    imgV15.setVisibility(View.INVISIBLE);
-                    break;
-                case 15:
-                    imgV16.setVisibility(View.INVISIBLE);
-                    break;
-            }
-
-            switch (clic2) {
-                case 0:
-                    imgV1.setVisibility(View.INVISIBLE);
-                    break;
-                case 1:
-                    imgV2.setVisibility(View.INVISIBLE);
-                    break;
-                case 2:
-                    imgV3.setVisibility(View.INVISIBLE);
-                    break;
-                case 3:
-                    imgV4.setVisibility(View.INVISIBLE);
-                    break;
-                case 4:
-                    imgV5.setVisibility(View.INVISIBLE);
-                    break;
-                case 5:
-                    imgV6.setVisibility(View.INVISIBLE);
-                    break;
-                case 6:
-                    imgV7.setVisibility(View.INVISIBLE);
-                    break;
-                case 7:
-                    imgV8.setVisibility(View.INVISIBLE);
-                    break;
-                case 8:
-                    imgV9.setVisibility(View.INVISIBLE);
-                    break;
-                case 9:
-                    imgV10.setVisibility(View.INVISIBLE);
-                    break;
-                case 10:
-                    imgV11.setVisibility(View.INVISIBLE);
-                    break;
-                case 11:
-                    imgV12.setVisibility(View.INVISIBLE);
-                    break;
-                case 12:
-                    imgV13.setVisibility(View.INVISIBLE);
-                    break;
-                case 13:
-                    imgV14.setVisibility(View.INVISIBLE);
-                    break;
-                case 14:
-                    imgV15.setVisibility(View.INVISIBLE);
-                    break;
-                case 15:
-                    imgV16.setVisibility(View.INVISIBLE);
-                    break;
-            }
-
-            nbCoups++;
-            txtCoup.setText(nbCoups);
-
-
-
-        }
-        else {
-            imgV1.setImageResource(R.drawable.t1_0);
-        }
-
-
-        //images déverouillées
-        imgV1.setEnabled(true);
-        imgV2.setEnabled(true);
-        imgV3.setEnabled(true);
-        imgV4.setEnabled(true);
-        imgV5.setEnabled(true);
-        imgV6.setEnabled(true);
-        imgV7.setEnabled(true);
-        imgV8.setEnabled(true);
-        imgV9.setEnabled(true);
-        imgV10.setEnabled(true);
-        imgV11.setEnabled(true);
-        imgV12.setEnabled(true);
-        imgV13.setEnabled(true);
-        imgV14.setEnabled(true);
-        imgV15.setEnabled(true);
-        imgV16.setEnabled(true);
-
-        //on vérifie que la partie est fini
-        finPartie();
-    }
-
-    private void finPartie()
-    {
-        //Si toute les images sont invisibles
-        if (imgV1.getVisibility() == View.INVISIBLE &&
-                imgV2.getVisibility() == View.INVISIBLE &&
-                imgV3.getVisibility() == View.INVISIBLE &&
-                imgV4.getVisibility() == View.INVISIBLE &&
-                imgV5.getVisibility() == View.INVISIBLE &&
-                imgV6.getVisibility() == View.INVISIBLE &&
-                imgV7.getVisibility() == View.INVISIBLE &&
-                imgV8.getVisibility() == View.INVISIBLE &&
-                imgV9.getVisibility() == View.INVISIBLE &&
-                imgV10.getVisibility() == View.INVISIBLE &&
-                imgV11.getVisibility() == View.INVISIBLE &&
-                imgV12.getVisibility() == View.INVISIBLE &&
-                imgV13.getVisibility() == View.INVISIBLE &&
-                imgV14.getVisibility() == View.INVISIBLE &&
-                imgV15.getVisibility() == View.INVISIBLE &&
-                imgV16.getVisibility() == View.INVISIBLE)
-        {
-            //On affiche une boite de dialogue annonçant le nombre de coups fait et ptoposant de recommencer ou quitter
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
-            alertDialogBuilder
-                    .setMessage("Fin de la partie ! \n Tu as fini en : " + nbCoups + " coups !")
-                    //empêche l'annulation
-                    .setCancelable(false)
-                    //on recommence une partie
-                    .setPositiveButton("Nouvelle partie", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int i) {
-                            Intent intent = new Intent(getApplicationContext(), Memory.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    })
-                    //renvois au Main activity
-                    .setNegativeButton("Quitter", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int i) {
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    });
-        }
-    }
 }
