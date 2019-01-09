@@ -34,7 +34,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
    // private int[] imgdujeu = new int[]{R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr, android.R.drawable.checkbox_off_background};
      // private int[] imgdujeu = new int[]{R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr, android.R.drawable.checkbox_off_background};
-      private int[] imgdujeu = new int[]{android.R.drawable.checkbox_off_background ,R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr ,R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr,R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr,R.drawable.a_1_fr,R.drawable.a_2_fr,R.drawable.a_3_fr,R.drawable.sp_fr,R.drawable.sp_2_frr,R.drawable.sp_3_fr,R.drawable.su_1_fr,R.drawable.su_2_frr,R.drawable.su_3_fr,R.drawable.fai_1_fr,R.drawable.fai_2_frr,R.drawable.fai_3_frr, R.drawable.na_1_fr,R.drawable.na_2_fr,R.drawable.na_3_fr, R.drawable.one_1_frr,R.drawable.one_2_fr,R.drawable.one_3_fr};
+      private int[] imgdujeu = new int[]{android.R.drawable.checkbox_off_background ,R.drawable.s_1_fr, R.drawable.s_2_fr, R.drawable.s_3_fr ,R.drawable.ti_1_fr, R.drawable.ti_2_frr, R.drawable.ti_3_fr,R.drawable.t_1_fr, R.drawable.t_2_fr, R.drawable.t_3_fr,R.drawable.a_1_fr,R.drawable.a_2_fr,R.drawable.a_3_fr,R.drawable.sp_fr,R.drawable.sp_2_frr,R.drawable.sp_3_fr,R.drawable.su_1_fr,R.drawable.su_2_frr,R.drawable.su_3_fr,R.drawable.fai_1_fr,R.drawable.fai_2_frr,R.drawable.fai_3_fre, R.drawable.na_1_fr,R.drawable.na_2_fr,R.drawable.na_3_fr, R.drawable.one_1_frr,R.drawable.one_2_fr,R.drawable.one_3_fr};
 
   //  android.R.drawable.checkbox_off_background
     private ImageView img1, img2, img3, img4, img5, img6, img7, img8, img9;
@@ -47,12 +47,12 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private Button start;
     private Boolean jeu = false;
 
-    private String leTheme;
-    private String lePseudo;
+    private String leTheme ="simpson",lePseudo ;
 
-    //hugo
-    private TextView test;
-    private TextView pseudo;
+
+
+    private TextView test, pseudo , niveau;
+
 
     private boolean eststart =true ;
     private int i ;
@@ -87,9 +87,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rene_la_bd);
 
-
-
-
+        niveau = (TextView) findViewById(R.id.txtniveau);
         text = (TextView) findViewById(R.id.txtscore);
         start = (Button) findViewById(R.id.btnstart);
 
@@ -231,12 +229,15 @@ public void pointparimg(int i){
                 // determine le niveau  de difficulté
             case R.id.btnFacile:
                 modedejeu =1;
+                niveau.setText("Facile");
                 break;
             case R.id.btnMoyen:
                 modedejeu =2;
+                niveau.setText("Moyen");
                 break;
             case R.id.btnDifficile:
                 modedejeu =3;
+                niveau.setText("Difficile");
                 break;
 
             // verification du clique sur le bouton start
