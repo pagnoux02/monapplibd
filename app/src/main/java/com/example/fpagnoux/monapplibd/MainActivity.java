@@ -77,11 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttValider:
                 pseudo = saisie.getText().toString();
-                if((Math.random() * 6)==0) {
+                if(Math.random()==0) {
                     play();
                 }
                 else{
-                    play();
+                    playMemo();
                 }
                 break;
             case R.id.avengersView:
@@ -129,6 +129,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         unIntent.putExtra("Theme", theme);
         this.startActivityForResult(unIntent, cFenetre);
     }
+
+    private void playMemo(){
+        Intent unIntent = new Intent(MainActivity.this, Memory.class);
+        unIntent.putExtra("Joueur", pseudo);
+        unIntent.putExtra("Theme", theme);
+        this.startActivityForResult(unIntent, cFenetre);
+    }
+
 }
 
 
