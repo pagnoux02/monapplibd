@@ -142,7 +142,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
                     text.setText(String.valueOf(score));
                     break;
             }
-           joueur = new rank(lePseudo, score);
+           joueur = new rank(lePseudo, score);//
            cmd.insertScore(joueur);
         }
 
