@@ -10,6 +10,7 @@ import android.util.Log;
 import java.io.Console;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
@@ -18,7 +19,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "pseudo TEXT NOT NULL,"
             + "score INTEGER);";
 
-    private String reqClassement = "SELECT * FROM Rank ORDER BY Rank.score DESC LIMIT 10;";
+    private String reqClassement = "SELECT * FROM Rank ORDER BY Rank.score DESC LIMIT 5;";
 
     private static String DB_NAME = "Classement";
     private static int DB_VERSION = 1;
@@ -63,9 +64,16 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
                 System.out.println(unRank.getPseudo());
                 ensScore.add(unRank);
             } while (unCurseur.moveToNext());
-            Collections.shuffle(ensScore);
         }
         return ensScore;
+    }
+
+    public void ajoutInsertScore(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("INSERT INTO Rank VALUES ('pseudo',score);");
+
+
     }
 
     public long ajoutScoreDep(rank unRank) {

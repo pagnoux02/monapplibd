@@ -14,7 +14,7 @@
 
         <activity android:name=".MainActivity"
 
-
+            android:screenOrientation="portrait"
 
         >
 
@@ -23,13 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activityClassement">
+        <activity android:name=".activityClassement"
+            android:screenOrientation="portrait">
 
 
 
         </activity>
 
-        <activity android:name=".reneActivity">
+        <activity android:name=".reneActivity"
+            android:screenOrientation="portrait">
 
             </activity>
 

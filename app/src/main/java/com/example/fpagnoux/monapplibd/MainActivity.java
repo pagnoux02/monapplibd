@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int cFenetre = 20;
     private collectionScore unecollection = new collectionScore();
     private Button buttValider;
+    private int i = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +78,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttValider:
                 pseudo = saisie.getText().toString();
-                if((Math.random() * 6)==0) {
+                if(i==1) {
                     play();
+                    i = 2;
                 }
                 else{
                     play();
+                    i=1;
                 }
                 break;
             case R.id.avengersView:
@@ -130,6 +132,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         unIntent.putExtra("Theme", theme);
         this.startActivityForResult(unIntent, cFenetre);
     }
+
+    private void playMemo(){
+        Intent unIntent = new Intent(MainActivity.this, Memory.class);
+        unIntent.putExtra("Joueur", pseudo);
+        unIntent.putExtra("Theme", theme);
+        this.startActivityForResult(unIntent, cFenetre);
+    }
+
 }
 
 
