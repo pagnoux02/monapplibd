@@ -81,8 +81,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     play();
                 }
                 else{
-                    //playMemo();
+                    //playMemo
                     play();
+
                 }
                 break;
             case R.id.avengersView:

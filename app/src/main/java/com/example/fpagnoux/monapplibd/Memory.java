@@ -48,8 +48,6 @@ public class Memory extends AppCompatActivity {
 
     private Button btnRetour, btnReinitialiser;
 
-    private String leTheme ,lePseudo ;
-
 
     @Override
     //sauvegarde l'instance
@@ -75,9 +73,6 @@ public class Memory extends AppCompatActivity {
             //recupération des imageVie et de leur etat
         }*/
 
-        //hugo
-        leTheme = this.getIntent().getExtras().getString("Theme");
-        lePseudo = this.getIntent().getExtras().getString("Joueur");
 
         // instanciation des imagesView
         imgV1 = (ImageView) findViewById(R.id.image1_1);
@@ -118,7 +113,7 @@ public class Memory extends AppCompatActivity {
 
         //nom joueur
         nomJoueur = findViewById(R.id.PlayerName);
-        nomJoueur.setText(lePseudo);
+        nomJoueur.setText("mael");
 
         //bouttons
         btnReinitialiser = findViewById(R.id.reinitialiser);
@@ -127,7 +122,7 @@ public class Memory extends AppCompatActivity {
         //instanciation du textView
         txtViewTheme = findViewById(R.id.theme);
         //On affiche le theme choisi dans le textView theme
-        txtViewTheme.setText(leTheme);
+        txtViewTheme.setText("tintin");
 
         //charge les images
         imgrsc();
@@ -585,7 +580,7 @@ public class Memory extends AppCompatActivity {
 
     private void imgrsc()
     {
-        switch(leTheme) {
+        switch("tintin") {
             case "tintin":
                 img0 = R.drawable.t1_0;
                 img1 = R.drawable.t1_1;

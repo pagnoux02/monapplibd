@@ -229,7 +229,7 @@ public void pointparimg(int i){
 
 }
 
-    //fonction qui s'active quand il y a un click
+    //fonction qui s'active quand il y a un clic
     @Override
     public void onClick(View v) {
 
@@ -319,7 +319,7 @@ public void pointparimg(int i){
 
     }
 
-    // Jouer permet de générer 2 nbr aléatoire 1 pour le choix de l'image et 1 de la case de reception
+    // Jouer permet de générer 2 nbr aléatoires 1 pour le choix de l'image et 1 de la case de reception
     private void jouer( String theme, int unmodedejeu) {
 
         //generation aleatoire pour l'image et la case ou elle va se trouver
@@ -459,7 +459,7 @@ public void pointparimg(int i){
         }
 
 
-    // affectation des image au differente case
+    // affectation des image aux differentes cases
     public void personnagejouer(int monimg1, int monimg2, int monimg3, int monimg4, int monimg5, int monimg6, int monimg7, int monimg8, int monimg9) {
 
 
