@@ -23,15 +23,11 @@ import static java.lang.Math.floor;
 import static java.lang.Math.random;
 
 
-//tuto inspiration
-//https://www.youtube.com/watch?v=94CWNE9ruMA
-
-
 public class Memory extends AppCompatActivity {
     //Propriétés
 
-    private String theme = "naruto";
-    private String nomJoueur;
+    private String theme = "tintin";
+    private TextView nomJoueur;
     private int nbCoups = 0;
 
     //génération d'un chiffre aléatoire
@@ -57,14 +53,14 @@ public class Memory extends AppCompatActivity {
 
     @Override
     //sauvegarde l'instance
-    public void onSaveInstanceState(Bundle savedInstanceState) {
+    /*public void onSaveInstanceState(Bundle savedInstanceState) {
         //sauvegarde le nombre de coups
         savedInstanceState.putInt("monNbCoup", nbCoups);
         //sauvegarde les imagesViews et leur etat
         //
 
         super.onSaveInstanceState(savedInstanceState);
-    }
+    }*/
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +114,11 @@ public class Memory extends AppCompatActivity {
         imgV14.setTag("13");
         imgV15.setTag("14");
         imgV16.setTag("15");
+
+
+        //nom joueur
+        nomJoueur = findViewById(R.id.PlayerName);
+        nomJoueur.setText("Mael");
 
         //bouttons
         btnReinitialiser = findViewById(R.id.reinitialiser);
