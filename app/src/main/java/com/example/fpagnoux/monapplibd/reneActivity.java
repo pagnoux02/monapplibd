@@ -309,13 +309,7 @@ public void pointparimg(int i){
                     pointparimg(8);
 
                     break;
-
-
-
-
             }
-           joueur = new rank(lePseudo, score);
-           cmd.insertScore(joueur);
         }
 
     }
@@ -512,7 +506,13 @@ public void pointparimg(int i){
             }, 1000);
 
         timerbar.setProgress(letempstotal);
-    }}
+        }
+        else{
+             //joueur = new rank(lePseudo, score);
+             //cmd.in
+             // sertScore(joueur);
+         }
+    }
 /*
     public void handleAnimation(View view){
         ObjectAnimator animatorX = ObjectAnimator.ofFloat(imgpnt1,"X",400f);

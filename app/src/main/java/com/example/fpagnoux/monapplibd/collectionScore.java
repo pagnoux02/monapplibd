@@ -8,14 +8,8 @@ import java.util.ArrayList;
 public class collectionScore {
     ArrayList<rank> ensScore= new ArrayList<>();
     MySQLiteOpenHelper base_score;
-    SQLiteDatabase db;
-
 
     public int nb_elements(){ return ensScore.size();}
-
-    public String getPseudo (int num_question, int num_proposition){ return ensScore.get(num_question).getPseudo();}
-
-    public int getScore(int numQuestion){ return ensScore.get(numQuestion).getScore();}
 
     //solution basée sur une insertion en code des questions
 
@@ -37,6 +31,7 @@ public class collectionScore {
             base_score.ajoutScoreDep(new rank("Benjamin", 10));
             base_score.ajoutScoreDep(new rank("Valentin", 0));
 
+            base_score.ajoutInsertScore();
             ensScore = base_score.getLesScores();
         }
     }
