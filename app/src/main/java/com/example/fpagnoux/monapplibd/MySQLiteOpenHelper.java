@@ -42,10 +42,12 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertScore() {
+    public void insertScore(rank unRank) {
         SQLiteDatabase db = this.getWritableDatabase();
+        String pseudo = unRank.getPseudo();
+        int score = unRank.getScore();
 
-        db.execSQL("INSERT INTO Rank VALUES (15, hugo, 1000);");
+        db.execSQL("INSERT INTO Rank VALUES ("+"pseudo,"+"score);");
     }
 
     public ArrayList<rank> getLesScores() {
@@ -56,7 +58,6 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         if (unCurseur.moveToFirst()) {
             do {
                 rank unRank = new rank();
-                unRank.setId(unCurseur.getInt(unCurseur.getColumnIndex("id")));
                 unRank.setPseudo(unCurseur.getString(unCurseur.getColumnIndex("pseudo")));
                 unRank.setScore(unCurseur.getInt(unCurseur.getColumnIndex("score")));
                 System.out.println(unRank.getPseudo());
@@ -67,18 +68,16 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         return ensScore;
     }
 
-    public long ajoutScoreDep(rank uneQuestion) {
+    public long ajoutScoreDep(rank unRank) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        //db.execSQL("INSERT INTO QuestionsQcm VALUES (0,'PremQuestion','premProp','SecProp','TroisProp','quatProp','premProp');");
-        System.out.println("ok!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         ContentValues values = new ContentValues();
 
-        values.put("id", uneQuestion.getId());
-        values.put("pseudo", uneQuestion.getPseudo());
-        values.put("score", uneQuestion.getScore());
+        values.put("pseudo", unRank.getPseudo());
+        values.put("score", unRank.getScore());
 
         long insertion = db.insert("Rank", null, values);
         return insertion;
     }
+
 }

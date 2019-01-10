@@ -47,6 +47,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private Button start;
     private Boolean jeu = false;
 
+
     private String leTheme ="simpson",lePseudo ;
 
 
@@ -62,6 +63,11 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private int letempstotal = 60, tempsapparition;
 
     private int place, imgalea ;
+
+
+    private rank joueur;
+    private MySQLiteOpenHelper cmd;
+
 
         // contien tout les imageview de jeu
 
@@ -308,6 +314,8 @@ public void pointparimg(int i){
 
 
             }
+           joueur = new rank(lePseudo, score);
+           cmd.insertScore(joueur);
         }
 
     }
