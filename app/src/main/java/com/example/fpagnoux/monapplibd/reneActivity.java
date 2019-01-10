@@ -508,8 +508,9 @@ public void pointparimg(int i){
         timerbar.setProgress(letempstotal);
         }
         else{
-             joueur = new rank(lePseudo, score);
-             cmd.insertScore(joueur);
+             //joueur = new rank(lePseudo, score);
+             //cmd.in
+             // sertScore(joueur);
          }
     }
 /*

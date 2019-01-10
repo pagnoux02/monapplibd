@@ -4,17 +4,11 @@ package com.example.fpagnoux.monapplibd;
 import android.database.MatrixCursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
-import java.util.ArrayList;
 
 
 public class activityClassement extends AppCompatActivity {
-    private TextView test;
-    private MySQLiteOpenHelper cmd;
-    private ArrayList<rank> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +21,12 @@ public class activityClassement extends AppCompatActivity {
 
 
 
-        //matrixCursor.addRow(new Object[] { 1,"hugo","400" });
-        //matrixCursor.addRow(new Object[] { 2,"francois","300" });
-        //matrixCursor.addRow(new Object[] { 3,"maël","200" });
-        //matrixCursor.addRow(new Object[] { 4,"steeven","100" });
-        //matrixCursor.addRow(new Object[] { 5,"thomas","50" });
+        matrixCursor.addRow(new Object[] { 1,"Challenger","500" });
+        matrixCursor.addRow(new Object[] { 2,"Diamand","350" });
+        matrixCursor.addRow(new Object[] { 3,"Platine","200" });
+        matrixCursor.addRow(new Object[] { 4,"Or","100" });
+        matrixCursor.addRow(new Object[] { 5,"Argent","50" });
+        matrixCursor.addRow(new Object[] { 5,"Bronze","25" });
 
         // on prendra les données des colonnes 1 et 2...
         String[] from = new String[] {"col1", "col2"};
