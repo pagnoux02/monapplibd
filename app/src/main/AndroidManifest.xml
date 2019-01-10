@@ -29,7 +29,8 @@
 
         </activity>
 
-        <activity android:name=".reneActivity">
+        <activity android:name=".reneActivity"
+            android:screenOrientation="portrait">
 
             </activity>
 
