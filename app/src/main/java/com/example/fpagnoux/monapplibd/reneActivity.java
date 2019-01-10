@@ -270,7 +270,7 @@ public void pointparimg(int i){
                 }}
                 break;
         }
-         // Si le jeu est en cours de deroulement
+         // Si le jeu est en c ours de deroulement
         if (jeu == true) {
 
 
@@ -491,7 +491,7 @@ public void pointparimg(int i){
 
         img9.setImageResource(imgdujeu[monimg9]);
         img9.setTag(imgdujeu[monimg9]);
-
+//
     }
 
 // affichage du temps sur 60s
