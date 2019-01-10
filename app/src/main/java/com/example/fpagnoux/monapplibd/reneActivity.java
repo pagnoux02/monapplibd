@@ -40,6 +40,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private TextView test;
     private TextView pseudo;
     private rank joueur;
+    private MySQLiteOpenHelper cmd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,7 +142,8 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
                     text.setText(String.valueOf(score));
                     break;
             }
-           // joueur = new rank();
+           joueur = new rank(lePseudo, score);
+           cmd.insertScore(joueur);
         }
 
     }

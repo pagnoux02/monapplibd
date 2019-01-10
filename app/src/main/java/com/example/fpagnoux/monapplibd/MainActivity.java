@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.lang.Math;
 
@@ -19,19 +20,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String theme;
     int cFenetre = 20;
     private collectionScore unecollection = new collectionScore();
+    private Button buttValider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         Button buttClass = this.findViewById(R.id.buttClass);
         buttClass.setOnClickListener(this);
 
-        Button buttValider = this.findViewById(R.id.buttValider);
+        buttValider = this.findViewById(R.id.buttValider);
         buttValider.setOnClickListener(this);
+        buttValider.setEnabled(false);
 
         img1 = this.findViewById(R.id.avengersView);
         img1.setOnClickListener(this);
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        TextView affich = this.findViewById(R.id.themeView);
         EditText saisie = this.findViewById(R.id.SaisiPseudo);
         switch (v.getId()) {
             case R.id.buttClass:
@@ -109,6 +111,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 theme = "onepiece";
                 break;
         }
+        affich.setText(theme);
+        buttValider.setEnabled(true);
     }
 
     private void rank(){
