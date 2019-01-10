@@ -486,7 +486,7 @@ public void pointparimg(int i){
 
         img9.setImageResource(imgdujeu[monimg9]);
         img9.setTag(imgdujeu[monimg9]);
-
+//
     }
 
 // affichage du temps sur 60s
