@@ -19,8 +19,7 @@ public class activityClassement extends AppCompatActivity {
         MatrixCursor matrixCursor= new MatrixCursor(columns);
         startManagingCursor(matrixCursor);
 
-
-
+        matrixCursor.addRow(new Object[] { 1,"Rang","Score" });
         matrixCursor.addRow(new Object[] { 1,"Challenger","500" });
         matrixCursor.addRow(new Object[] { 2,"Diamand","350" });
         matrixCursor.addRow(new Object[] { 3,"Platine","200" });
