@@ -270,7 +270,7 @@ public void pointparimg(int i){
                 }}
                 break;
         }
-         // Si le jeu est en cours de deroulement
+         // Si le jeu est en c ours de deroulement
         if (jeu == true) {
 
 
