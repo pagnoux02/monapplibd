@@ -55,7 +55,11 @@ public class Memory extends AppCompatActivity {
     @Override
     //sauvegarde l'instance
     public void onSaveInstanceState(Bundle savedInstanceState) {
+        //sauvegarde le nombre de coups
         savedInstanceState.putInt("monNbCoup", nbCoups);
+        //sauvegarde les imagesViews et leur etat
+        //
+
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -63,11 +67,14 @@ public class Memory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memory_lanscape); //on assigne le layout memory_lanscape à l'activité
-        Bundle state = getIntent().getExtras();
+
+        /*Bundle state = getIntent().getExtras();
         if(state != null)
         {
+            //recupération du nombre de coup
             nbCoups = savedInstanceState.getInt("monNbCoup");
-        }
+            //recupération des imageVie et de leur etat
+        }*/
 
         // instanciation des imagesView
         imgV1 = (ImageView) findViewById(R.id.image1_1);
@@ -267,22 +274,15 @@ public class Memory extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
     }
 
     private void doStuff(ImageView imgView, int carte)
     {
-
         //met les bonnes images dans les imageviews
         if (tabCarte[carte] == 101) {
             imgView.setImageResource(img1);
         } else if (tabCarte[carte] == 102) {
-        imgView.setImageResource(img2);
+            imgView.setImageResource(img2);
         } else if (tabCarte[carte] == 103) {
             imgView.setImageResource(img3);
         } else if (tabCarte[carte] == 104) {
@@ -334,7 +334,7 @@ public class Memory extends AppCompatActivity {
             clic2 = carte;
 
             nbCoups++;
-
+            System.out.println("test");
             imgV1.setEnabled(false);
             imgV2.setEnabled(false);
             imgV3.setEnabled(false);
@@ -365,7 +365,9 @@ public class Memory extends AppCompatActivity {
                 //affiche le nombre de coups
                 txtCoup.setText(String.valueOf(nbCoups));
             }
-        } , 1000/*delais en millisecondes*/);
+        } , 2000/*delais en millisecondes*/);
+
+
     }
 
 
@@ -465,6 +467,7 @@ public class Memory extends AppCompatActivity {
                     break;
                 case 12:
                     imgV13.setVisibility(View.INVISIBLE);
+                    clic2 = 0;
                     break;
                 case 13:
                     imgV14.setVisibility(View.INVISIBLE);
@@ -476,8 +479,6 @@ public class Memory extends AppCompatActivity {
                     imgV16.setVisibility(View.INVISIBLE);
                     break;
             }
-
-
 
 
         }
@@ -498,6 +499,7 @@ public class Memory extends AppCompatActivity {
             imgV14.setImageResource(R.drawable.point_interrogation);
             imgV15.setImageResource(R.drawable.point_interrogation);
             imgV16.setImageResource(R.drawable.point_interrogation);
+            clic1 = 0;
         }
 
 
@@ -520,10 +522,11 @@ public class Memory extends AppCompatActivity {
         imgV16.setEnabled(true);
 
         //on vérifie que la partie est fini
-        finPartie();
+        endGame();
+
     }
 
-    private void finPartie()
+    private void endGame()
     {
         //Si toute les images sont invisibles
         if (imgV1.getVisibility() == View.INVISIBLE &&
@@ -543,7 +546,7 @@ public class Memory extends AppCompatActivity {
                 imgV15.getVisibility() == View.INVISIBLE &&
                 imgV16.getVisibility() == View.INVISIBLE)
         {
-            //On affiche une boite de dialogue annonçant le nombre de coups fait et ptoposant de recommencer ou quitter
+            //On affiche une boite de dialogue annonçant le nombre de coups fait et proposant de recommencer ou quitter
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
             alertDialogBuilder
                     .setMessage("Fin de la partie ! \n Tu as fini en : " + nbCoups + " coups !")
@@ -572,7 +575,6 @@ public class Memory extends AppCompatActivity {
 
     private void imgrsc()
     {
-
         switch(theme) {
             case "tintin":
                 img0 = R.drawable.t1_0;
