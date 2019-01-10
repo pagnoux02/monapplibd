@@ -256,6 +256,8 @@ public void pointparimg(int i){
                         facile.setVisibility(View.INVISIBLE);
                         moyen.setVisibility(View.INVISIBLE);
                         difficile.setVisibility(View.INVISIBLE);
+
+                        start.setVisibility(View.INVISIBLE);
                 }}
                 break;
         }
@@ -446,7 +448,7 @@ public void pointparimg(int i){
                 facile.setVisibility(View.VISIBLE);
                 moyen.setVisibility(View.VISIBLE);
                 difficile.setVisibility(View.VISIBLE);
-
+                start.setVisibility(View.VISIBLE);
             }
 
         }
