@@ -2,7 +2,7 @@ package com.example.fpagnoux.monapplibd;
 
 
 public class rank {
-    private int id;
+
     private String pseudo;
     private int score;
 
@@ -11,18 +11,10 @@ public class rank {
     }
 
 
-    public rank(int unId, String unPseudo, int unScore){
+    public rank(String unPseudo, int unScore){
         super();
-        id = unId;
         pseudo = unPseudo;
         score = unScore;
-    }
-
-    public void setId(int unId){
-        id = unId;
-    }
-    public int getId(){
-        return id;
     }
 
     public void setPseudo(String wPseudo){

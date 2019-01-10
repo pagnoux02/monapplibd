@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fond"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -41,10 +42,10 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/nbCoup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264" />
+        app:layout_constraintVertical_bias="0.687" />
 
     <TextView
         android:id="@+id/nbCoup"
@@ -90,9 +91,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="580dp"
         android:layout_marginTop="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image1_2"
@@ -100,9 +101,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image1_1"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image1_3"
@@ -110,9 +111,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image1_2"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image1_4"
@@ -121,11 +122,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image1_3"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image2_1"
@@ -133,9 +134,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="580dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image1_1"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toBottomOf="@+id/image1_1" />
 
     <ImageView
         android:id="@+id/image2_2"
@@ -143,9 +144,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image2_1"
-        app:layout_constraintTop_toBottomOf="@+id/image1_2"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toBottomOf="@+id/image1_2" />
 
     <ImageView
         android:id="@+id/image2_3"
@@ -153,9 +154,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image2_2"
-        app:layout_constraintTop_toBottomOf="@+id/image1_3"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toBottomOf="@+id/image1_3" />
 
     <ImageView
         android:id="@+id/image2_4"
@@ -164,11 +165,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image2_3"
-        app:layout_constraintTop_toBottomOf="@+id/image1_4"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toBottomOf="@+id/image1_4" />
 
     <ImageView
         android:id="@+id/image3_1"
@@ -176,9 +177,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="580dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image2_1"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toBottomOf="@+id/image2_1" />
 
     <ImageView
         android:id="@+id/image3_2"
@@ -186,9 +187,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image3_1"
-        app:layout_constraintTop_toBottomOf="@+id/image2_2"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toBottomOf="@+id/image2_2" />
 
     <ImageView
         android:id="@+id/image3_3"
@@ -196,9 +197,9 @@
         android:layout_height="140dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintStart_toEndOf="@+id/image3_2"
-        app:layout_constraintTop_toBottomOf="@+id/image2_3"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toBottomOf="@+id/image2_3" />
 
     <ImageView
         android:id="@+id/image3_4"
@@ -207,11 +208,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image3_3"
-        app:layout_constraintTop_toBottomOf="@+id/image2_4"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintTop_toBottomOf="@+id/image2_4" />
 
     <ImageView
         android:id="@+id/image4_1"
@@ -220,11 +221,11 @@
         android:layout_marginStart="580dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image3_1"
-        app:layout_constraintVertical_bias="0.571"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <ImageView
         android:id="@+id/image4_2"
@@ -233,11 +234,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image4_1"
         app:layout_constraintTop_toBottomOf="@+id/image3_2"
-        app:layout_constraintVertical_bias="0.571"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <ImageView
         android:id="@+id/image4_3"
@@ -246,11 +247,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image4_2"
         app:layout_constraintTop_toBottomOf="@+id/image3_3"
-        app:layout_constraintVertical_bias="0.571"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <ImageView
         android:id="@+id/image4_4"
@@ -260,13 +261,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
+        android:src="@drawable/point_interrogation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image4_3"
         app:layout_constraintTop_toBottomOf="@+id/image3_4"
-        app:layout_constraintVertical_bias="0.571"
-        tools:srcCompat="@drawable/point_interrogation" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <Button
         android:id="@+id/reinitialiser"
