@@ -52,6 +52,8 @@ public class Memory extends AppCompatActivity {
 
     private Button btnRetour, btnReinitialiser;
 
+    private String leTheme ,lePseudo ;
+
 
     @Override
     //sauvegarde l'instance
@@ -76,6 +78,10 @@ public class Memory extends AppCompatActivity {
             nbCoups = savedInstanceState.getInt("monNbCoup");
             //recupération des imageVie et de leur etat
         }*/
+
+        //hugo
+        leTheme = this.getIntent().getExtras().getString("Theme");
+        lePseudo = this.getIntent().getExtras().getString("Joueur");
 
         // instanciation des imagesView
         imgV1 = (ImageView) findViewById(R.id.image1_1);
