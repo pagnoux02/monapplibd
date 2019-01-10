@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttValider:
                 pseudo = saisie.getText().toString();
-                System.out.println(Math.random());
                 if(i==1) {
                     play();
                     i = 2;
