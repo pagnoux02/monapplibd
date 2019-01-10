@@ -165,7 +165,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
 
-        //ajoute un evenement qui verifie le click sur les img
+        //ajoute un evenement  click sur les img
         img1.setOnClickListener(this);
         img2.setOnClickListener(this);
         img3.setOnClickListener(this);
@@ -176,11 +176,10 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         img8.setOnClickListener(this);
         img9.setOnClickListener(this);
 
-
-
         facile = (Button)findViewById(R.id.btnFacile);
         moyen = (Button)findViewById(R.id.btnMoyen);
         difficile= (Button)findViewById(R.id.btnDifficile);
+
         facile.setOnClickListener(this);
         moyen.setOnClickListener(this);
         difficile.setOnClickListener(this);
@@ -313,7 +312,7 @@ public void pointparimg(int i){
 
     }
 
-    // Jouer peromet de generé 2 nbr aléatoir pour le choix de l'image et de la case de reception
+    // Jouer permet de générer 2 nbr aléatoire 1 pour le choix de l'image et 1 de la case de reception
     private void jouer( String theme, int unmodedejeu) {
 
         //generation aleatoire pour l'image et la case ou elle va se trouver
@@ -492,7 +491,8 @@ public void pointparimg(int i){
     public void letimer (){
         letempstotal--;
         Timer.setText(String.valueOf(letempstotal+" / 60"));
-        if (letempstotal >00 ){
+
+         if (letempstotal >00 ){
 
         Handler unHandler = new Handler();
             unHandler.postDelayed(new Runnable() {
@@ -556,15 +556,17 @@ public void animation (int i){
             // arraylist avec les imageview
             ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
             // affectation position Y par defaut de chaque imageview
-            imgdelacase[0].setY(846);
-            imgdelacase[1].setY(846);
-            imgdelacase[2].setY(846);
-            imgdelacase[3].setY(1272);
-            imgdelacase[4].setY(1272);
-            imgdelacase[5].setY(1272);
-            imgdelacase[6].setY(1714);
-            imgdelacase[7].setY(1714);
-            imgdelacase[8].setY(1714);
+            imgdelacase[0].setY(838);
+            imgdelacase[1].setY(838);
+            imgdelacase[2].setY(838);
+            imgdelacase[3].setY(1158);
+            imgdelacase[4].setY(1158);
+            imgdelacase[5].setY(1158);
+            imgdelacase[6].setY(1490);
+            imgdelacase[7].setY(1490);
+            imgdelacase[8].setY(1490);
+
+            // 838   1158  1490
         }
     } );
 }}
