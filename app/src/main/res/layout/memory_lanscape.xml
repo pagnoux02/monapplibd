@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:background="@drawable/tintin_portrait">
 
@@ -14,9 +15,15 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Nom_Joueur"
+
+        android:textColor="@android:color/background_dark"
+
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--text qui affiche le theme-->
 
     <TextView
         android:id="@+id/theme"
@@ -29,6 +36,7 @@
         android:background="@drawable/bulle_bd_2"
         android:text="Thème_choisi"
         android:textAlignment="center"
+
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/nbCoup"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +44,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+
+    <!--nombre de coups-->
 
     <TextView
         android:id="@+id/nbCoup"
@@ -49,11 +60,17 @@
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="70sp"
+
+        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.087" />
+
+
+    <!--image bulle pour le nombre de coups -->
 
     <ImageView
         android:id="@+id/bulle"
@@ -69,7 +86,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.154"
+
         app:srcCompat="@drawable/bulle_bd_1" />//
+
 
     <ImageView
         android:id="@+id/image1_1"
@@ -79,7 +98,10 @@
         android:layout_marginTop="356dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 2 ligne 1-->
 
     <ImageView
         android:id="@+id/image1_2"
@@ -89,7 +111,10 @@
         android:layout_marginTop="356dp"
         app:layout_constraintStart_toEndOf="@+id/image1_1"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 3 ligne 1-->
 
     <ImageView
         android:id="@+id/image1_3"
@@ -99,7 +124,10 @@
         android:layout_marginTop="356dp"
         app:layout_constraintStart_toEndOf="@+id/image1_2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 3 ligne 1-->
 
     <ImageView
         android:id="@+id/image1_4"
@@ -112,7 +140,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image1_3"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 1 ligne 2-->
 
     <ImageView
         android:id="@+id/image2_1"
@@ -122,7 +153,10 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image1_1"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 2 ligne 2-->
 
     <ImageView
         android:id="@+id/image2_2"
@@ -132,7 +166,10 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/image2_1"
         app:layout_constraintTop_toBottomOf="@+id/image1_2"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 3 ligne 2-->
 
     <ImageView
         android:id="@+id/image2_3"
@@ -143,7 +180,10 @@
         android:contentDescription="TODO"
         app:layout_constraintStart_toEndOf="@+id/image2_2"
         app:layout_constraintTop_toBottomOf="@+id/image1_3"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 4 ligne 2-->
 
     <ImageView
         android:id="@+id/image2_4"
@@ -156,7 +196,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image2_3"
         app:layout_constraintTop_toBottomOf="@+id/image1_4"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 1 ligne 3-->
 
     <ImageView
         android:id="@+id/image3_1"
@@ -166,7 +209,10 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image2_1"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 2 ligne 3-->
 
     <ImageView
         android:id="@+id/image3_2"
@@ -176,7 +222,10 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/image3_1"
         app:layout_constraintTop_toBottomOf="@+id/image2_2"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 3 ligne 3-->
 
     <ImageView
         android:id="@+id/image3_3"
@@ -186,7 +235,10 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/image3_2"
         app:layout_constraintTop_toBottomOf="@+id/image2_3"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 4 ligne 3-->
 
     <ImageView
         android:id="@+id/image3_4"
@@ -199,7 +251,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image3_3"
         app:layout_constraintTop_toBottomOf="@+id/image2_4"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 1 ligne 4-->
 
     <ImageView
         android:id="@+id/image4_1"
@@ -212,7 +267,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image3_1"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 2 ligne 4-->
 
     <ImageView
         android:id="@+id/image4_2"
@@ -225,7 +283,10 @@
         app:layout_constraintStart_toEndOf="@+id/image4_1"
         app:layout_constraintTop_toBottomOf="@+id/image3_2"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 3 ligne 4-->
 
     <ImageView
         android:id="@+id/image4_3"
@@ -238,7 +299,10 @@
         app:layout_constraintStart_toEndOf="@+id/image4_2"
         app:layout_constraintTop_toBottomOf="@+id/image3_3"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--image 4 ligne 4-->
 
     <ImageView
         android:id="@+id/image4_4"
@@ -254,7 +318,10 @@
         app:layout_constraintStart_toEndOf="@+id/image4_3"
         app:layout_constraintTop_toBottomOf="@+id/image3_4"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/point_interrogation" />
+
+        tools:background="@drawable/point_interrogation" />
+
+    <!--Boutton reinitialiser-->
 
     <Button
         android:id="@+id/reinitialiser"
@@ -270,6 +337,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <!--Boutton retour-->
+
     <Button
         android:id="@+id/retour"
         android:layout_width="200dp"
@@ -280,5 +350,6 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
