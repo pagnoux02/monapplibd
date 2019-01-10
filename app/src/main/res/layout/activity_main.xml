@@ -6,4 +6,171 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
+    <EditText
+        android:id="@+id/SaisiPseudo"
+        android:layout_width="397dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Pseudo"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/Titre"
+        android:layout_width="203dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:text="René La BD"
+        android:textColor="@android:color/black"
+        android:textColorLink="@android:color/black"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/avengersView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginBottom="553dp"
+        android:background="@drawable/avengers"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/spidermanView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="552dp"
+        android:background="@drawable/spiderman"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avengersView" />
+
+    <ImageView
+        android:id="@+id/supermanView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="552dp"
+        android:background="@drawable/superman"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/spidermanView" />
+
+    <ImageView
+        android:id="@+id/simpsonView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/simpson"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avengersView" />
+
+    <ImageView
+        android:id="@+id/tintinView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/tintin"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/simpsonView"
+        app:layout_constraintTop_toBottomOf="@+id/spidermanView" />
+
+    <ImageView
+        android:id="@+id/titeufView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/titeuf"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/tintinView"
+        app:layout_constraintTop_toBottomOf="@+id/supermanView" />
+
+    <ImageView
+        android:id="@+id/fairytailView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/fairytail"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simpsonView" />
+
+    <ImageView
+        android:id="@+id/narutoView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/naruto"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/fairytailView"
+        app:layout_constraintTop_toBottomOf="@+id/tintinView" />
+
+    <ImageView
+        android:id="@+id/onepieceView"
+        android:layout_width="131dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/onepiece"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/narutoView"
+        app:layout_constraintTop_toBottomOf="@+id/titeufView" />
+
+    <Button
+        android:id="@+id/buttValider"
+        style="@android:style/Widget.Material.Light.Button.Small"
+        android:layout_width="310dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Valider"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttClass"
+        style="@android:style/Widget.Material.Light.Button.Small"
+        android:layout_width="310dp"
+        android:layout_height="67dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:fadingEdge="none"
+        android:text="Classement"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
 </android.support.constraint.ConstraintLayout>
