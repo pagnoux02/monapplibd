@@ -30,7 +30,7 @@ import static java.lang.Math.random;
 public class Memory extends AppCompatActivity {
     //Propriétés
 
-    private String theme = "tintin";
+    private String theme = "naruto";
     private String nomJoueur;
     private int nbCoups = 0;
 
@@ -51,6 +51,7 @@ public class Memory extends AppCompatActivity {
     int nbCarte = 1;
 
     private Button btnRetour, btnReinitialiser;
+
 
     @Override
     //sauvegarde l'instance
@@ -116,8 +117,10 @@ public class Memory extends AppCompatActivity {
         btnReinitialiser = findViewById(R.id.reinitialiser);
         btnRetour = findViewById(R.id.retour);
 
-        //On affiche le theme choisi dans le textView theme
+        //instanciation du textView
         txtViewTheme = findViewById(R.id.theme);
+        //On affiche le theme choisi dans le textView theme
+        txtViewTheme.setText(theme);
 
         //charge les images
         imgrsc();
@@ -637,6 +640,23 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "naruto":
+
+                //On affiche une boite de dialogue annonçant que le theme n'est pas disponible
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
+                alertDialogBuilder
+                        .setMessage("Dsolé ! ce thème n'est pas encore disponible !")
+                        //empêche l'annulation
+                        .setCancelable(false)
+                        //on recommence une partie
+                        .setPositiveButton("Retour", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
                 /*img0 = R.drawable.t4_0;
                 img1 = R.drawable.t4_1;
                 img2 = R.drawable.t4_2;
@@ -657,6 +677,23 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "fairytail":
+
+                //On affiche une boite de dialogue annonçant que le theme n'est pas disponible
+                AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(Memory.this);
+                alertDialogBuilder2
+                        .setMessage("Dsolé ! ce thème n'est pas encore disponible !")
+                        //empêche l'annulation
+                        .setCancelable(false)
+                        //on recommence une partie
+                        .setPositiveButton("Retour", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
                 /*img0 = R.drawable.t5_0;
                 img1 = R.drawable.t5_1;
                 img2 = R.drawable.t5_2;
@@ -677,6 +714,23 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "onepiece":
+
+                //On affiche une boite de dialogue annonçant que le theme n'est pas disponible
+                AlertDialog.Builder alertDialogBuilder3 = new AlertDialog.Builder(Memory.this);
+                alertDialogBuilder3
+                        .setMessage("Dsolé ! ce thème n'est pas encore disponible !")
+                        //empêche l'annulation
+                        .setCancelable(false)
+                        //on recommence une partie
+                        .setPositiveButton("Retour", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
                 /*img0 = R.drawable.t6_0;
                 img1 = R.drawable.t6_1;
                 img2 = R.drawable.t6_2;
@@ -697,6 +751,22 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "superman":
+                //On affiche une boite de dialogue annonçant que le theme n'est pas disponible
+                AlertDialog.Builder alertDialogBuilder4 = new AlertDialog.Builder(Memory.this);
+                alertDialogBuilder4
+                        .setMessage("Dsolé ! ce thème n'est pas encore disponible !")
+                        //empêche l'annulation
+                        .setCancelable(false)
+                        //on recommence une partie
+                        .setPositiveButton("Retour", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
                 /*img0 = R.drawable.t7_0;
                 img1 = R.drawable.t7_1;
                 img2 = R.drawable.t7_2;
@@ -717,6 +787,23 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "spiderman":
+
+                //On affiche une boite de dialogue annonçant que le theme n'est pas disponible
+                AlertDialog.Builder alertDialogBuilder5 = new AlertDialog.Builder(Memory.this);
+                alertDialogBuilder5
+                        .setMessage("Dsolé ! ce thème n'est pas encore disponible !")
+                        //empêche l'annulation
+                        .setCancelable(false)
+                        //on recommence une partie
+                        .setPositiveButton("Retour", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
                 /*img0 = R.drawable.t8_0;
                 img1 = R.drawable.t8_1;
                 img2 = R.drawable.t8_2;
@@ -737,6 +824,23 @@ public class Memory extends AppCompatActivity {
                 break;
 
             case "avengers":
+
+                //On affiche une boite de dialogue annonçant que le theme n'est pas disponible
+                AlertDialog.Builder alertDialogBuilder6 = new AlertDialog.Builder(Memory.this);
+                alertDialogBuilder6
+                        .setMessage("Dsolé ! ce thème n'est pas encore disponible !")
+                        //empêche l'annulation
+                        .setCancelable(false)
+                        //on recommence une partie
+                        .setPositiveButton("Retour", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+
                 /*img0 = R.drawable.t9_0;
                 img1 = R.drawable.t9_1;
                 img2 = R.drawable.t9_2;
