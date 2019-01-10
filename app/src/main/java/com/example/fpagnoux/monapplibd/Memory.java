@@ -26,7 +26,7 @@ import static java.lang.Math.random;
 public class Memory extends AppCompatActivity {
     //Propriétés
 
-    private String theme = "tintin";
+    //private String theme = "tintin";
     private TextView nomJoueur;
     private int nbCoups = 0;
 
@@ -118,7 +118,7 @@ public class Memory extends AppCompatActivity {
 
         //nom joueur
         nomJoueur = findViewById(R.id.PlayerName);
-        nomJoueur.setText("Mael");
+        nomJoueur.setText(lePseudo);
 
         //bouttons
         btnReinitialiser = findViewById(R.id.reinitialiser);
@@ -127,7 +127,7 @@ public class Memory extends AppCompatActivity {
         //instanciation du textView
         txtViewTheme = findViewById(R.id.theme);
         //On affiche le theme choisi dans le textView theme
-        txtViewTheme.setText(theme);
+        txtViewTheme.setText(leTheme);
 
         //charge les images
         imgrsc();
@@ -585,7 +585,7 @@ public class Memory extends AppCompatActivity {
 
     private void imgrsc()
     {
-        switch(theme) {
+        switch(leTheme) {
             case "tintin":
                 img0 = R.drawable.t1_0;
                 img1 = R.drawable.t1_1;
