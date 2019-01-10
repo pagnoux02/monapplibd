@@ -47,7 +47,9 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private Button start;
     private Boolean jeu = false;
 
-    private String leTheme ="simpson",lePseudo ;
+
+    private String leTheme ,lePseudo ;
+
 
 
 
@@ -377,41 +379,41 @@ public void pointparimg(int i){
         switch (imgjeuplace) {
 
             case 0:
-             //   img1.setImageResource(imgdujeu[n]);
+
                 personnagejouer(n, 0, 0, 0, 0,0, 0,0, 0);
 
                 break;
             case 1:
-               // img2.setImageResource(imgdujeu[n]);
+
 
                 personnagejouer(0, n, 0, 0, 0, 0, 0, 0, 0);
                 break;
             case 2:
-               // img3.setImageResource(imgdujeu[n]);
+
                 personnagejouer(0, 0, n, 0, 0, 0, 0,0, 0);
                 break;
             case 3:
-               // img4.setImageResource(imgdujeu[n]);
+
                personnagejouer(0, 0, 0, n, 0, 0, 0, 0, 0);
                 break;
             case 4:
-              //  img5.setImageResource(imgdujeu[n]);
+
                 personnagejouer(0, 0, 0, 0, n, 0, 0, 0, 0);
                 break;
             case 5:
-               // img6.setImageResource(imgdujeu[n]);
+
                 personnagejouer(0, 0, 0, 0, 0, n, 0, 0, 0);
                 break;
             case 6:
-                //img7.setImageResource(imgdujeu[n]);
+
                 personnagejouer( 0, 0,0, 0,0 , 0, n, 0, 0);
                 break;
             case 7:
-              //  img8.setImageResource(imgdujeu[n]);
+
                 personnagejouer(0, 0, 0, 0, 0, 0, 0, n,0);
                 break;
             case 8:
-             //   img9.setImageResource(imgdujeu[n]);
+
                 personnagejouer(0, 0, 0, 0, 0, 0, 0, 0, n);
                 break;
         }
@@ -507,29 +509,6 @@ public void pointparimg(int i){
 
         timerbar.setProgress(letempstotal);
     }}
-/*
-    public void handleAnimation(View view){
-        ObjectAnimator animatorX = ObjectAnimator.ofFloat(imgpnt1,"X",400f);
-
-        animatorX.setDuration(animationDuration);
-       AnimatorSet animatorSet = new AnimatorSet();
-       animatorSet.playTogether(animatorX);
-       animatorSet.start();
-
-
-        Handler unHandler = new Handler();
-        unHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(imgpnt1,"X",200f);
-                animatorX2.setDuration(animationDuration);
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                animatorSet2.playTogether(animatorX2);
-                animatorSet2.start();
-
-            }
-        }, 1000);
-    }*/
 
 
 public void animation (int i){
