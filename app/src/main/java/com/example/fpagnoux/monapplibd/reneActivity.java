@@ -48,7 +48,9 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private Boolean jeu = false;
 
 
+
     private String leTheme ,lePseudo ;
+
 
 
 
@@ -64,6 +66,11 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private int letempstotal = 60, tempsapparition;
 
     private int place, imgalea ;
+
+
+    private rank joueur;
+    private MySQLiteOpenHelper cmd;
+
 
         // contien tout les imageview de jeu
 
@@ -307,10 +314,6 @@ public void pointparimg(int i){
                     pointparimg(8);
 
                     break;
-
-
-
-
             }
         }
 
@@ -508,6 +511,7 @@ public void pointparimg(int i){
             }, 1000);
 
         timerbar.setProgress(letempstotal);
+
     }}
 
 

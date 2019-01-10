@@ -1,45 +1,44 @@
 package com.example.fpagnoux.monapplibd;
 
 
+import android.database.MatrixCursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.SimpleCursorAdapter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static com.example.fpagnoux.monapplibd.R.layout.cell;
 
 public class activityClassement extends AppCompatActivity {
-    private TextView test;
-    private MySQLiteOpenHelper cmd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classement);
 
-        //String leTheme = this.getIntent().getExtras().getString("Theme");
-        GridView grid = (GridView)findViewById(R.id.grid_view);
-/*
-        int i = 0;
+        String[] columns = new String[] { "_id", "col1", "col2" };
+        MatrixCursor matrixCursor= new MatrixCursor(columns);
+        startManagingCursor(matrixCursor);
 
-        while(i<11){
-            for (rank unRank: cmd.getLesScores()
-                 ) {
-                //grid.setAdapter(); ;
-            }
-            i+=1;
-        }*/
+
+
+        matrixCursor.addRow(new Object[] { 1,"Challenger","500" });
+        matrixCursor.addRow(new Object[] { 2,"Diamand","350" });
+        matrixCursor.addRow(new Object[] { 3,"Platine","200" });
+        matrixCursor.addRow(new Object[] { 4,"Or","100" });
+        matrixCursor.addRow(new Object[] { 5,"Argent","50" });
+        matrixCursor.addRow(new Object[] { 5,"Bronze","25" });
+
+        // on prendra les données des colonnes 1 et 2...
+        String[] from = new String[] {"col1", "col2"};
+
+        // ...pour les placer dans les TextView définis dans "row_item.xml"
+        int[] to = new int[] { R.id.textViewCol1, R.id.textViewCol2};
+
+        // création de l'objet SimpleCursorAdapter...
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.row_item, matrixCursor, from, to, 0);
+
+        // ...qui va remplir l'objet ListView
+        ListView lv = (ListView) findViewById(R.id.lv);
+        lv.setAdapter(adapter);
     }
 }
