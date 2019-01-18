@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int cFenetre = 20;
     private collectionScore unecollection = new collectionScore();
     private Button buttValider;
-    private int i = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +77,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttValider:
                 pseudo = saisie.getText().toString();
-                if(i==1) {
+                if(Math.random()>0.5) {
                     play();
-                    i = 2;
                 }
                 else{
+                    //playMemo
                     play();
-                    i=1;
+
                 }
                 break;
             case R.id.avengersView:

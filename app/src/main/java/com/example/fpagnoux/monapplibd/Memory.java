@@ -23,15 +23,11 @@ import static java.lang.Math.floor;
 import static java.lang.Math.random;
 
 
-//tuto inspiration
-//https://www.youtube.com/watch?v=94CWNE9ruMA
-
-
 public class Memory extends AppCompatActivity {
     //Propriétés
 
-    private String theme = "naruto";
-    private String nomJoueur;
+    //private String theme = "tintin";
+    private TextView nomJoueur;
     private int nbCoups = 0;
 
     //génération d'un chiffre aléatoire
@@ -52,19 +48,17 @@ public class Memory extends AppCompatActivity {
 
     private Button btnRetour, btnReinitialiser;
 
-    private String leTheme ,lePseudo ;
-
 
     @Override
     //sauvegarde l'instance
-    public void onSaveInstanceState(Bundle savedInstanceState) {
+    /*public void onSaveInstanceState(Bundle savedInstanceState) {
         //sauvegarde le nombre de coups
         savedInstanceState.putInt("monNbCoup", nbCoups);
         //sauvegarde les imagesViews et leur etat
         //
 
         super.onSaveInstanceState(savedInstanceState);
-    }
+    }*/
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +73,6 @@ public class Memory extends AppCompatActivity {
             //recupération des imageVie et de leur etat
         }*/
 
-        //hugo
-        leTheme = this.getIntent().getExtras().getString("Theme");
-        lePseudo = this.getIntent().getExtras().getString("Joueur");
 
         // instanciation des imagesView
         imgV1 = (ImageView) findViewById(R.id.image1_1);
@@ -119,6 +110,11 @@ public class Memory extends AppCompatActivity {
         imgV15.setTag("14");
         imgV16.setTag("15");
 
+
+        //nom joueur
+        nomJoueur = findViewById(R.id.PlayerName);
+        nomJoueur.setText("mael");
+
         //bouttons
         btnReinitialiser = findViewById(R.id.reinitialiser);
         btnRetour = findViewById(R.id.retour);
@@ -126,7 +122,7 @@ public class Memory extends AppCompatActivity {
         //instanciation du textView
         txtViewTheme = findViewById(R.id.theme);
         //On affiche le theme choisi dans le textView theme
-        txtViewTheme.setText(theme);
+        txtViewTheme.setText("tintin");
 
         //charge les images
         imgrsc();
@@ -584,7 +580,7 @@ public class Memory extends AppCompatActivity {
 
     private void imgrsc()
     {
-        switch(theme) {
+        switch("tintin") {
             case "tintin":
                 img0 = R.drawable.t1_0;
                 img1 = R.drawable.t1_1;
