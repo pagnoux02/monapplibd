@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9;
     private String theme;
     int cFenetre = 20;
-    private collectionScore unecollection = new collectionScore();
+    //private collectionScore unecollection = new collectionScore();
     private Button buttValider;
 
     @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         img9 = this.findViewById(R.id.onepieceView);
         img9.setOnClickListener(this);
 
-        unecollection.insertion_Score(getApplicationContext());
+       // unecollection.insertion_Score(getApplicationContext());
 
     }
 
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.buttClass:
                 pseudo = saisie.getText().toString();
-                rank();
+         //       rank();
                 break;
             case R.id.buttValider:
                 pseudo = saisie.getText().toString();
@@ -118,12 +118,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttValider.setEnabled(true);
     }
 
-    private void rank(){
+ /*   private void rank(){
         Intent unIntent = new Intent(MainActivity.this, activityClassement.class);
         unIntent.putExtra("Joueur", pseudo);
         unIntent.putExtra("Theme", theme);
         this.startActivityForResult(unIntent, cFenetre);
-    }
+    }*/
 
     private void play(){
         Intent unIntent = new Intent(MainActivity.this, reneActivity.class);

@@ -69,7 +69,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
     private rank joueur;
-    private MySQLiteOpenHelper cmd;
+    //private MySQLiteOpenHelper cmd;
 
 
         // contien tout les imageview de jeu
