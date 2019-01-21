@@ -59,8 +59,10 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         if (unCurseur.moveToFirst()) {
             do {
                 rank unRank = new rank();
+                unRank.setId(unCurseur.getInt(unCurseur.getColumnIndex("id")));
                 unRank.setPseudo(unCurseur.getString(unCurseur.getColumnIndex("pseudo")));
                 unRank.setScore(unCurseur.getInt(unCurseur.getColumnIndex("score")));
+
                 System.out.println(unRank.getPseudo());
                 ensScore.add(unRank);
             } while (unCurseur.moveToNext());
