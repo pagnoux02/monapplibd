@@ -132,12 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.startActivityForResult(unIntent, cFenetre);
     }
 
-    private void playMemo(){
-        Intent unIntent = new Intent(MainActivity.this, Memory.class);
-        unIntent.putExtra("Joueur", pseudo);
-        unIntent.putExtra("Theme", theme);
-        this.startActivityForResult(unIntent, cFenetre);
-    }
+
 
 }
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class collectionScore {
     ArrayList<rank> ensScore= new ArrayList<>();
     MySQLiteOpenHelper base_score;
-
+  private rank lerank;
     public int nb_elements(){ return ensScore.size();}
 
     //solution basée sur une insertion en code des questions

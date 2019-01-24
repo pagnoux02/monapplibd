@@ -6,8 +6,10 @@ public class rank {
     private String pseudo;
     private int score,id;
 
-    public rank(){
-
+    public rank( String unPseudo, int unScore){
+        super();
+        pseudo = unPseudo;
+        score = unScore;
     }
 
 
@@ -18,6 +20,7 @@ public class rank {
         score = unScore;
 
     }
+
 
     public void setId(int unid){
         id = unid;
