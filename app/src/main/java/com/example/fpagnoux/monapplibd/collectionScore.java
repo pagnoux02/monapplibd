@@ -13,12 +13,15 @@ public class collectionScore {
 
     //solution basée sur une insertion en code des questions
 
-    public void insertion_Score(Context un_context){
+
+    public void insertion_Score(Context un_context, String pseudo, int score){
         base_score = new MySQLiteOpenHelper(un_context);
 
         ensScore = base_score.getLesScores();
 
-        if(ensScore.isEmpty()){
+        base_score.ajoutScoreDep(new rank(pseudo, score));
+
+        /*if(ensScore.isEmpty()){
             base_score.ajoutScoreDep(new rank(1,"Hugo", 100));
             base_score.ajoutScoreDep(new rank(2,"Francois", 90));
             base_score.ajoutScoreDep(new rank(3,"Mael", 80));
@@ -29,10 +32,10 @@ public class collectionScore {
             base_score.ajoutScoreDep(new rank(8,"Anthony", 30));
             base_score.ajoutScoreDep(new rank(9,"Loïc", 20));
             base_score.ajoutScoreDep(new rank(10,"Benjamin", 10));
-            base_score.ajoutScoreDep(new rank(11,"Valentin", 0));
+            base_score.ajoutScoreDep(new rank(11,"Valentin", 0));*/
 
-            base_score.ajoutInsertScore();
             ensScore = base_score.getLesScores();
-        }
+
     }
+
 }

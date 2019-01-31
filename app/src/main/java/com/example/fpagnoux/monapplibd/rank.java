@@ -6,15 +6,19 @@ public class rank {
     private String pseudo;
     private int score,id;
 
+public rank(){
+
+}
+
     public rank( String unPseudo, int unScore){
-        super();
+
         pseudo = unPseudo;
         score = unScore;
     }
 
 
     public rank(int unid, String unPseudo, int unScore){
-        super();
+
         id = unid;
         pseudo = unPseudo;
         score = unScore;

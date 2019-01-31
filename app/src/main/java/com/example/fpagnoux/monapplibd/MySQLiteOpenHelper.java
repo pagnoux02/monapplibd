@@ -58,8 +58,10 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         Cursor unCurseur = db.rawQuery(reqClassement, null);
         if (unCurseur.moveToFirst()) {
             do {
+
+                //convertir en entier probleme de type
                 rank unRank = new rank();
-              //  unRank.setId(unCurseur.getInt(unCurseur.getColumnIndex("id")));
+              unRank.setId(unCurseur.getInt(unCurseur.getColumnIndex("id")));
                 unRank.setPseudo(unCurseur.getString(unCurseur.getColumnIndex("pseudo")));
                 unRank.setScore(unCurseur.getInt(unCurseur.getColumnIndex("score")));
 

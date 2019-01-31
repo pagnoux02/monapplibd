@@ -99,7 +99,9 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
     private MySQLiteOpenHelper ajoutsdunscorefinjeu;
     private SQLiteDatabase db;
-    private collectionScore lacollecscore;
+    private collectionScore lacollecscore = new collectionScore();
+    private rank lerank;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -468,7 +470,8 @@ public void pointparimg(int i){
             //    db.execSQL("INSERT INTO Rank (pseudo,score)  VALUES (" + lePseudo + "," + score + ");");
 
         //    lacollecscore.insert_score(lePseudo,score);
-            ajoutsdunscorefinjeu.ajoutScoreDep(getApplicationContext(),lePseudo,score);
+            //ajoutsdunscorefinjeu.ajoutScoreDep(new rank(12,lePseudo,score));
+            lacollecscore.insertion_Score(getApplicationContext(), lePseudo, score);
 
         }
 
