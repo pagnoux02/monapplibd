@@ -62,7 +62,7 @@ public class activityClassement extends AppCompatActivity {
     }
     private void displayData() {
         db = controllerdb.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM  Rank ORDER BY score DESC LIMIT 10;",null);
+        Cursor cursor = db.rawQuery("SELECT *  FROM  Rank ORDER BY score DESC LIMIT 10;",null);
         Id.clear();
         Pseudo.clear();
         Score.clear();

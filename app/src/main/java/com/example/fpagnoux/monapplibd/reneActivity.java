@@ -66,7 +66,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
     private TextView Timer;
-    private int letempstotal = 60, tempsapparition;
+    private int letempstotal = 5, tempsapparition;
 
     private int place, imgalea ;
 
