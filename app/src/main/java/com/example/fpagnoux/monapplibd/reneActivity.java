@@ -66,7 +66,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
     private TextView Timer;
-    private int letempstotal = 5, tempsapparition;
+    private int letempstotal = 60, tempsapparition;
 
     private int place, imgalea ;
 
@@ -109,13 +109,13 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
         niveau = (TextView) findViewById(R.id.txtniveau);
         text = (TextView) findViewById(R.id.txtscore);
-        start = (Button) findViewById(R.id.btnstart);
+       // start = (Button) findViewById(R.id.btnstart);
 
         timerbar = (ProgressBar)findViewById(R.id.progresstimer) ;
 
         Timer = (TextView) findViewById(R.id.txttimer);
         // text.setText(String.valueOf( listimgaview[1]));
-        start.setOnClickListener(this);
+        //start.setOnClickListener(this);
 
 
         //hugo
@@ -249,37 +249,22 @@ public void pointparimg(int i){
             case R.id.btnFacile:
                 modedejeu =1;
                 niveau.setText("Facile");
+                eststart();
                 break;
             case R.id.btnMoyen:
                 modedejeu =2;
+                eststart();
                 niveau.setText("Moyen");
                 break;
             case R.id.btnDifficile:
                 modedejeu =3;
                 niveau.setText("Difficile");
+                eststart();
                 break;
 
-            // verification du clique sur le bouton start
-            case R.id.btnstart:
 
-                if (modedejeu != 0  ){
-                // verification si le jeu est deja en fonctionnement
 
-                    if (eststart == true ) {
-                        score = 0;
-                    text.setText(String.valueOf(score));
-                    letimer();
 
-                    jouer(leTheme,modedejeu);
-                    eststart = false;
-                 //   handleAnimation(imgpnt1);
-                        facile.setVisibility(View.INVISIBLE);
-                        moyen.setVisibility(View.INVISIBLE);
-                        difficile.setVisibility(View.INVISIBLE);
-
-                        start.setVisibility(View.INVISIBLE);
-                }}
-                break;
         }
          // Si le jeu est en c ours de deroulement
         if (jeu == true) {
@@ -328,6 +313,27 @@ public void pointparimg(int i){
             }
         }
 
+    }
+
+ // methode de lancement du jeu
+    public void eststart(){
+
+        if (modedejeu != 0  ){
+            // verification si le jeu est deja en fonctionnement
+
+            if (eststart == true ) {
+                score = 0;
+                text.setText(String.valueOf(score));
+                letimer();
+
+                jouer(leTheme,modedejeu);
+                eststart = false;
+                //   handleAnimation(imgpnt1);
+                facile.setVisibility(View.INVISIBLE);
+                moyen.setVisibility(View.INVISIBLE);
+                difficile.setVisibility(View.INVISIBLE);
+
+                }}
     }
 
     // Jouer permet de générer 2 nbr aléatoires 1 pour le choix de l'image et 1 de la case de reception

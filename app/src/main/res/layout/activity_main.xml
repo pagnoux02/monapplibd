@@ -12,24 +12,26 @@
         android:id="@+id/SaisiPseudo"
         android:layout_width="397dp"
         android:layout_height="62dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/white"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/transparent"
         android:ems="10"
         android:gravity="center_vertical|center"
         android:inputType="textPersonName"
-        android:text="Pseudo"
-        android:textColor="@android:color/background_dark"
+        android:maxLength="16"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textColor="@android:color/background_light"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.184"
-        android:maxLength="16"/>
+        app:layout_constraintVertical_bias="0.184" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -47,23 +49,22 @@
 
     <TextView
         android:id="@+id/Titre"
-        android:layout_width="258dp"
+        android:layout_width="189dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="8dp"
+        android:maxLength="16"
+        android:maxLines="1"
         android:shadowColor="@android:color/background_dark"
-        android:text="René La BD"
+        android:text=" Pseudo   :"
         android:textColor="@android:color/background_light"
         android:textColorLink="@android:color/black"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:maxLines="1"
-        android:maxLength="16"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgbord1"

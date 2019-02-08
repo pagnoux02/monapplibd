@@ -14,6 +14,7 @@ public rank(){
 
         pseudo = unPseudo;
         score = unScore;
+
     }
 
 
@@ -22,6 +23,7 @@ public rank(){
         id = unid;
         pseudo = unPseudo;
         score = unScore;
+
 
     }
 

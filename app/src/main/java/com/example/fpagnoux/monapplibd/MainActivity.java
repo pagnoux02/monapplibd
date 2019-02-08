@@ -93,12 +93,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()) {
 
-            case R.id.SaisiPseudo:
-                if (start == 1) {
-                    lepseudo.setText("");
-                    start = 0;
-                }
-                break;
+
+
             case R.id.buttClass:
                 pseudo = saisie.getText().toString();
                 rank();
