@@ -2,6 +2,8 @@ package com.example.fpagnoux.monapplibd;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -15,8 +17,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.content.Context;
 
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
@@ -90,7 +93,15 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private int montheme;
 
 
+
     private int nbrindeximg;
+
+
+    private MySQLiteOpenHelper ajoutsdunscorefinjeu;
+    private SQLiteDatabase db;
+    private collectionScore lacollecscore = new collectionScore();
+    private rank lerank;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,13 +109,13 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
         niveau = (TextView) findViewById(R.id.txtniveau);
         text = (TextView) findViewById(R.id.txtscore);
-        start = (Button) findViewById(R.id.btnstart);
+       // start = (Button) findViewById(R.id.btnstart);
 
         timerbar = (ProgressBar)findViewById(R.id.progresstimer) ;
 
         Timer = (TextView) findViewById(R.id.txttimer);
         // text.setText(String.valueOf( listimgaview[1]));
-        start.setOnClickListener(this);
+        //start.setOnClickListener(this);
 
 
         //hugo
@@ -238,37 +249,22 @@ public void pointparimg(int i){
             case R.id.btnFacile:
                 modedejeu =1;
                 niveau.setText("Facile");
+                eststart();
                 break;
             case R.id.btnMoyen:
                 modedejeu =2;
+                eststart();
                 niveau.setText("Moyen");
                 break;
             case R.id.btnDifficile:
                 modedejeu =3;
                 niveau.setText("Difficile");
+                eststart();
                 break;
 
-            // verification du clique sur le bouton start
-            case R.id.btnstart:
 
-                if (modedejeu != 0  ){
-                // verification si le jeu est deja en fonctionnement
 
-                    if (eststart == true ) {
-                        score = 0;
-                    text.setText(String.valueOf(score));
-                    letimer();
 
-                    jouer(leTheme,modedejeu);
-                    eststart = false;
-                 //   handleAnimation(imgpnt1);
-                        facile.setVisibility(View.INVISIBLE);
-                        moyen.setVisibility(View.INVISIBLE);
-                        difficile.setVisibility(View.INVISIBLE);
-
-                        start.setVisibility(View.INVISIBLE);
-                }}
-                break;
         }
          // Si le jeu est en c ours de deroulement
         if (jeu == true) {
@@ -319,15 +315,36 @@ public void pointparimg(int i){
 
     }
 
+ // methode de lancement du jeu
+    public void eststart(){
+
+        if (modedejeu != 0  ){
+            // verification si le jeu est deja en fonctionnement
+
+            if (eststart == true ) {
+                score = 0;
+                text.setText(String.valueOf(score));
+                letimer();
+
+                jouer(leTheme,modedejeu);
+                eststart = false;
+                //   handleAnimation(imgpnt1);
+                facile.setVisibility(View.INVISIBLE);
+                moyen.setVisibility(View.INVISIBLE);
+                difficile.setVisibility(View.INVISIBLE);
+
+                }}
+    }
+
     // Jouer permet de générer 2 nbr aléatoires 1 pour le choix de l'image et 1 de la case de reception
     private void jouer( String theme, int unmodedejeu) {
 
         //generation aleatoire pour l'image et la case ou elle va se trouver
-        int n = rand.nextInt(3)+1;
+        int n = rand.nextInt(3) + 1;
         int imgjeuplace = rand.nextInt(9);
 
 
-        switch (modedejeu){
+        switch (modedejeu) {
             case 1:
                 tempsapparition = 3000;
                 break;
@@ -341,38 +358,36 @@ public void pointparimg(int i){
         }
 
         // ajout d'un nombre à n afin de modifier la recherche  dans la list d'image en fonction des themes
-        switch (theme){
+        switch (theme) {
             case "simpson":
 
                 break;
             case "titeuf":
-                    n = n+3;
+                n = n + 3;
                 break;
             case "tintin":
-                    n = n+6;
+                n = n + 6;
                 break;
             case "avengers":
-                    n = n+9;
+                n = n + 9;
                 break;
-            case  "spiderman":
-                n = n+12;
+            case "spiderman":
+                n = n + 12;
                 break;
-            case  "superman":
-                n = n+15;
+            case "superman":
+                n = n + 15;
                 break;
-            case  "fairytail":
-                n = n+ 18;
+            case "fairytail":
+                n = n + 18;
                 break;
             case "naruto":
-                n= n+21;
+                n = n + 21;
                 break;
-            case"onepiece":
-                n = n+24;
+            case "onepiece":
+                n = n + 24;
                 break;
         }
         jeu = true;
-
-
 
 
         place = imgjeuplace;
@@ -383,7 +398,7 @@ public void pointparimg(int i){
 
             case 0:
 
-                personnagejouer(n, 0, 0, 0, 0,0, 0,0, 0);
+                personnagejouer(n, 0, 0, 0, 0, 0, 0, 0, 0);
 
                 break;
             case 1:
@@ -393,11 +408,11 @@ public void pointparimg(int i){
                 break;
             case 2:
 
-                personnagejouer(0, 0, n, 0, 0, 0, 0,0, 0);
+                personnagejouer(0, 0, n, 0, 0, 0, 0, 0, 0);
                 break;
             case 3:
 
-               personnagejouer(0, 0, 0, n, 0, 0, 0, 0, 0);
+                personnagejouer(0, 0, 0, n, 0, 0, 0, 0, 0);
                 break;
             case 4:
 
@@ -409,54 +424,74 @@ public void pointparimg(int i){
                 break;
             case 6:
 
-                personnagejouer( 0, 0,0, 0,0 , 0, n, 0, 0);
+                personnagejouer(0, 0, 0, 0, 0, 0, n, 0, 0);
                 break;
             case 7:
 
-                personnagejouer(0, 0, 0, 0, 0, 0, 0, n,0);
+                personnagejouer(0, 0, 0, 0, 0, 0, 0, n, 0);
                 break;
             case 8:
 
                 personnagejouer(0, 0, 0, 0, 0, 0, 0, 0, n);
                 break;
         }
-            // permet de refaire la fonction jouer tout les X temps
-         //  int  alea = (rand.nextInt((5 - 2) + 1) + 2);
+        // permet de refaire la fonction jouer tout les X temps
+        //  int  alea = (rand.nextInt((5 - 2) + 1) + 2);
         //    alea = alea * 1000;
-            if (letempstotal > 0 ) {
+        if (letempstotal > 0) {
 
-                Handler unHandler = new Handler();
-                unHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        jouer(leTheme,modedejeu);
-                        ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
-
-
-
-                      imgdelacase[nbdelacase].animate().alpha(1);
-
-                    }
-                },  tempsapparition);
+            Handler unHandler = new Handler();
+            unHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    jouer(leTheme, modedejeu);
+                    ImageView[] imgdelacase = new ImageView[]{img1, img2, img3, img4, img5, img6, img7, img8, img9};
 
 
-            }
-            // remet au valeur par defaut
-            else {
+                    imgdelacase[nbdelacase].animate().alpha(1);
 
-             jeu = false;
-             letempstotal = 60;
-             personnagejouer(0,0, 0, 0, 0,0, 0, 0, 0);
-             modedejeu = 1;
-             eststart = true;
+                }
+            }, tempsapparition);
 
-                facile.setVisibility(View.VISIBLE);
-                moyen.setVisibility(View.VISIBLE);
-                difficile.setVisibility(View.VISIBLE);
-                start.setVisibility(View.VISIBLE);
-            }
 
         }
+        // remet au valeur par defaut
+        else {
+
+            jeu = false;
+            letempstotal = 60;
+
+            personnagejouer(0, 0, 0, 0, 0, 0, 0, 0, 0);
+            modedejeu = 1;
+            eststart = true;
+
+            facile.setVisibility(View.VISIBLE);
+            moyen.setVisibility(View.VISIBLE);
+            difficile.setVisibility(View.VISIBLE);
+            start.setVisibility(View.VISIBLE);
+
+
+            //     db = ajoutsdunscorefinjeu.getWritableDatabase();
+
+            //    db.execSQL("INSERT INTO Rank (pseudo,score)  VALUES (" + lePseudo + "," + score + ");");
+
+        //    lacollecscore.insert_score(lePseudo,score);
+            //ajoutsdunscorefinjeu.ajoutScoreDep(new rank(12,lePseudo,score));
+            lacollecscore.insertion_Score(getApplicationContext(), lePseudo, score);
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
 
 
     // affectation des image aux differentes cases
