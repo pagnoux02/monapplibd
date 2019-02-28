@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvid"
+        android:layout_width="57dp"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="383dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="New Text"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvmailid"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="New Text"
+        android:textSize="30sp" />
+</LinearLayout>
