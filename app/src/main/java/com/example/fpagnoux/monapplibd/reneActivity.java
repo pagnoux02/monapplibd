@@ -477,7 +477,10 @@ public void pointparimg(int i){
 
         //    lacollecscore.insert_score(lePseudo,score);
             //ajoutsdunscorefinjeu.ajoutScoreDep(new rank(12,lePseudo,score));
-            lacollecscore.insertion_Score(getApplicationContext(), lePseudo, score);
+
+
+
+         lacollecscore.insertion_Score(getApplicationContext(), lePseudo, score);
 
         }
 
