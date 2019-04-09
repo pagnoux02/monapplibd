@@ -66,7 +66,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
     private TextView Timer;
-    private int letempstotal = 60, tempsapparition;
+    private int letempstotal = 10, tempsapparition;
 
     private int place, imgalea ;
 
@@ -468,7 +468,6 @@ public void pointparimg(int i){
             facile.setVisibility(View.VISIBLE);
             moyen.setVisibility(View.VISIBLE);
             difficile.setVisibility(View.VISIBLE);
-            start.setVisibility(View.VISIBLE);
 
 
             //     db = ajoutsdunscorefinjeu.getWritableDatabase();
