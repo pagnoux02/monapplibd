@@ -4,8 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fond_5"
+    android:background="@drawable/bg_7"
     tools:ignore="MissingDefaultResource">
+
+
+    <ImageView
+        android:id="@+id/back_score"
+        android:layout_width="809dp"
+        android:layout_height="406dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/bg_fr_2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+
+    <ImageView
+        android:id="@+id/espace_noir"
+        android:layout_width="842dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_score"
+        app:srcCompat="@android:color/background_dark" />
 
 
     <TextView
@@ -237,13 +260,14 @@
         android:id="@+id/progresstimer"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="632dp"
-        android:layout_height="37dp"
+        android:layout_height="30dp"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="368dp"
+        android:layout_marginTop="416dp"
         android:layout_marginEnd="5dp"
         android:max="60"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -312,5 +336,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

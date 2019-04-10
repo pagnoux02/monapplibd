@@ -81,7 +81,8 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     long animationDuration = 1000;
     private int nbdelacase;
     private float trans;
-   
+
+    private TextView testok;
     //TEST
 
 
@@ -102,13 +103,23 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
     private collectionScore lacollecscore = new collectionScore();
     private rank lerank;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rene_la_bd);
 
+
         niveau = (TextView) findViewById(R.id.txtniveau);
+
+
+
+        testok = (TextView) findViewById(R.id.txtniveau);
+
+
+
         text = (TextView) findViewById(R.id.txtscore);
+
        // start = (Button) findViewById(R.id.btnstart);
 
         timerbar = (ProgressBar)findViewById(R.id.progresstimer) ;
@@ -119,6 +130,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
         //hugo
+
         leTheme = this.getIntent().getExtras().getString("Theme");
         lePseudo = this.getIntent().getExtras().getString("Joueur");
 
@@ -578,7 +590,7 @@ public void animation (int i){
             // arraylist avec les imageview
             ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
             // affectation position Y par defaut de chaque imageview
-            imgdelacase[0].setY(838);
+         /*   imgdelacase[0].setY(838);
             imgdelacase[1].setY(838);
             imgdelacase[2].setY(838);
             imgdelacase[3].setY(1158);
@@ -586,11 +598,22 @@ public void animation (int i){
             imgdelacase[5].setY(1158);
             imgdelacase[6].setY(1490);
             imgdelacase[7].setY(1490);
-            imgdelacase[8].setY(1490);
+            imgdelacase[8].setY(1490);   */
+
+            testok.setText(String.valueOf(img4.getY()));
+            imgdelacase[0].setY(1022);
+            imgdelacase[1].setY(1022);
+            imgdelacase[2].setY(1022);
+            imgdelacase[3].setY(1448);
+            imgdelacase[4].setY(1448);
+            imgdelacase[5].setY(1448);
+            imgdelacase[6].setY(1890);
+            imgdelacase[7].setY(1890);
+            imgdelacase[8].setY(1890);
 
             // 838   1158  1490
         }
-    } );
+    } );    // 1022 1448    1890
 }}
 
 

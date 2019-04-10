@@ -22,6 +22,7 @@ public class adapter extends BaseAdapter {
     private ArrayList<String> Id = new ArrayList<String>();
     private ArrayList<String> Pseudo = new ArrayList<String>();
     private ArrayList<String> Score = new ArrayList<String>();
+    private int classementPlace = 0;
 
     public adapter(Context  context,ArrayList<String> Id,ArrayList<String> Pseudo, ArrayList<String> Score)
     {
@@ -48,6 +49,7 @@ public class adapter extends BaseAdapter {
        controldbontroldb   =new MySQLiteOpenHelper(mContext);
         LayoutInflater layoutInflater;
         if (convertView == null) {
+
             layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.okinvi, null);
             holder = new viewHolder();
@@ -59,7 +61,8 @@ public class adapter extends BaseAdapter {
         } else {
             holder = (viewHolder) convertView.getTag();
         }
-        holder.id.setText(Id.get(position));
+        classementPlace = classementPlace+1 ;
+        holder.id.setText(String.valueOf(classementPlace));
         holder.pseudo.setText(Pseudo.get(position));
         holder.score.setText(Score.get(position));
 
