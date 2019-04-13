@@ -3,6 +3,7 @@ package com.example.fpagnoux.monapplibd;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -47,13 +48,12 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
     private TextView text;
     private int score = 0;
-    private Button start;
+    private Button start  , regle;
     private Boolean jeu = false;
 
 
 
     private String leTheme ,lePseudo ;
-
 
 
 
@@ -109,7 +109,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rene_la_bd);
 
-
+        regle = (Button)findViewById(R.id.btnregle);
         niveau = (TextView) findViewById(R.id.txtniveau);
 
 
@@ -134,6 +134,10 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         leTheme = this.getIntent().getExtras().getString("Theme");
         lePseudo = this.getIntent().getExtras().getString("Joueur");
 
+
+
+
+
         // instancie les images
 
         // imageview qui contient les images afin dans la zone de score
@@ -143,6 +147,7 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
 
 
         // ajout d'un nombre à n afin de modifier la recherche  dans la list d'image en fonction des themes
+
 
 
         switch (leTheme){
@@ -257,6 +262,7 @@ public void pointparimg(int i){
     public void onClick(View v) {
 
         switch (v.getId()) {
+
                 // determine le niveau  de difficulté
             case R.id.btnFacile:
                 modedejeu =1;
@@ -278,6 +284,7 @@ public void pointparimg(int i){
 
 
         }
+
          // Si le jeu est en c ours de deroulement
         if (jeu == true) {
 
