@@ -76,6 +76,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 rank();
                 break;
             case R.id.buttValider:
+
+                if (theme.equals(null)){
+
+                }
                 pseudo = saisie.getText().toString();
                 if(Math.random()>0.5) {
                     play();
