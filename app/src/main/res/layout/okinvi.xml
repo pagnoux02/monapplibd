@@ -8,8 +8,8 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:text="1"
-        android:textSize="40sp"
-        android:textColor="#ffffff"/>
+        android:textColor="#ffffff"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/tvname"

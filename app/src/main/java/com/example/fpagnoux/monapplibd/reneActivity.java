@@ -2,6 +2,7 @@ package com.example.fpagnoux.monapplibd;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,7 +26,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Timer;
 
-public class reneActivity  extends AppCompatActivity implements View.OnClickListener {
+public class reneActivity  extends Activity implements View.OnClickListener {
 
 
 
@@ -113,8 +114,6 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         niveau = (TextView) findViewById(R.id.txtniveau);
 
 
-
-        testok = (TextView) findViewById(R.id.txtniveau);
 
 
 
@@ -221,13 +220,23 @@ public class reneActivity  extends AppCompatActivity implements View.OnClickList
         moyen.setOnClickListener(this);
         difficile.setOnClickListener(this);
 
+
         test = this.findViewById(R.id.txttheme);
         test.setText(leTheme);
         pseudo = this.findViewById(R.id.txtpseudo);
         pseudo.setText(lePseudo);
 
 
-      
+        regle.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Intent unIntent = new Intent(reneActivity.this, regleActivity.class);
+                startActivity(unIntent);
+
+            }
+        });
+
 
 
     }
@@ -257,11 +266,17 @@ public void pointparimg(int i){
 
 }
 
+
     //fonction qui s'active quand il y a un clic
+
+
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
+
+
+
 
                 // determine le niveau  de difficulté
             case R.id.btnFacile:
@@ -607,7 +622,7 @@ public void animation (int i){
             imgdelacase[7].setY(1490);
             imgdelacase[8].setY(1490);   */
 
-            testok.setText(String.valueOf(img4.getY()));
+
             imgdelacase[0].setY(1022);
             imgdelacase[1].setY(1022);
             imgdelacase[2].setY(1022);
@@ -621,7 +636,13 @@ public void animation (int i){
             // 838   1158  1490
         }
     } );    // 1022 1448    1890
-}}
+}
+
+
+
+
+
+}
 
 
 
