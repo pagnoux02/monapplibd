@@ -67,7 +67,7 @@ public class reneActivity  extends Activity implements View.OnClickListener {
 
 
     private TextView Timer;
-    private int letempstotal = 10, tempsapparition;
+    private int letempstotal = 60, tempsapparition;
 
     private int place, imgalea ;
 
