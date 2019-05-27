@@ -394,7 +394,6 @@ public void pointparimg(int i){
         // ajout d'un nombre à n afin de modifier la recherche  dans la list d'image en fonction des themes
         switch (theme) {
             case "simpson":
-
                 break;
             case "titeuf":
                 n = n + 3;
@@ -431,41 +430,30 @@ public void pointparimg(int i){
         switch (imgjeuplace) {
 
             case 0:
-
                 personnagejouer(n, 0, 0, 0, 0, 0, 0, 0, 0);
-
                 break;
             case 1:
-
-
                 personnagejouer(0, n, 0, 0, 0, 0, 0, 0, 0);
                 break;
             case 2:
-
                 personnagejouer(0, 0, n, 0, 0, 0, 0, 0, 0);
                 break;
             case 3:
-
                 personnagejouer(0, 0, 0, n, 0, 0, 0, 0, 0);
                 break;
             case 4:
-
                 personnagejouer(0, 0, 0, 0, n, 0, 0, 0, 0);
                 break;
             case 5:
-
                 personnagejouer(0, 0, 0, 0, 0, n, 0, 0, 0);
                 break;
             case 6:
-
                 personnagejouer(0, 0, 0, 0, 0, 0, n, 0, 0);
                 break;
             case 7:
-
                 personnagejouer(0, 0, 0, 0, 0, 0, 0, n, 0);
                 break;
             case 8:
-
                 personnagejouer(0, 0, 0, 0, 0, 0, 0, 0, n);
                 break;
         }
@@ -480,7 +468,6 @@ public void pointparimg(int i){
                 public void run() {
                     jouer(leTheme, modedejeu);
                     ImageView[] imgdelacase = new ImageView[]{img1, img2, img3, img4, img5, img6, img7, img8, img9};
-
 
                     imgdelacase[nbdelacase].animate().alpha(1);
 
@@ -530,7 +517,7 @@ public void pointparimg(int i){
 
 
 
-    // affectation des image aux differentes cases
+    // affectation des images aux differentes cases
     public void personnagejouer(int monimg1, int monimg2, int monimg3, int monimg4, int monimg5, int monimg6, int monimg7, int monimg8, int monimg9) {
 
 
@@ -562,7 +549,6 @@ public void pointparimg(int i){
 
         img9.setImageResource(imgdujeu[monimg9]);
         img9.setTag(imgdujeu[monimg9]);
-//
     }
 
 // affichage du temps sur 60s
@@ -612,7 +598,7 @@ public void animation (int i){
             // arraylist avec les imageview
             ImageView[] imgdelacase = new ImageView[]{img1,img2,img3,img4, img5, img6, img7, img8, img9};
             // affectation position Y par defaut de chaque imageview
-         /*   imgdelacase[0].setY(838);
+            imgdelacase[0].setY(838);
             imgdelacase[1].setY(838);
             imgdelacase[2].setY(838);
             imgdelacase[3].setY(1158);
@@ -620,10 +606,10 @@ public void animation (int i){
             imgdelacase[5].setY(1158);
             imgdelacase[6].setY(1490);
             imgdelacase[7].setY(1490);
-            imgdelacase[8].setY(1490);   */
+            imgdelacase[8].setY(1490);
 
 
-            imgdelacase[0].setY(1022);
+         /*   imgdelacase[0].setY(1022);
             imgdelacase[1].setY(1022);
             imgdelacase[2].setY(1022);
             imgdelacase[3].setY(1448);
@@ -631,7 +617,7 @@ public void animation (int i){
             imgdelacase[5].setY(1448);
             imgdelacase[6].setY(1890);
             imgdelacase[7].setY(1890);
-            imgdelacase[8].setY(1890);
+            imgdelacase[8].setY(1890);*/
 
             // 838   1158  1490
         }
