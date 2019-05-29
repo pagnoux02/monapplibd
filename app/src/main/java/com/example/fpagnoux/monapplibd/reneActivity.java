@@ -366,7 +366,7 @@ public void pointparimg(int i){
                 facile.setVisibility(View.INVISIBLE);
                 moyen.setVisibility(View.INVISIBLE);
                 difficile.setVisibility(View.INVISIBLE);
-
+                regle.setVisibility(View.INVISIBLE);
                 }}
     }
 
@@ -489,7 +489,7 @@ public void pointparimg(int i){
             facile.setVisibility(View.VISIBLE);
             moyen.setVisibility(View.VISIBLE);
             difficile.setVisibility(View.VISIBLE);
-
+            regle.setVisibility(View.VISIBLE);
 
             //     db = ajoutsdunscorefinjeu.getWritableDatabase();
 

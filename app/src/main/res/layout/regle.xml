@@ -8,39 +8,31 @@
     android:background="@color/colorbgregle">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgregle"
         android:layout_width="822dp"
-        android:layout_height="1018dp"
+        android:layout_height="876dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="232dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/regle_1" />
+        app:srcCompat="@drawable/regle_imgjeu" />
 
-    <Button
-        android:id="@+id/btnQuitter"
-        android:layout_width="280dp"
-        android:layout_height="120dp"
+    <TextView
+        android:id="@+id/idregle"
+        android:layout_width="426dp"
+        android:layout_height="95dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="56dp"
-        android:text="Quitter"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnQuitter2"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:gravity="center"
+        android:text="Regle"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnQuitter2"
-        android:layout_width="280dp"
-        android:layout_height="112dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="56dp"
-        android:text="Suivant"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>
